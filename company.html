@@ -2,7 +2,21 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.craftcoaching.kr/company.html">
+  <meta property="og:title" content="회사 소개 — Craft Coaching">
+  <meta property="og:description" content="신념이 바뀌면 삶이 바뀝니다. 삶이 바뀌면 가치가 바뀝니다. 온전한 가치를 찾는 고객의 크래프팅 여정에 함께합니다.">
+  <meta property="og:image" content="https://www.craftcoaching.kr/og_image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="Craft Coaching">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="회사 소개 — Craft Coaching">
+  <meta name="twitter:description" content="신념이 바뀌면 삶이 바뀝니다. 삶이 바뀌면 가치가 바뀝니다. 온전한 가치를 찾는 고객의 크래프팅 여정에 함께합니다.">
+  <meta name="twitter:image" content="https://www.craftcoaching.kr/og_image.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회사 소개 — Craft Coaching</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
@@ -495,10 +509,71 @@ footer {
 .hero-symbol { animation: fadeUp 0.8s 0.2s ease both; }
 
 /* ── Responsive ── */
+/* ── 햄버거 버튼 ── */
+.nav-hamburger {
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+  padding:8px;
+  background:none;
+  border:none;
+}
+.nav-hamburger span {
+  display:block;
+  width:24px;
+  height:2px;
+  background:var(--gold);
+  border-radius:2px;
+  transition:all 0.3s;
+}
+/* 열린 상태 X 표시 */
+.nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity:0; }
+.nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+/* 모바일 메뉴 오버레이 */
+.nav-overlay {
+  display:none;
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  background:rgba(10,25,18,0.97);
+  z-index:99;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+}
+.nav-overlay.open { display:flex; }
+.nav-overlay-item {
+  width:100%;
+  text-align:center;
+  border-bottom:0.5px solid rgba(184,147,90,0.15);
+}
+.nav-overlay-item a {
+  display:block;
+  padding:18px 24px;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:15px; letter-spacing:2px;
+  color:rgba(234,224,208,0.85);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-overlay-item a:hover,
+.nav-overlay-item a:active { color:var(--gold-lt); }
+.nav-overlay-close {
+  margin-top:32px;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:11px; letter-spacing:3px;
+  color:var(--sage); cursor:pointer;
+  background:none; border:none;
+}
+
 @media (max-width:900px) {
   nav { padding:0 16px; height:64px; }
   .nav-menu { display:none; }
-  .nav-cta { font-size:11px; padding:7px 14px; }
+  .nav-hamburger { display:flex; }
+  .nav-cta { display:none; }
   .section-inner { padding:60px 20px; }
   .hero-grid, .company-grid, .coaching-intro, .vm-grid,
   .avatar-grid, .contact-grid, .two-col { grid-template-columns:1fr; }
@@ -541,15 +616,8 @@ footer {
         <a href="company.html#philosophy">회사 철학</a>
         <a href="company.html#brand">브랜드 스토리</a>
         <a href="company.html#vision">비전 &amp; 미션</a>
-        <a href="company.html#media">미디어</a>
         <a href="company.html#books">도서</a>
-      </div>
-    </li>
-    <li>
-      <a href="life.html">라이프 코칭</a>
-      <div class="dropdown">
-        <a href="life.html">라이프 코칭이란</a>
-        <a href="life.html#life-fields">코칭 분야</a>
+        <a href="company.html#media">미디어</a>
       </div>
     </li>
     <li>
@@ -557,6 +625,13 @@ footer {
       <div class="dropdown">
         <a href="business.html">비즈니스 코칭이란</a>
         <a href="business.html#biz-fields">코칭 분야</a>
+      </div>
+    </li>
+    <li>
+      <a href="life.html">라이프 코칭</a>
+      <div class="dropdown">
+        <a href="life.html">라이프 코칭이란</a>
+        <a href="life.html#life-fields">코칭 분야</a>
       </div>
     </li>
     <li>
@@ -575,6 +650,30 @@ footer {
   </ul>
   <a href="contact.html" class="nav-cta">상담 문의</a>
 </nav>
+<!-- ── 모바일 오버레이 메뉴 ── -->
+<div class="nav-overlay" id="navOverlay">
+  <div class="nav-overlay-item"><a href="company.html" onclick="closeNav()">회사 소개</a></div>
+  <div class="nav-overlay-item"><a href="business.html" onclick="closeNav()">비즈니스 코칭</a></div>
+  <div class="nav-overlay-item"><a href="life.html" onclick="closeNav()">라이프 코칭</a></div>
+  <div class="nav-overlay-item"><a href="jc.html" onclick="closeNav()">잡 크래프팅</a></div>
+  <div class="nav-overlay-item"><a href="avatar.html" onclick="closeNav()">아봐타®</a></div>
+  <div class="nav-overlay-item"><a href="contact.html" onclick="closeNav()">문의하기</a></div>
+  <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
+</div>
+<script>
+function toggleNav(){
+  const btn=document.getElementById('navBtn');
+  const ov=document.getElementById('navOverlay');
+  btn.classList.toggle('open');
+  ov.classList.toggle('open');
+  document.body.style.overflow=ov.classList.contains('open')?'hidden':'';
+}
+function closeNav(){
+  document.getElementById('navBtn').classList.remove('open');
+  document.getElementById('navOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+</script>
 
 <section id="company">
   <div class="section-inner">
@@ -630,7 +729,89 @@ footer {
       </div>
     </div>
 
-    <!-- Media -->
+    <!-- Books -->
+    <div id="books" style="margin-top:72px;">
+      <div class="section-tag">Publication</div>
+      <h3 class="section-title" style="font-size:28px;">저서</h3>
+      <div style="display:flex;gap:32px;align-items:flex-start;max-width:600px;">
+        <!-- 책 표지 이미지 -->
+        <div style="flex-shrink:0;width:160px;">
+          <a href="https://www.yes24.com/product/goods/149603594" target="_blank">
+            <img src="https://image.yes24.com/goods/149603594/XL"
+                 alt="잡 크래프팅 표지"
+                 style="width:100%;display:block;box-shadow:4px 4px 16px rgba(0,0,0,0.2);"
+                 onerror="this.style.display='none'"/>
+          </a>
+        </div>
+        <!-- 책 정보 -->
+        <div class="book-card" style="flex:1;max-width:none;background:transparent;padding:0;border:none;">
+          <div class="book-title" style="color:var(--green);font-size:20px;">잡 크래프팅</div>
+          <div class="book-author" style="color:var(--text-lt);margin-bottom:10px;">이정숙, 김현주</div>
+          <div class="book-desc" style="color:var(--text-lt);margin-bottom:18px;">일의 의미를 스스로 재구성하는 잡 크래프팅의 이론과 실천을 담은<br><span style="text-decoration:underline;font-weight:700;color:var(--green);">국내 최초 번역서</span></div>
+          <a href="https://www.yes24.com/product/goods/149603594"
+             target="_blank"
+             style="display:inline-block;font-family:'Josefin Sans',sans-serif;font-size:10px;
+                    letter-spacing:2px;color:var(--green);border:0.8px solid var(--green);
+                    padding:9px 20px;text-decoration:none;transition:all 0.25s;"
+             onmouseover="this.style.background='var(--green)';this.style.color='#EAE0D0'"
+             onmouseout="this.style.background='transparent';this.style.color='var(--green)'">
+            YES24 구매하기 →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section id="brand" style="background:var(--dark);">
+  <div class="section-inner">
+    <div class="section-tag">Brand Story</div>
+    <h2 class="section-title-light">브랜드 스토리</h2>
+    <div class="gold-rule"></div>
+    <div class="brand-story">
+      <div class="brand-line" style="color:#EAE0D0;">"사람과 조직을 움직이는 것은<br>기술이 아니라 <em style="color:var(--gold);">신념</em>이었습니다."</div>
+      <p class="brand-body" style="color:rgba(234,224,208,0.6);">
+        기업 현장에서 수많은 사람들과 팀을 만나며 성과와 관계, 성장의 흐름을 관찰해왔습니다.
+        그 과정에서 깨달은 것은, 사람과 조직을 움직이는 것은 기술이 아니라 '신념'이라는 사실이었습니다.
+      </p>
+      <p class="brand-body" style="color:rgba(234,224,208,0.6); margin-top:20px;">
+        이 깨달음은 코칭의 방향을 완전히 바꾸어 놓았습니다.
+        우리는 문제를 해결하는 코칭이 아니라, 신념을 정돈하고 가능성을 빚어내는 코칭을 선택했습니다.
+      </p>
+      <div style="margin-top:40px;padding:32px;background:rgba(184,147,90,0.06);border-left:2px solid var(--gold);">
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:#EAE0D0;line-height:1.9;">
+          정답을 주지 않고,<br>
+          앞에서 끌지 않고,<br>
+          뒤에서 밀지 않고,<br>
+          함께 걸으며 성장의 속도를 존중하는 코칭.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VISION & MISSION ── -->
+<section id="vision" style="background:var(--green);scroll-margin-top:72px;">
+  <div class="section-inner" style="padding-top:80px;padding-bottom:80px;">
+    <div class="vm-grid" style="border:0.5px solid rgba(184,147,90,0.2);">
+      <div class="vm-card">
+        <div class="vm-label">Vision</div>
+        <div class="vm-title">사람과 조직이<br>신념의 힘으로<br>성장하는 세상</div>
+      </div>
+      <div class="vm-card">
+        <div class="vm-label">Mission</div>
+        <div class="vm-items">
+          <div class="vm-item">개인이 자신의 삶을 주체적으로 설계하도록 돕는다</div>
+          <div class="vm-item">기업이 건강한 신념과 문화 위에서 지속 가능한 성장을 이루도록 지원한다</div>
+          <div class="vm-item">삶과 비즈니스의 구조를 장인정신으로 정교하게 다듬는다</div>
+          <div class="vm-item">코칭을 통해 사람과 조직의 가능성을 현실로 만든다</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream);scroll-margin-top:96px;">
+  <div class="section-inner">
+<!-- Media -->
     <div id="media">
       <div class="section-tag">Media</div>
       <h3 class="section-title" style="font-size:28px;">미디어</h3>
@@ -703,88 +884,9 @@ footer {
       </div>
     </div>
 
-    <!-- Books -->
-    <div id="books" style="margin-top:72px;">
-      <div class="section-tag">Publication</div>
-      <h3 class="section-title" style="font-size:28px;">저서</h3>
-      <div style="display:flex;gap:32px;align-items:flex-start;max-width:600px;">
-        <!-- 책 표지 이미지 -->
-        <div style="flex-shrink:0;width:160px;">
-          <a href="https://www.yes24.com/product/goods/149603594" target="_blank">
-            <img src="https://image.yes24.com/goods/149603594/XL"
-                 alt="잡 크래프팅 표지"
-                 style="width:100%;display:block;box-shadow:4px 4px 16px rgba(0,0,0,0.2);"
-                 onerror="this.style.display='none'"/>
-          </a>
-        </div>
-        <!-- 책 정보 -->
-        <div class="book-card" style="flex:1;max-width:none;background:transparent;padding:0;border:none;">
-          <div class="book-title" style="color:var(--green);font-size:20px;">잡 크래프팅</div>
-          <div class="book-author" style="color:var(--text-lt);margin-bottom:10px;">이정숙, 김현주</div>
-          <div class="book-desc" style="color:var(--text-lt);margin-bottom:18px;">일의 의미를 스스로 재구성하는 잡 크래프팅의 이론과 실천을 담은<br><span style="text-decoration:underline;font-weight:700;color:var(--green);">국내 최초 번역서</span></div>
-          <a href="https://www.yes24.com/product/goods/149603594"
-             target="_blank"
-             style="display:inline-block;font-family:'Josefin Sans',sans-serif;font-size:10px;
-                    letter-spacing:2px;color:var(--green);border:0.8px solid var(--green);
-                    padding:9px 20px;text-decoration:none;transition:all 0.25s;"
-             onmouseover="this.style.background='var(--green)';this.style.color='#EAE0D0'"
-             onmouseout="this.style.background='transparent';this.style.color='var(--green)'">
-            YES24 구매하기 →
-          </a>
-        </div>
       </div>
-    </div>
-  </div>
 </section>
 
-<!-- ── BRAND STORY ── -->
-<section id="brand" style="background:var(--dark);">
-  <div class="section-inner">
-    <div class="section-tag">Brand Story</div>
-    <h2 class="section-title-light">브랜드 스토리</h2>
-    <div class="gold-rule"></div>
-    <div class="brand-story">
-      <div class="brand-line" style="color:#EAE0D0;">"사람과 조직을 움직이는 것은<br>기술이 아니라 <em style="color:var(--gold);">신념</em>이었습니다."</div>
-      <p class="brand-body" style="color:rgba(234,224,208,0.6);">
-        기업 현장에서 수많은 사람들과 팀을 만나며 성과와 관계, 성장의 흐름을 관찰해왔습니다.
-        그 과정에서 깨달은 것은, 사람과 조직을 움직이는 것은 기술이 아니라 '신념'이라는 사실이었습니다.
-      </p>
-      <p class="brand-body" style="color:rgba(234,224,208,0.6); margin-top:20px;">
-        이 깨달음은 코칭의 방향을 완전히 바꾸어 놓았습니다.
-        우리는 문제를 해결하는 코칭이 아니라, 신념을 정돈하고 가능성을 빚어내는 코칭을 선택했습니다.
-      </p>
-      <div style="margin-top:40px;padding:32px;background:rgba(184,147,90,0.06);border-left:2px solid var(--gold);">
-        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:#EAE0D0;line-height:1.9;">
-          정답을 주지 않고,<br>
-          앞에서 끌지 않고,<br>
-          뒤에서 밀지 않고,<br>
-          함께 걸으며 성장의 속도를 존중하는 코칭.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── VISION & MISSION ── -->
-<section id="vision" style="background:var(--green);scroll-margin-top:72px;">
-  <div class="section-inner" style="padding-top:80px;padding-bottom:80px;">
-    <div class="vm-grid" style="border:0.5px solid rgba(184,147,90,0.2);">
-      <div class="vm-card">
-        <div class="vm-label">Vision</div>
-        <div class="vm-title">사람과 조직이<br>신념의 힘으로<br>성장하는 세상</div>
-      </div>
-      <div class="vm-card">
-        <div class="vm-label">Mission</div>
-        <div class="vm-items">
-          <div class="vm-item">개인이 자신의 삶을 주체적으로 설계하도록 돕는다</div>
-          <div class="vm-item">기업이 건강한 신념과 문화 위에서 지속 가능한 성장을 이루도록 지원한다</div>
-          <div class="vm-item">삶과 비즈니스의 구조를 장인정신으로 정교하게 다듬는다</div>
-          <div class="vm-item">코칭을 통해 사람과 조직의 가능성을 현실로 만든다</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── LIFE COACHING ── -->
 
