@@ -517,10 +517,15 @@ footer {
   align-items:center;
   gap:6px;
   cursor:pointer;
-  padding:10px 12px;
-  background:rgba(184,147,90,0.1);
-  border:1px solid rgba(184,147,90,0.3);
+  padding:10px 14px;
+  background:rgba(184,147,90,0.15);
+  border:1.5px solid rgba(184,147,90,0.6);
   border-radius:4px;
+  transition:all 0.2s;
+}
+.nav-hamburger:hover, .nav-hamburger:active {
+  background:rgba(184,147,90,0.3);
+  border-color:var(--gold);
 }
 .nav-hamburger span {
   display:block;
@@ -573,9 +578,9 @@ footer {
 }
 
 @media (max-width:900px) {
-  nav { padding:0 16px; height:64px; }
+  nav { padding:0 16px; height:64px; display:flex; justify-content:space-between; align-items:center; }
   .nav-menu { display:none; }
-  .nav-hamburger { display:flex; }
+  .nav-hamburger { display:flex !important; }
   .nav-cta { display:none; }
   .section-inner { padding:60px 20px; }
   .hero-grid, .company-grid, .coaching-intro, .vm-grid,
@@ -620,26 +625,26 @@ footer {
     <li>
       <a href="company.html">회사 소개</a>
       <div class="dropdown">
-        <a href="company.html#ceo">CEO Message</a>
-        <a href="company.html#philosophy">회사 철학</a>
+        <a href="company.html#ceo-anchor">CEO Message</a>
+        <a href="company.html#philosophy-anchor">회사 철학</a>
         <a href="company.html#brand">브랜드 스토리</a>
         <a href="company.html#vision">비전 &amp; 미션</a>
-        <a href="company.html#books">도서</a>
-        <a href="company.html#media">미디어</a>
+        <a href="company.html#books">저서</a>
+        <a href="company.html#media-anchor">미디어</a>
       </div>
     </li>
     <li>
       <a href="business.html">비즈니스 코칭</a>
       <div class="dropdown">
         <a href="business.html">비즈니스 코칭이란</a>
-        <a href="business.html#biz-fields">코칭 분야</a>
+        <a href="business.html#biz-fields-anchor">코칭 분야</a>
       </div>
     </li>
     <li>
       <a href="life.html">라이프 코칭</a>
       <div class="dropdown">
         <a href="life.html">라이프 코칭이란</a>
-        <a href="life.html#life-fields">코칭 분야</a>
+        <a href="life.html#life-fields-anchor">코칭 분야</a>
       </div>
     </li>
     <li>
@@ -652,7 +657,7 @@ footer {
       <a href="avatar.html">아봐타®</a>
       <div class="dropdown">
         <a href="avatar.html">아봐타®란</a>
-        <a href="avatar.html#avatar-courses">아봐타® 코스</a>
+        <a href="avatar.html#avatar-courses-anchor">아봐타® 코스</a>
       </div>
     </li>
   </ul>
