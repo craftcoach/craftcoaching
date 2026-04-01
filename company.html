@@ -517,10 +517,15 @@ footer {
   align-items:center;
   gap:6px;
   cursor:pointer;
-  padding:10px 12px;
-  background:rgba(184,147,90,0.1);
-  border:1px solid rgba(184,147,90,0.3);
+  padding:10px 14px;
+  background:rgba(184,147,90,0.15);
+  border:1.5px solid rgba(184,147,90,0.6);
   border-radius:4px;
+  transition:all 0.2s;
+}
+.nav-hamburger:hover, .nav-hamburger:active {
+  background:rgba(184,147,90,0.3);
+  border-color:var(--gold);
 }
 .nav-hamburger span {
   display:block;
@@ -573,9 +578,9 @@ footer {
 }
 
 @media (max-width:900px) {
-  nav { padding:0 16px; height:64px; }
+  nav { padding:0 16px; height:64px; display:flex; justify-content:space-between; align-items:center; }
   .nav-menu { display:none; }
-  .nav-hamburger { display:flex; }
+  .nav-hamburger { display:flex !important; }
   .nav-cta { display:none; }
   .section-inner { padding:60px 20px; }
   .hero-grid, .company-grid, .coaching-intro, .vm-grid,
@@ -620,12 +625,12 @@ footer {
     <li>
       <a href="company.html" style="color:var(--gold-lt)!important;">회사 소개</a>
       <div class="dropdown">
-        <a href="company.html#ceo">CEO Message</a>
-        <a href="company.html#philosophy">회사 철학</a>
+        <a href="company.html#ceo-anchor">CEO Message</a>
+        <a href="company.html#philosophy-anchor">회사 철학</a>
         <a href="company.html#brand">브랜드 스토리</a>
         <a href="company.html#vision">비전 &amp; 미션</a>
-        <a href="company.html#books">도서</a>
-        <a href="company.html#media">미디어</a>
+        <a href="company.html#media-anchor">미디어</a>
+        <a href="company.html#books">저서</a>
       </div>
     </li>
     <li>
@@ -693,6 +698,7 @@ function closeNav(){
     <div id="ceo" class="company-grid" style="margin-bottom:80px;grid-template-columns:1fr;">
       <div class="ceo-block">
         <div class="section-tag">CEO Message</div>
+        <span id="ceo-anchor" style="display:block;scroll-margin-top:112px;"></span>
         <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:var(--green);margin-bottom:20px;font-weight:600;">이정숙 대표 코치</h3>
         <p class="ceo-intro">
           Craft Coaching은 삶과 비즈니스를 정교하게 빚어가는 과정에 가치를 두고 있습니다.<br>
@@ -718,7 +724,8 @@ function closeNav(){
           <div class="credential-item">tbn 강원교통방송 출연중</div>
         </div>
       </div>
-      <div id="philosophy" class="philosophy-block">
+      <span id="philosophy-anchor" style="display:block;scroll-margin-top:112px;"></span>
+        <div id="philosophy" class="philosophy-block">
         <div class="section-tag" style="color:var(--gold-lt);">Philosophy</div>
         <div class="philosophy-quote">
           "신념이 바뀌면 삶이 바뀝니다.<br>
@@ -789,47 +796,11 @@ function closeNav(){
 </section>
 
 
-<section style="background:var(--cream);scroll-margin-top:108px;">
-  <div class="section-inner">
-<!-- Books -->
-    <div id="books" style="margin-top:72px;">
-      <div class="section-tag">Publication</div>
-      <h3 class="section-title" style="font-size:28px;">저서</h3>
-      <div style="display:flex;gap:32px;align-items:flex-start;max-width:600px;">
-        <!-- 책 표지 이미지 -->
-        <div style="flex-shrink:0;width:160px;">
-          <a href="https://www.yes24.com/product/goods/149603594" target="_blank">
-            <img src="https://image.yes24.com/goods/149603594/XL"
-                 alt="잡 크래프팅 표지"
-                 style="width:100%;display:block;box-shadow:4px 4px 16px rgba(0,0,0,0.2);"
-                 onerror="this.style.display='none'"/>
-          </a>
-        </div>
-        <!-- 책 정보 -->
-        <div class="book-card" style="flex:1;max-width:none;background:transparent;padding:0;border:none;">
-          <div class="book-title" style="color:var(--green);font-size:20px;">잡 크래프팅</div>
-          <div class="book-author" style="color:var(--text-lt);margin-bottom:10px;">이정숙, 김현주</div>
-          <div class="book-desc" style="color:var(--text-lt);margin-bottom:18px;">일의 의미를 스스로 재구성하는 잡 크래프팅의 이론과 실천을 담은<br><span style="text-decoration:underline;font-weight:700;color:var(--green);">국내 최초 번역서</span></div>
-          <a href="https://www.yes24.com/product/goods/149603594"
-             target="_blank"
-             style="display:inline-block;font-family:'Josefin Sans',sans-serif;font-size:10px;
-                    letter-spacing:2px;color:var(--green);border:0.8px solid var(--green);
-                    padding:9px 20px;text-decoration:none;transition:all 0.25s;"
-             onmouseover="this.style.background='var(--green)';this.style.color='#EAE0D0'"
-             onmouseout="this.style.background='transparent';this.style.color='var(--green)'">
-            YES24 구매하기 →
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
-
 <section style="background:var(--cream);scroll-margin-top:96px;">
   <div class="section-inner">
 <!-- Media -->
     <div id="media">
+      <span id="media-anchor" style="display:block;scroll-margin-top:112px;"></span>
       <div class="section-tag">Media</div>
       <h3 class="section-title" style="font-size:28px;">미디어</h3>
 
@@ -902,6 +873,43 @@ function closeNav(){
     </div>
 
       </div>
+</section>
+
+<section style="background:var(--cream);scroll-margin-top:108px;">
+  <div class="section-inner">
+<!-- Books -->
+    <div id="books" style="margin-top:72px;">
+      <div class="section-tag">Publication</div>
+      <h3 class="section-title" style="font-size:28px;">저서</h3>
+      <div style="display:flex;gap:32px;align-items:flex-start;max-width:600px;">
+        <!-- 책 표지 이미지 -->
+        <div style="flex-shrink:0;width:160px;">
+          <a href="https://www.yes24.com/product/goods/149603594" target="_blank">
+            <img src="https://image.yes24.com/goods/149603594/XL"
+                 alt="잡 크래프팅 표지"
+                 style="width:100%;display:block;box-shadow:4px 4px 16px rgba(0,0,0,0.2);"
+                 onerror="this.style.display='none'"/>
+          </a>
+        </div>
+        <!-- 책 정보 -->
+        <div class="book-card" style="flex:1;max-width:none;background:transparent;padding:0;border:none;">
+          <div class="book-title" style="color:var(--green);font-size:20px;">잡 크래프팅</div>
+          <div class="book-author" style="color:var(--text-lt);margin-bottom:10px;">이정숙, 김현주</div>
+          <div class="book-desc" style="color:var(--text-lt);margin-bottom:18px;">일의 의미를 스스로 재구성하는 잡 크래프팅의 이론과 실천을 담은<br><span style="text-decoration:underline;font-weight:700;color:var(--green);">국내 최초 번역서</span></div>
+          <a href="https://www.yes24.com/product/goods/149603594"
+             target="_blank"
+             style="display:inline-block;font-family:'Josefin Sans',sans-serif;font-size:10px;
+                    letter-spacing:2px;color:var(--green);border:0.8px solid var(--green);
+                    padding:9px 20px;text-decoration:none;transition:all 0.25s;"
+             onmouseover="this.style.background='var(--green)';this.style.color='#EAE0D0'"
+             onmouseout="this.style.background='transparent';this.style.color='var(--green)'">
+            YES24 구매하기 →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 </section>
 
 
