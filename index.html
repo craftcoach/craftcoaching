@@ -163,7 +163,7 @@ nav {
 .hero-symbol svg { width:280px; height:280px; opacity:0.85; }
 
 /* ── Section Commons ── */
-section { scroll-margin-top: 96px; }
+section { scroll-margin-top: 108px; }
 .section-inner { max-width:1100px; margin:0 auto; padding:100px 48px; }
 .section-tag {
   font-family:'Josefin Sans',sans-serif; font-weight:400; font-size:12px;
@@ -514,19 +514,22 @@ footer {
   display:none;
   flex-direction:column;
   justify-content:center;
-  gap:5px;
+  align-items:center;
+  gap:6px;
   cursor:pointer;
-  padding:8px;
-  background:none;
-  border:none;
+  padding:10px 12px;
+  background:rgba(184,147,90,0.1);
+  border:1px solid rgba(184,147,90,0.3);
+  border-radius:4px;
 }
 .nav-hamburger span {
   display:block;
-  width:24px;
-  height:2px;
+  width:26px;
+  height:3px;
   background:var(--gold);
   border-radius:2px;
   transition:all 0.3s;
+  box-shadow: 0 0 4px rgba(184,147,90,0.5);
 }
 /* 열린 상태 X 표시 */
 .nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
@@ -599,7 +602,12 @@ footer {
   .section-title, .section-title-light { font-size:24px; }
   .hero-photo-frame { width:240px; height:280px; }
   .section-inner { padding:48px 16px; }
-}</style>
+}
+/* ── Contact Info Cards ── */
+@media (max-width:600px) {
+  .contact-info > div { grid-template-columns:1fr !important; }
+}
+</style>
 </head>
 <body>
 
@@ -715,8 +723,8 @@ function closeNav(){
   </div>
     <div class="footer-links">
     <a href="company.html">회사 소개</a>
-    <a href="life.html">라이프 코칭</a>
     <a href="business.html">비즈니스 코칭</a>
+    <a href="life.html">라이프 코칭</a>
     <a href="jc.html">잡 크래프팅</a>
     <a href="avatar.html">아봐타®</a>
     <a href="contact.html">문의하기</a>
