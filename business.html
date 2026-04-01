@@ -813,19 +813,9 @@ function closeNav(){
   </div>
 </footer>
 
+
+</body>
 <!-- ── 모바일 고정 버튼 ── -->
-<button id="fixedMenuBtn" onclick="toggleFixedNav()" aria-label="메뉴">
-  <span class="bar"></span>
-  <span class="bar"></span>
-  <span class="bar"></span>
-</button>
-
-<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로">
-  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
-
-<!-- ── 모바일 고정 메뉴버튼 + TOP버튼 ── -->
 <button id="fixedMenuBtn" aria-label="메뉴열기">
   <span class="bar"></span>
   <span class="bar"></span>
@@ -839,110 +829,46 @@ function closeNav(){
 </button>
 
 <style>
-#fixedMenuBtn {
-  display:none;
-  position:fixed;
-  top:12px; right:14px;
-  z-index:9999;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:6px;
-  width:44px; height:44px;
-  background:rgba(10,26,18,0.95);
-  border:1.5px solid #C9A870;
-  border-radius:4px;
-  cursor:pointer;
-}
-#fixedMenuBtn .bar {
-  display:block;
-  width:20px; height:2px;
-  background:#C9A870;
-  border-radius:1px;
-  transition:transform 0.3s, opacity 0.3s;
-}
-#fixedMenuBtn.is-open .bar:nth-child(1){ transform:translateY(8px) rotate(45deg); }
-#fixedMenuBtn.is-open .bar:nth-child(2){ opacity:0; transform:scaleX(0); }
-#fixedMenuBtn.is-open .bar:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
-#topBtn {
-  display:none;
-  position:fixed;
-  right:14px; bottom:80px;
-  z-index:9999;
-  width:44px; height:44px;
-  background:rgba(10,26,18,0.92);
-  border:1.5px solid #C9A870;
-  border-radius:50%;
-  cursor:pointer;
-  align-items:center;
-  justify-content:center;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity 0.3s;
-}
-#topBtn svg {
-  width:18px; height:18px;
-  stroke:#C9A870; fill:none;
-  stroke-width:2.5;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-@media (max-width:900px) {
-  #fixedMenuBtn { display:flex; }
-  #topBtn { display:flex; }
-}
+#fixedMenuBtn{position:fixed;top:12px;right:14px;z-index:9999;display:none;flex-direction:column;justify-content:center;align-items:center;gap:6px;width:44px;height:44px;background:rgba(10,26,18,0.95);border:1.5px solid #C9A870;border-radius:4px;cursor:pointer;}
+#fixedMenuBtn .bar{display:block;width:20px;height:2px;background:#C9A870;border-radius:1px;transition:transform .3s,opacity .3s;}
+#fixedMenuBtn.is-open .bar:nth-child(1){transform:translateY(8px) rotate(45deg);}
+#fixedMenuBtn.is-open .bar:nth-child(2){opacity:0;transform:scaleX(0);}
+#fixedMenuBtn.is-open .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+#topBtn{position:fixed;right:14px;bottom:80px;z-index:9999;display:none;width:44px;height:44px;background:rgba(10,26,18,0.92);border:1.5px solid #C9A870;border-radius:50%;cursor:pointer;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
+#topBtn svg{width:18px;height:18px;stroke:#C9A870;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+@media(max-width:900px){#fixedMenuBtn{display:flex;}#topBtn{display:flex;}}
 </style>
 
 <script>
 (function(){
-  var menuBtn = document.getElementById('fixedMenuBtn');
-  var overlay = document.getElementById('navOverlay');
-  var topBtn  = document.getElementById('topBtn');
-
-  /* ── 메뉴 버튼 토글 ── */
-  if(menuBtn && overlay){
-    menuBtn.addEventListener('click', function(){
-      var isOpen = overlay.classList.contains('open');
-      if(isOpen){
-        overlay.classList.remove('open');
-        menuBtn.classList.remove('is-open');
-        document.body.style.overflow = '';
-      } else {
-        overlay.classList.add('open');
-        menuBtn.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      }
+  var btn=document.getElementById('fixedMenuBtn');
+  var ov=document.getElementById('navOverlay');
+  var top=document.getElementById('topBtn');
+  if(btn&&ov){
+    btn.addEventListener('click',function(){
+      var open=ov.classList.contains('open');
+      ov.classList.toggle('open',!open);
+      btn.classList.toggle('is-open',!open);
+      document.body.style.overflow=open?'':'hidden';
     });
-
-    /* 오버레이 항목 클릭 시 자동 닫힘 */
-    var items = overlay.querySelectorAll('a');
-    items.forEach(function(a){
-      a.addEventListener('click', function(){
-        overlay.classList.remove('open');
-        menuBtn.classList.remove('is-open');
-        document.body.style.overflow = '';
+    ov.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        ov.classList.remove('open');
+        btn.classList.remove('is-open');
+        document.body.style.overflow='';
       });
     });
   }
-
-  /* ── TOP 버튼 스크롤 감지 ── */
-  if(topBtn){
-    window.addEventListener('scroll', function(){
-      if(window.scrollY > 300){
-        topBtn.style.opacity = '1';
-        topBtn.style.pointerEvents = 'auto';
-      } else {
-        topBtn.style.opacity = '0';
-        topBtn.style.pointerEvents = 'none';
-      }
-    }, {passive:true});
-
-    topBtn.addEventListener('click', function(){
-      window.scrollTo({top:0, behavior:'smooth'});
+  if(top){
+    window.addEventListener('scroll',function(){
+      var show=window.scrollY>300;
+      top.style.opacity=show?'1':'0';
+      top.style.pointerEvents=show?'auto':'none';
+    },{passive:true});
+    top.addEventListener('click',function(){
+      window.scrollTo({top:0,behavior:'smooth'});
     });
   }
 })();
 </script>
-
-</body>
 </html>
