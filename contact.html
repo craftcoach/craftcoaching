@@ -79,6 +79,7 @@ nav {
   white-space: nowrap;
 }
 .nav-menu > li > a:hover { color: var(--gold-lt); }
+.nav-menu > li > a.active-page { border-bottom:2px solid var(--gold); font-weight:500; }
 .nav-menu > li:hover .dropdown { display:block; }
 .dropdown {
   display:none; position:absolute; top:72px; left:0;
@@ -517,24 +518,26 @@ footer {
   align-items:center;
   gap:6px;
   cursor:pointer;
-  padding:10px 12px;
-  background:rgba(184,147,90,0.1);
-  border:1px solid rgba(184,147,90,0.3);
-  border-radius:4px;
+  width:44px; height:44px;
+  background:transparent;
+  border:none;
+  padding:0;
 }
-.nav-hamburger span {
+.nav-hamburger:hover .nav-ham-line,
+.nav-hamburger:active .nav-ham-line { background:#D4A855; }
+.nav-ham-line {
   display:block;
   width:26px;
-  height:3px;
-  background:var(--gold);
-  border-radius:2px;
+  height:2px;
+  background:#C9A870;
+  border-radius:1px;
   transition:all 0.3s;
-  box-shadow: 0 0 4px rgba(184,147,90,0.5);
 }
+.nav-hamburger.open .nav-ham-line:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+.nav-hamburger.open .nav-ham-line:nth-child(2){ opacity:0; transform:scaleX(0); }
+.nav-hamburger.open .nav-ham-line:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
 /* 열린 상태 X 표시 */
-.nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity:0; }
-.nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
 
 /* 모바일 메뉴 오버레이 */
 .nav-overlay {
@@ -573,9 +576,9 @@ footer {
 }
 
 @media (max-width:900px) {
-  nav { padding:0 16px; height:64px; }
+  nav { padding:0 16px; height:64px; display:flex; justify-content:space-between; align-items:center; }
   .nav-menu { display:none; }
-  .nav-hamburger { display:flex; }
+  .nav-hamburger { display:flex !important; margin-left:auto; }
   .nav-cta { display:none; }
   .section-inner { padding:60px 20px; }
   .hero-grid, .company-grid, .coaching-intro, .vm-grid,
@@ -607,6 +610,43 @@ footer {
 @media (max-width:600px) {
   .contact-info > div { grid-template-columns:1fr !important; }
 }
+
+/* ── TOP 버튼 ── */
+#topBtn {
+  display:none;
+  position:fixed;
+  right:16px; bottom:80px;
+  z-index:200;
+  width:44px; height:44px;
+  background:rgba(15,32,24,0.88);
+  border:1.5px solid #C9A870;
+  border-radius:50%;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  backdrop-filter:blur(8px);
+  transition:all 0.25s;
+  opacity:0;
+  pointer-events:none;
+}
+#topBtn.visible {
+  opacity:1;
+  pointer-events:auto;
+}
+#topBtn:hover, #topBtn:active {
+  background:rgba(184,147,90,0.25);
+}
+#topBtn svg {
+  width:18px; height:18px;
+  stroke:#C9A870; fill:none;
+  stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
+}
+
+@media (max-width:900px) {
+  #fixedMenuBtn { display:flex; }
+  #topBtn { display:flex; }
+}
+
 </style>
 </head>
 <body>
@@ -620,26 +660,26 @@ footer {
     <li>
       <a href="company.html">회사 소개</a>
       <div class="dropdown">
-        <a href="company.html#ceo">CEO Message</a>
-        <a href="company.html#philosophy">회사 철학</a>
+        <a href="company.html#ceo-anchor">CEO Message</a>
+        <a href="company.html#philosophy-anchor">회사 철학</a>
         <a href="company.html#brand">브랜드 스토리</a>
         <a href="company.html#vision">비전 &amp; 미션</a>
-        <a href="company.html#books">도서</a>
-        <a href="company.html#media">미디어</a>
+        <a href="company.html#books">저서</a>
+        <a href="company.html#media-anchor">미디어</a>
       </div>
     </li>
     <li>
       <a href="business.html">비즈니스 코칭</a>
       <div class="dropdown">
         <a href="business.html">비즈니스 코칭이란</a>
-        <a href="business.html#biz-fields">코칭 분야</a>
+        <a href="business.html#biz-fields-anchor">코칭 분야</a>
       </div>
     </li>
     <li>
       <a href="life.html">라이프 코칭</a>
       <div class="dropdown">
         <a href="life.html">라이프 코칭이란</a>
-        <a href="life.html#life-fields">코칭 분야</a>
+        <a href="life.html#life-fields-anchor">코칭 분야</a>
       </div>
     </li>
     <li>
@@ -652,10 +692,15 @@ footer {
       <a href="avatar.html">아봐타®</a>
       <div class="dropdown">
         <a href="avatar.html">아봐타®란</a>
-        <a href="avatar.html#avatar-courses">아봐타® 코스</a>
+        <a href="avatar.html#avatar-courses-anchor">아봐타® 코스</a>
       </div>
     </li>
   </ul>
+  <button class="nav-hamburger" id="navBtn" onclick="toggleNav()" aria-label="메뉴열기">
+    <span class="nav-ham-line"></span>
+    <span class="nav-ham-line"></span>
+    <span class="nav-ham-line"></span>
+  </button>
   <a href="contact.html" class="nav-cta">상담 문의</a>
 </nav>
 <!-- ── 모바일 오버레이 메뉴 ── -->
@@ -702,7 +747,7 @@ function closeNav(){
             <!-- Email -->
             <div style="background:var(--dark);padding:24px 20px;border-top:2px solid var(--gold);border-radius:0;">
               <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;">✉ Email</div>
-              <a href="mailto:craftway.coach@gmail.com" style="font-size:13px;color:#EAE0D0;text-decoration:none;word-break:break-all;">craftway.coach@gmail.com</a>
+              <a href="/cdn-cgi/l/email-protection#5132233037252630287f323e30323911363c30383d7f323e3c" style="font-size:13px;color:#EAE0D0;text-decoration:none;word-break:break-all;"><span class="__cf_email__" data-cfemail="9ffcedfef9ebe8fee6b1fcf0fefcf7dff8f2fef6f3b1fcf0f2">[email&#160;protected]</span></a>
             </div>
 
             <!-- Phone -->
@@ -791,9 +836,119 @@ function closeNav(){
     <a href="business.html">비즈니스 코칭</a>
     <a href="life.html">라이프 코칭</a>
     <a href="jc.html">잡 크래프팅</a>
-    <a href="avatar.html">아봐타®</a>
-    <a href="contact.html" style="color:var(--gold-lt)!important;">문의하기</a>
+    <a href="av
   </div>
 </footer>
+<!-- ── 모바일 고정 메뉴버튼 + TOP버튼 ── -->
+<button id="fixedMenuBtn" aria-label="메뉴열기">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+
+<button id="topBtn" aria-label="맨 위로">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<style>
+#fixedMenuBtn {
+  display:none;
+  position:fixed;
+  top:12px; right:14px;
+  z-index:9999;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+  width:44px; height:44px;
+  background:rgba(10,26,18,0.95);
+  border:1.5px solid #C9A870;
+  border-radius:4px;
+  cursor:pointer;
+}
+#fixedMenuBtn .bar {
+  display:block;
+  width:20px; height:2px;
+  background:#C9A870;
+  border-radius:1px;
+  transition:transform 0.3s, opacity 0.3s;
+}
+#fixedMenuBtn.is-open .bar:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+#fixedMenuBtn.is-open .bar:nth-child(2){ opacity:0; transform:scaleX(0); }
+#fixedMenuBtn.is-open .bar:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+#topBtn {
+  display:none;
+  position:fixed;
+  right:14px; bottom:80px;
+  z-index:9999;
+  width:44px; height:44px;
+  background:rgba(10,26,18,0.92);
+  border:1.5px solid #C9A870;
+  border-radius:50%;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.3s;
+}
+#topBtn svg {
+  width:18px; height:18px;
+  stroke:#C9A870; fill:none;
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+@media (max-width:900px) {
+  #fixedMenuBtn { display:flex; }
+  #topBtn { display:flex; }
+}
+</style>
+
+<script>
+(function(){
+  var menuBtn = document.getElementById('fixedMenuBtn');
+  var overlay = document.getElementById('navOverlay');
+  var topBtn  = document.getElementById('topBtn');
+  if(menuBtn && overlay){
+    menuBtn.addEventListener('click', function(){
+      var isOpen = overlay.classList.contains('open');
+      if(isOpen){
+        overlay.classList.remove('open');
+        menuBtn.classList.remove('is-open');
+        document.body.style.overflow = '';
+      } else {
+        overlay.classList.add('open');
+        menuBtn.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+    overlay.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        overlay.classList.remove('open');
+        menuBtn.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+  if(topBtn){
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 300){
+        topBtn.style.opacity='1';
+        topBtn.style.pointerEvents='auto';
+      } else {
+        topBtn.style.opacity='0';
+        topBtn.style.pointerEvents='none';
+      }
+    },{passive:true});
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
