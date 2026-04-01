@@ -610,6 +610,76 @@ footer {
 @media (max-width:600px) {
   .contact-info > div { grid-template-columns:1fr !important; }
 }
+
+/* ── 모바일 고정 햄버거 버튼 ── */
+#fixedMenuBtn {
+  display:none;
+  position:fixed;
+  top:14px; right:16px;
+  z-index:200;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+  width:44px; height:44px;
+  background:rgba(15,32,24,0.92);
+  border:1.5px solid #C9A870;
+  border-radius:4px;
+  cursor:pointer;
+  backdrop-filter:blur(8px);
+  transition:all 0.2s;
+}
+#fixedMenuBtn:hover, #fixedMenuBtn:active {
+  background:rgba(184,147,90,0.25);
+  border-color:var(--gold);
+}
+#fixedMenuBtn .bar {
+  display:block;
+  width:20px; height:2px;
+  background:#C9A870;
+  border-radius:1px;
+  transition:all 0.3s;
+}
+#fixedMenuBtn.open .bar:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+#fixedMenuBtn.open .bar:nth-child(2){ opacity:0; transform:scaleX(0); }
+#fixedMenuBtn.open .bar:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+
+/* ── TOP 버튼 ── */
+#topBtn {
+  display:none;
+  position:fixed;
+  right:16px; bottom:80px;
+  z-index:200;
+  width:44px; height:44px;
+  background:rgba(15,32,24,0.88);
+  border:1.5px solid #C9A870;
+  border-radius:50%;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  backdrop-filter:blur(8px);
+  transition:all 0.25s;
+  opacity:0;
+  pointer-events:none;
+}
+#topBtn.visible {
+  opacity:1;
+  pointer-events:auto;
+}
+#topBtn:hover, #topBtn:active {
+  background:rgba(184,147,90,0.25);
+}
+#topBtn svg {
+  width:18px; height:18px;
+  stroke:#C9A870; fill:none;
+  stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
+}
+
+@media (max-width:900px) {
+  #fixedMenuBtn { display:flex; }
+  #topBtn { display:flex; }
+}
+
 </style>
 </head>
 <body>
@@ -738,5 +808,17 @@ function closeNav(){
     <a href="contact.html">문의하기</a>
   </div>
 </footer>
+
+<!-- ── 모바일 고정 버튼 ── -->
+<button id="fixedMenuBtn" onclick="toggleFixedNav()" aria-label="메뉴">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
 </body>
 </html>
