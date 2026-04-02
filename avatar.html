@@ -49,9 +49,9 @@ body {
 /* ── Navigation ── */
 nav {
   position: fixed; top:0; left:0; right:0; z-index:100;
-  background: rgba(15,32,24,0.97);
+  background: rgba(15,32,20,1.0);
   backdrop-filter: blur(12px);
-  border-bottom: 0.5px solid rgba(184,147,90,0.3);
+  border-bottom: 0.5px solid rgba(184,147,90,0.25);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 48px; height: 96px;
 }
@@ -165,6 +165,7 @@ nav {
 
 /* ── Section Commons ── */
 section { scroll-margin-top: 108px; }
+@media (max-width:900px) { section { scroll-margin-top:52px; } }
 .section-inner { max-width:1100px; margin:0 auto; padding:100px 48px; }
 .section-tag {
   font-family:'Josefin Sans',sans-serif; font-weight:400; font-size:12px;
@@ -576,8 +577,9 @@ footer {
 }
 
 @media (max-width:900px) {
-  nav { padding:0 16px; height:56px; display:flex; justify-content:space-between; align-items:center; }
-  .nav-logo img { height:44px !important; }
+  nav { padding:0 16px; height:48px; display:flex; justify-content:space-between; align-items:center; }
+  .nav-logo img { height:36px !important; }
+  .section-inner { padding-top:70px !important; }
   .nav-menu { display:none; }
   .nav-hamburger { display:flex !important; margin-left:auto; }
   .nav-cta { display:none; }
@@ -919,7 +921,15 @@ function closeNav(){
             <input id="trial-date" type="text" placeholder="희망하시는 일정을 적어주세요" style="width:100%;padding:11px 14px;border:0.5px solid rgba(184,147,90,0.2);background:rgba(255,255,255,0.04);font-size:13px;color:#EAE0D0;outline:none;"/>
           </div>
           <div style="padding-top:4px;">
-            <button type="button" id="trialSubmitBtn" style="font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:11px;letter-spacing:3px;padding:14px 36px;background:var(--gold);color:var(--dark);border:none;cursor:pointer;width:100%;">무료체험 신청하기 →</button>
+            <button type="button" style="font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:11px;letter-spacing:3px;padding:14px 36px;background:var(--gold);color:var(--dark);border:none;cursor:pointer;width:100%;" onclick="(function(){
+  var name=document.getElementById('trial-name').value||'';
+  var phone=document.getElementById('trial-phone').value||'';
+  var email=document.getElementById('trial-email').value||'';
+  var date=document.getElementById('trial-date').value||'';
+  if(!name&&!phone&&!email){alert('성함, 연락처 또는 이메일을 입력해주세요.');return;}
+  var body='[아봐타® 무료체험 신청]\n\n성함: '+name+'\n연락처: '+phone+'\n이메일: '+email+'\n희망일정: '+date;
+  window.location.href='mailto:craftway.coach@gmail.com?subject='+encodeURIComponent('[아봐타® 무료체험 신청] '+name)+'&body='+encodeURIComponent(body);
+})()">무료체험 신청하기</button>
           </div>
         </div>
       </div>
@@ -956,39 +966,6 @@ function closeNav(){
 
 
 
-<script>
-(function(){
-  var btn = document.getElementById('trialSubmitBtn');
-  if(!btn) return;
-  btn.addEventListener('click', function(){
-    var name  = document.getElementById('trial-name')  ? document.getElementById('trial-name').value.trim()  : '';
-    var phone = document.getElementById('trial-phone') ? document.getElementById('trial-phone').value.trim() : '';
-    var email = document.getElementById('trial-email') ? document.getElementById('trial-email').value.trim() : '';
-    var date  = document.getElementById('trial-date')  ? document.getElementById('trial-date').value.trim()  : '';
-    if(!name){  alert('성함을 입력해주세요.'); return; }
-    if(!phone){ alert('연락처를 입력해주세요.'); return; }
-    var subject = encodeURIComponent('[아봐타® 무료체험 신청] ' + name);
-    var body = encodeURIComponent(
-      '[아봐타® 무료체험 신청]
-
-' +
-      '성함    : ' + name  + '
-' +
-      '연락처  : ' + phone + '
-' +
-      '이메일  : ' + (email || '미입력') + '
-' +
-      '희망일정: ' + (date  || '미입력') + '
-
-' +
-      '──────────────────
-' +
-      'craftcoaching.kr 무료체험 신청 폼'
-    );
-    window.location.href = 'mailto:craftway.coach@gmail.com?subject=' + subject + '&body=' + body;
-  });
-})();
-</script>
 
 <!-- ── 모바일 고정 버튼 ── -->
 <button id="fixedMenuBtn" aria-label="메뉴열기">
