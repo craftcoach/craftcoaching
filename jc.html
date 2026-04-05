@@ -833,6 +833,13 @@ function closeNav(){
   document.getElementById('navOverlay').classList.remove('open');
   document.body.style.overflow='';
 }
+
+function mobToggle(el){
+  var item = el.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.mob-item').forEach(function(i){ i.classList.remove('open'); });
+  if(!isOpen){ item.classList.add('open'); }
+}
 </script>
 
 <section id="jc-section" style="background:var(--dark);scroll-margin-top:72px;">
