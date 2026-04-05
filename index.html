@@ -651,6 +651,45 @@ footer {
   #topBtn { display:flex; }
 }
 
+
+/* ── 모바일 아코디언 메뉴 ── */
+.mob-item {
+  width:100%;
+  border-bottom:0.5px solid rgba(184,147,90,0.15);
+}
+.mob-title {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:18px 32px;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:15px; letter-spacing:2px;
+  color:rgba(234,224,208,0.85);
+  cursor:pointer;
+  transition:color 0.2s;
+}
+.mob-title:hover, .mob-title:active { color:#C9A870; }
+.mob-arrow {
+  font-size:18px; color:rgba(184,147,90,0.6);
+  transition:transform 0.3s;
+  flex-shrink:0;
+}
+.mob-item.open .mob-arrow { transform:rotate(45deg); color:#C9A870; }
+.mob-sub {
+  display:none;
+  flex-direction:column;
+  background:rgba(10,25,18,0.6);
+  padding:4px 0 12px 0;
+}
+.mob-item.open .mob-sub { display:flex; }
+.mob-sub a {
+  padding:11px 32px 11px 48px;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:13px; letter-spacing:1.5px;
+  color:rgba(184,147,90,0.75);
+  text-decoration:none;
+  transition:color 0.2s, padding-left 0.2s;
+}
+.mob-sub a:hover, .mob-sub a:active { color:#C9A870; padding-left:54px; }
+
 </style>
 </head>
 <body>
@@ -712,19 +751,75 @@ footer {
 </nav>
 <!-- ── 모바일 오버레이 메뉴 ── -->
 <div class="nav-overlay" id="navOverlay">
-  <div class="nav-overlay-item"><a href="company.html" onclick="closeNav()">회사 소개</a></div>
-  <div class="nav-overlay-item"><a href="business.html" onclick="closeNav()">비즈니스 코칭</a></div>
-  <div class="nav-overlay-item"><a href="life.html" onclick="closeNav()">라이프 코칭</a></div>
-  <div class="nav-overlay-item"><a href="jc.html" onclick="closeNav()">잡 크래프팅</a></div>
-  <div class="nav-overlay-item"><a href="avatar.html" onclick="closeNav()">아봐타®</a></div>
-  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_intro.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타®란</a></div>
-  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_courses.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타® 코스</a></div>
-  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_schedule.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타® 코스일정</a></div>
-  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_faq.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— FAQ</a></div>
-  <div class="nav-overlay-item"><a href="avatar_books.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타® 도서</a></div>
-  <div class="nav-overlay-item"><a href="contact.html" onclick="closeNav()">문의하기</a></div>
+
+  <!-- 회사 소개 -->
+  <div class="mob-item">
+    <div class="mob-title" onclick="mobToggle(this)">
+      <span>회사 소개</span><span class="mob-arrow">﹢</span>
+    </div>
+    <div class="mob-sub">
+      <a href="company_ceo.html" onclick="closeNav()">CEO Message</a>
+      <a href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
+      <a href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
+      <a href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
+      <a href="company_media.html" onclick="closeNav()">미디어</a>
+      <a href="company_books.html" onclick="closeNav()">저서</a>
+    </div>
+  </div>
+
+  <!-- 비즈니스 코칭 -->
+  <div class="mob-item">
+    <div class="mob-title" onclick="mobToggle(this)">
+      <span>비즈니스 코칭</span><span class="mob-arrow">﹢</span>
+    </div>
+    <div class="mob-sub">
+      <a href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
+      <a href="business_fields.html" onclick="closeNav()">코칭 분야</a>
+    </div>
+  </div>
+
+  <!-- 라이프 코칭 -->
+  <div class="mob-item">
+    <div class="mob-title" onclick="mobToggle(this)">
+      <span>라이프 코칭</span><span class="mob-arrow">﹢</span>
+    </div>
+    <div class="mob-sub">
+      <a href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
+      <a href="life_fields.html" onclick="closeNav()">코칭 분야</a>
+    </div>
+  </div>
+
+  <!-- 잡 크래프팅 -->
+  <div class="mob-item">
+    <div class="mob-title" onclick="closeNav();location.href='jc.html'">
+      <span>잡 크래프팅</span>
+    </div>
+  </div>
+
+  <!-- 아봐타 -->
+  <div class="mob-item">
+    <div class="mob-title" onclick="mobToggle(this)">
+      <span>아봐타®</span><span class="mob-arrow">﹢</span>
+    </div>
+    <div class="mob-sub">
+      <a href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
+      <a href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
+      <a href="avatar_schedule.html" onclick="closeNav()">아봐타® 코스일정</a>
+      <a href="avatar_faq.html" onclick="closeNav()">FAQ</a>
+      <a href="avatar_books.html" onclick="closeNav()">아봐타® 도서</a>
+    </div>
+  </div>
+
+  <!-- 문의하기 -->
+  <div class="mob-item">
+    <div class="mob-title" onclick="closeNav();location.href='contact.html'">
+      <span>문의하기</span>
+    </div>
+  </div>
+
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
 </div>
+
 <script>
 function toggleNav(){
   const btn=document.getElementById('navBtn');
