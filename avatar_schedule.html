@@ -716,6 +716,11 @@ footer {
   <div class="nav-overlay-item"><a href="life.html" onclick="closeNav()">라이프 코칭</a></div>
   <div class="nav-overlay-item"><a href="jc.html" onclick="closeNav()">잡 크래프팅</a></div>
   <div class="nav-overlay-item"><a href="avatar.html" onclick="closeNav()">아봐타®</a></div>
+  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_intro.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타®란</a></div>
+  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_courses.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타® 코스</a></div>
+  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_schedule.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타® 코스일정</a></div>
+  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_faq.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— FAQ</a></div>
+  <div class="nav-overlay-item"><a href="avatar_books.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타® 도서</a></div>
   <div class="nav-overlay-item"><a href="contact.html" onclick="closeNav()">문의하기</a></div>
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
 </div>
@@ -914,40 +919,8 @@ function closeNav(){
     <div class="gold-rule"></div>
     <div class="contact-grid">
       <div>
-        <p style="font-size:15px;color:var(--text-lt);line-height:2;margin-bottom:40px;">
-          삶과 비즈니스의 크래프팅 여정을 함께 시작하고 싶으신가요?<br>
-          아래 채널로 편하게 연락 주세요.<br>
-          첫 상담은 부담 없이 시작할 수 있습니다.
-        </p>
-        <div class="contact-info">
-          <!-- 연락처 카드 그리드 -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px;">
-            
-            <!-- Email -->
-            <div style="background:var(--dark);padding:24px 20px;border-top:2px solid var(--gold);border-radius:0;">
-              <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;">✉ Email</div>
-              <a href="/cdn-cgi/l/email-protection#e2819083849695839bcc818d83818aa2858f838b8ecc818d8f" style="color:#EAE0D0;text-decoration:none;"><span class="__cf_email__" data-cfemail="83e0f1e2e5f7f4e2faade0ece2e0ebc3e4eee2eaefade0ecee">[email&#160;protected]</span></a>
-            </div>
-
-            <!-- Phone -->
-            <div style="background:var(--dark);padding:24px 20px;border-top:2px solid var(--gold);">
-              <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;">☎ Phone</div>
-              <a href="tel:010-7301-3515" style="font-size:14px;color:#EAE0D0;text-decoration:none;letter-spacing:1px;">010-7301-3515</a>
-            </div>
-
-            <!-- Kakao -->
-            <div style="background:var(--dark);padding:24px 20px;border-top:2px solid rgba(184,147,90,0.4);">
-              <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;">◎ Kakao</div>
-              <span style="font-size:13px;color:rgba(234,224,208,0.55);">카카오 1:1 채팅 준비중</span>
-            </div>
-
-            <!-- Location -->
-            <div style="background:var(--dark);padding:24px 20px;border-top:2px solid rgba(184,147,90,0.4);">
-              <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;">⊙ Location</div>
-              <span style="font-size:13px;color:rgba(234,224,208,0.7);line-height:1.6;">대면·온라인 코칭<br>모두 가능합니다</span>
-            </div>
-          </div>
-        </div>
+        
+        
       </div>
       <div class="contact-form">
         <div class="form-row">
@@ -965,37 +938,20 @@ function closeNav(){
           <input class="form-input" id="f-email" type="email" placeholder="이메일 주소">
         </div>
         <div class="form-group">
-          <label class="form-label">관심 코칭 분야</label>
-          <select class="form-select" id="f-interest">
-            <option value="">선택해주세요</option>
-            <option>라이프 코칭 — 자기계발</option>
-            <option>라이프 코칭 — 커리어 전환</option>
-            <option>라이프 코칭 — 관계·가족</option>
-            <option>라이프 코칭 — 중·노년기</option>
-            <option>비즈니스 코칭 — 임원 코칭</option>
-            <option>비즈니스 코칭 — 중간관리자</option>
-            <option>비즈니스 코칭 — 그룹/팀 코칭</option>
-            <option>잡 크래프팅 코칭</option>
-            <option>아봐타® 코스</option>
-            <option>기타 문의</option>
-          </select>
-        </div>
-        <div class="form-group">
           <label class="form-label">문의 내용</label>
-          <textarea class="form-textarea" id="f-msg" placeholder="궁금한 점이나 현재 상황을 자유롭게 적어주세요."></textarea>
+          <textarea class="form-input" id="f-msg" rows="4" placeholder="문의 내용을 입력해주세요" style="resize:vertical;min-height:100px;"></textarea>
         </div>
-        <button class="form-submit" type="button" onclick="(function(){
+        <div style="margin-top:8px;">
+          <button class="form-submit" type="button" onclick="(function(){
   var name=document.getElementById('f-name').value||'';
   var tel=document.getElementById('f-tel').value||'';
   var email=document.getElementById('f-email').value||'';
-  var interest=document.getElementById('f-interest').value||'';
   var msg=document.getElementById('f-msg').value||'';
   if(!name&&!tel&&!email){alert('성함, 연락처 또는 이메일을 입력해주세요.');return;}
-  var body='성함: '+name+'\n연락처: '+tel+'\n이메일: '+email+'\n관심분야: '+interest+'\n\n'+msg;
+  var body='성함: '+name+'\n연락처: '+tel+'\n이메일: '+email+'\n\n'+msg;
   window.location.href='mailto:craftway.coach@gmail.com?subject='+encodeURIComponent('코칭 문의 - '+name)+'&body='+encodeURIComponent(body);
 })()">문의 보내기</button>
-      </div>
-    </div>
+        </div>
   </div>
 </section>
 
