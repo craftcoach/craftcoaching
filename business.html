@@ -849,6 +849,39 @@ function mobToggle(el){
   document.querySelectorAll('.mob-item').forEach(function(i){ i.classList.remove('open'); });
   if(!isOpen){ item.classList.add('open'); }
 }
+
+/* ── 모바일 touchend 지원 (비즈니스/라이프 코칭 클릭 문제 해결) ── */
+(function(){
+  function attachTouchToggle(){
+    document.querySelectorAll('.mob-title').forEach(function(btn){
+      if(btn.dataset.touchBound) return;
+      btn.dataset.touchBound = '1';
+      var startY = 0;
+      btn.addEventListener('touchstart', function(e){
+        startY = e.touches[0].clientY;
+      }, {passive:true});
+      btn.addEventListener('touchend', function(e){
+        var dy = Math.abs(e.changedTouches[0].clientY - startY);
+        if(dy > 10) return; /* 스크롤이면 무시 */
+        e.preventDefault();
+        e.stopPropagation();
+        var hrefFn = btn.getAttribute('onclick');
+        if(hrefFn && hrefFn.indexOf('location.href') !== -1){
+          eval(hrefFn); return;
+        }
+        var item = btn.parentElement;
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.mob-item').forEach(function(i){ i.classList.remove('open'); });
+        if(!isOpen){ item.classList.add('open'); }
+      }, {passive:false});
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', attachTouchToggle);
+  } else {
+    attachTouchToggle();
+  }
+})();
 </script>
 
 <section id="business">
