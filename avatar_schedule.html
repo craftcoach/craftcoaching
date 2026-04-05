@@ -546,10 +546,13 @@ footer {
   display:none;
   position:fixed; top:0; left:0; right:0; bottom:0;
   background:rgba(10,25,18,0.97);
-  z-index:99;
+  z-index:10000;
   flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  align-items:stretch;
+  justify-content:flex-start;
+  overflow-y:auto;
+  padding-top:64px;
+  padding-bottom:40px;
   gap:0;
 }
 .nav-overlay.open { display:flex; }
@@ -579,7 +582,7 @@ footer {
 
 @media (max-width:900px) {
   nav { padding:0 16px; height:48px; display:flex; justify-content:space-between; align-items:center; }
-  .nav-logo img { height:36px !important; }
+  .nav-logo img { height:40px !important; }
   .section-inner { padding-top:70px !important; }
   .nav-menu { display:none; }
   .nav-hamburger { display:flex !important; margin-left:auto; }
@@ -659,36 +662,42 @@ footer {
 }
 .mob-title {
   display:flex; justify-content:space-between; align-items:center;
-  padding:18px 32px;
+  width:100%; padding:18px 32px;
   font-family:'Josefin Sans',sans-serif;
   font-size:15px; letter-spacing:2px;
   color:rgba(234,224,208,0.85);
+  background:none; border:none;
   cursor:pointer;
-  transition:color 0.2s;
+  text-align:left;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:rgba(184,147,90,0.2);
 }
-.mob-title:hover, .mob-title:active { color:#C9A870; }
+.mob-title:active { color:#C9A870; background:rgba(184,147,90,0.05); }
 .mob-arrow {
-  font-size:18px; color:rgba(184,147,90,0.6);
-  transition:transform 0.3s;
-  flex-shrink:0;
+  font-size:20px; color:rgba(184,147,90,0.7);
+  transition:transform 0.25s;
+  flex-shrink:0; margin-left:12px;
+  line-height:1;
 }
 .mob-item.open .mob-arrow { transform:rotate(45deg); color:#C9A870; }
 .mob-sub {
   display:none;
   flex-direction:column;
-  background:rgba(10,25,18,0.6);
-  padding:4px 0 12px 0;
+  background:rgba(8,22,15,0.7);
+  padding:4px 0 10px 0;
 }
 .mob-item.open .mob-sub { display:flex; }
 .mob-sub a {
-  padding:11px 32px 11px 48px;
+  display:block;
+  padding:12px 32px 12px 48px;
   font-family:'Josefin Sans',sans-serif;
   font-size:13px; letter-spacing:1.5px;
-  color:rgba(184,147,90,0.75);
+  color:rgba(184,147,90,0.8);
   text-decoration:none;
-  transition:color 0.2s, padding-left 0.2s;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:rgba(184,147,90,0.2);
 }
-.mob-sub a:hover, .mob-sub a:active { color:#C9A870; padding-left:54px; }
+.mob-sub a:active { color:#C9A870; background:rgba(184,147,90,0.08); }
 
 </style>
 </head>
@@ -754,9 +763,9 @@ footer {
 
   <!-- 회사 소개 -->
   <div class="mob-item">
-    <div class="mob-title" onclick="mobToggle(this)">
+    <button class="mob-title" type="button" onclick="mobToggle(this)">
       <span>회사 소개</span><span class="mob-arrow">﹢</span>
-    </div>
+    </button>
     <div class="mob-sub">
       <a href="company_ceo.html" onclick="closeNav()">CEO Message</a>
       <a href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
@@ -769,9 +778,9 @@ footer {
 
   <!-- 비즈니스 코칭 -->
   <div class="mob-item">
-    <div class="mob-title" onclick="mobToggle(this)">
+    <button class="mob-title" type="button" onclick="mobToggle(this)">
       <span>비즈니스 코칭</span><span class="mob-arrow">﹢</span>
-    </div>
+    </button>
     <div class="mob-sub">
       <a href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
       <a href="business_fields.html" onclick="closeNav()">코칭 분야</a>
@@ -780,9 +789,9 @@ footer {
 
   <!-- 라이프 코칭 -->
   <div class="mob-item">
-    <div class="mob-title" onclick="mobToggle(this)">
+    <button class="mob-title" type="button" onclick="mobToggle(this)">
       <span>라이프 코칭</span><span class="mob-arrow">﹢</span>
-    </div>
+    </button>
     <div class="mob-sub">
       <a href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
       <a href="life_fields.html" onclick="closeNav()">코칭 분야</a>
@@ -791,16 +800,16 @@ footer {
 
   <!-- 잡 크래프팅 -->
   <div class="mob-item">
-    <div class="mob-title" onclick="closeNav();location.href='jc.html'">
+    <button class="mob-title" type="button" onclick="closeNav();location.href='jc.html'">
       <span>잡 크래프팅</span>
-    </div>
+    </button>
   </div>
 
   <!-- 아봐타 -->
   <div class="mob-item">
-    <div class="mob-title" onclick="mobToggle(this)">
+    <button class="mob-title" type="button" onclick="mobToggle(this)">
       <span>아봐타®</span><span class="mob-arrow">﹢</span>
-    </div>
+    </button>
     <div class="mob-sub">
       <a href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
       <a href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
@@ -812,9 +821,9 @@ footer {
 
   <!-- 문의하기 -->
   <div class="mob-item">
-    <div class="mob-title" onclick="closeNav();location.href='contact.html'">
+    <button class="mob-title" type="button" onclick="closeNav();location.href='contact.html'">
       <span>문의하기</span>
-    </div>
+    </button>
   </div>
 
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
@@ -832,6 +841,13 @@ function closeNav(){
   document.getElementById('navBtn').classList.remove('open');
   document.getElementById('navOverlay').classList.remove('open');
   document.body.style.overflow='';
+}
+
+function mobToggle(el){
+  var item = el.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.mob-item').forEach(function(i){ i.classList.remove('open'); });
+  if(!isOpen){ item.classList.add('open'); }
 }
 </script>
 
