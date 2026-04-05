@@ -730,18 +730,11 @@ function closeNav(){
   document.body.style.overflow='';
 }
 </script>
-
 <section style="background:var(--cream);">
   <div class="section-inner">
     <div class="section-tag">CEO Message</div>
-    <h2 class="section-title">이정숙 대표 코치</h2>
-    <div class="gold-rule"></div>
-    <!-- CEO Message -->
-    <div id="ceo" class="company-grid" style="margin-bottom:80px;grid-template-columns:1fr;">
+    <div class="company-grid" style="margin-bottom:80px;grid-template-columns:1fr;">
       <div class="ceo-block">
-        <div class="section-tag">CEO Message</div>
-        <span id="ceo-anchor" style="display:block;scroll-margin-top:112px;"></span>
-        <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:var(--green);margin-bottom:20px;font-weight:600;">이정숙 대표 코치</h3>
         <p class="ceo-intro">
           Craft Coaching은 삶과 비즈니스를 정교하게 빚어가는 과정에 가치를 두고 있습니다.<br>
           우리는 누구나 자신의 가능성을 스스로 발견하고, 그 가능성을 현실의 변화로 연결할 수 있다고 믿습니다.
@@ -753,10 +746,13 @@ function closeNav(){
           지금의 코칭 철학을 단단하게 만든 기반이 되었습니다.
         </p>
         <p class="ceo-intro" style="margin-top:16px;font-style:italic;color:var(--sage);font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;">
-          "향기 깊은 코칭의 봉우리를 품기 위해,<br>맑은 의식의 토양을 일구고 온전함의 주의를 삶 전반에 보내며 살아갑니다."
+          "향기 깊은 코칭의 봉우리를 품기 위해,<br>
+          맑은 의식의 토양을 일구고<br>
+          온전함의 주의를 삶 전반에 보내며 살아갑니다."
         </p>
-        <div class="gold-rule"></div>
-        <div class="section-tag" style="color:var(--gold);margin-bottom:12px;">Profile</div>
+        <!-- 이름: section-tag 기준 두 단계 작은 폰트 (section-tag=9px → h5=18px → 여기서는 h5보다 두단계 작음 → 14px) -->
+        <p style="font-family:'Playfair Display',serif;font-size:14px;color:var(--green);margin-top:48px;font-weight:600;letter-spacing:0.5px;">이정숙 대표 코치</p>
+        <div class="section-tag" style="color:var(--gold);margin-top:0;margin-bottom:0;">Profile</div>
         <div class="credential-list">
           <div class="credential-item">(사)한국코치협회 인증프로코치(KPC) 및 심사위원</div>
           <div class="credential-item">아봐타® 마스터</div>
@@ -766,9 +762,10 @@ function closeNav(){
           <div class="credential-item">tbn 강원교통방송 출연중</div>
         </div>
       </div>
-      <span id="philosophy-anchor" style="display:block;scroll-margin-top:112px;"></span>
+    </div>
   </div>
 </section>
+
 
 <footer>
   <div style="cursor:default;">
