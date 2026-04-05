@@ -696,6 +696,9 @@ footer {
       <div class="dropdown">
         <a href="avatar_intro.html">아봐타®란</a>
         <a href="avatar_courses.html">아봐타® 코스</a>
+        <a href="avatar_schedule.html">아봐타® 코스일정</a>
+        <a href="avatar_faq.html">FAQ</a>
+        <a href="avatar_books.html">아봐타® 도서</a>
       </div>
     </li>
   </ul>
@@ -713,6 +716,11 @@ footer {
   <div class="nav-overlay-item"><a href="life.html" onclick="closeNav()">라이프 코칭</a></div>
   <div class="nav-overlay-item"><a href="jc.html" onclick="closeNav()">잡 크래프팅</a></div>
   <div class="nav-overlay-item"><a href="avatar.html" onclick="closeNav()">아봐타®</a></div>
+  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_intro.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타®란</a></div>
+  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_courses.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타® 코스</a></div>
+  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_schedule.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타® 코스일정</a></div>
+  <div class="nav-overlay-item" style="border-bottom:none;"><a href="avatar_faq.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— FAQ</a></div>
+  <div class="nav-overlay-item"><a href="avatar_books.html" onclick="closeNav()" style="font-size:13px;padding:10px 24px 10px 36px;color:rgba(184,147,90,0.75);">— 아봐타® 도서</a></div>
   <div class="nav-overlay-item"><a href="contact.html" onclick="closeNav()">문의하기</a></div>
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
 </div>
@@ -892,6 +900,263 @@ function closeNav(){
     </div>
 
     <!-- 무료 체험 -->
+
+<!-- ── 아봐타 코스 일정 ── -->
+<section style="background:var(--cream);padding:0;">
+  <div class="section-inner" style="padding-top:80px;padding-bottom:80px;">
+    <div class="section-tag" style="color:var(--green);">Schedule</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:var(--green);margin-bottom:36px;font-weight:700;">아봐타® 코스 일정</h3>
+
+    <!-- 배너 -->
+    <div style="position:relative;overflow:hidden;border-radius:2px;background:linear-gradient(135deg,#0F2014 0%,#1B3A2A 40%,#1a3828 70%,#0d1e14 100%);min-height:320px;display:flex;align-items:center;justify-content:center;">
+
+      <!-- 장미 SVG 왼쪽 -->
+      <svg style="position:absolute;left:-30px;bottom:-10px;opacity:0.55;width:320px;height:300px;" viewBox="0 0 320 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- 줄기 -->
+        <path d="M80 280 Q90 220 110 180 Q130 140 140 100" stroke="#4a7a5a" stroke-width="3" fill="none"/>
+        <path d="M110 180 Q80 160 60 140" stroke="#4a7a5a" stroke-width="2" fill="none"/>
+        <path d="M125 155 Q150 130 170 120" stroke="#4a7a5a" stroke-width="2" fill="none"/>
+        <!-- 잎 -->
+        <path d="M60 140 Q50 115 70 105 Q85 130 60 140Z" fill="#3a6a4a" opacity="0.8"/>
+        <path d="M170 120 Q185 95 200 90 Q195 115 170 120Z" fill="#3a6a4a" opacity="0.8"/>
+        <path d="M108 200 Q85 185 75 165 Q100 168 108 200Z" fill="#3a6a4a" opacity="0.7"/>
+        <!-- 장미1 (메인) -->
+        <circle cx="140" cy="95" r="38" fill="#8B1A2F" opacity="0.15"/>
+        <path d="M140 75 Q155 68 162 80 Q155 90 140 88 Q125 90 118 80 Q125 68 140 75Z" fill="#C4274A"/>
+        <path d="M140 88 Q158 82 165 95 Q158 108 140 106 Q122 108 115 95 Q122 82 140 88Z" fill="#B8213F"/>
+        <path d="M140 106 Q160 98 168 112 Q160 126 140 124 Q120 126 112 112 Q120 98 140 106Z" fill="#A91C38"/>
+        <path d="M140 124 Q156 118 162 130 Q155 140 140 138 Q125 140 118 130 Q124 118 140 124Z" fill="#9B1832"/>
+        <circle cx="140" cy="85" r="8" fill="#D4355A" opacity="0.9"/>
+        <circle cx="140" cy="85" r="4" fill="#E8456A"/>
+        <!-- 장미2 (작은) -->
+        <path d="M65 138 Q74 133 78 140 Q74 147 65 146 Q56 147 52 140 Q56 133 65 138Z" fill="#C4274A" opacity="0.9"/>
+        <path d="M65 146 Q76 141 80 149 Q76 157 65 156 Q54 157 50 149 Q54 141 65 146Z" fill="#B8213F" opacity="0.9"/>
+        <circle cx="65" cy="140" r="4" fill="#D4355A" opacity="0.8"/>
+        <!-- 장미3 (오른쪽 작은) -->
+        <path d="M195 112 Q202 107 206 113 Q202 119 195 118 Q188 119 184 113 Q188 107 195 112Z" fill="#C4274A" opacity="0.85"/>
+        <path d="M195 118 Q204 113 208 120 Q204 127 195 126 Q186 127 182 120 Q186 113 195 118Z" fill="#B8213F" opacity="0.85"/>
+        <circle cx="195" cy="113" r="3.5" fill="#D4355A" opacity="0.8"/>
+        <!-- 꽃봉오리 -->
+        <path d="M110 175 Q115 168 120 172 Q118 180 110 179Z" fill="#C4274A" opacity="0.7"/>
+        <path d="M175 108 Q179 102 184 106 Q182 113 175 112Z" fill="#C4274A" opacity="0.7"/>
+      </svg>
+
+      <!-- 장미 SVG 오른쪽 -->
+      <svg style="position:absolute;right:-20px;top:-10px;opacity:0.5;width:280px;height:280px;transform:scaleX(-1);" viewBox="0 0 320 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M80 280 Q90 220 110 180 Q130 140 140 100" stroke="#4a7a5a" stroke-width="3" fill="none"/>
+        <path d="M110 180 Q80 160 60 140" stroke="#4a7a5a" stroke-width="2" fill="none"/>
+        <path d="M125 155 Q150 130 170 120" stroke="#4a7a5a" stroke-width="2" fill="none"/>
+        <path d="M60 140 Q50 115 70 105 Q85 130 60 140Z" fill="#3a6a4a" opacity="0.8"/>
+        <path d="M170 120 Q185 95 200 90 Q195 115 170 120Z" fill="#3a6a4a" opacity="0.8"/>
+        <path d="M140 75 Q155 68 162 80 Q155 90 140 88 Q125 90 118 80 Q125 68 140 75Z" fill="#C4274A"/>
+        <path d="M140 88 Q158 82 165 95 Q158 108 140 106 Q122 108 115 95 Q122 82 140 88Z" fill="#B8213F"/>
+        <path d="M140 106 Q160 98 168 112 Q160 126 140 124 Q120 126 112 112 Q120 98 140 106Z" fill="#A91C38"/>
+        <path d="M140 124 Q156 118 162 130 Q155 140 140 138 Q125 140 118 130 Q124 118 140 124Z" fill="#9B1832"/>
+        <circle cx="140" cy="85" r="8" fill="#D4355A" opacity="0.9"/>
+        <circle cx="140" cy="85" r="4" fill="#E8456A"/>
+        <path d="M65 138 Q74 133 78 140 Q74 147 65 146 Q56 147 52 140 Q56 133 65 138Z" fill="#C4274A" opacity="0.9"/>
+        <path d="M65 146 Q76 141 80 149 Q76 157 65 156 Q54 157 50 149 Q54 141 65 146Z" fill="#B8213F" opacity="0.9"/>
+        <circle cx="65" cy="140" r="4" fill="#D4355A" opacity="0.8"/>
+        <path d="M110 175 Q115 168 120 172 Q118 180 110 179Z" fill="#C4274A" opacity="0.7"/>
+      </svg>
+
+      <!-- 텍스트 중앙 -->
+      <div style="position:relative;z-index:2;text-align:center;padding:48px 24px;">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:4px;color:rgba(184,147,90,0.7);text-transform:uppercase;margin-bottom:12px;">The Avatar® Course</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:36px;color:#EAE0D0;font-weight:700;margin-bottom:20px;line-height:1.3;">5월 아봐타® 코스</h2>
+        <div style="width:48px;height:1px;background:var(--gold);margin:0 auto 20px;"></div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;color:rgba(234,224,208,0.85);margin-bottom:8px;line-height:1.8;">
+          2026년 5월 2일(토) — 5월 11일(월)
+        </p>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;color:rgba(184,147,90,0.85);">
+          서울 동화킴스관광호텔
+        </p>
+      </div>
+    </div>
+
+    <!-- 배너 하단 링크 스타일 정보 -->
+    <div style="margin-top:20px;padding:16px 0;border-top:0.5px solid rgba(27,58,42,0.2);display:flex;gap:32px;flex-wrap:wrap;">
+      <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:1px;color:var(--green);">아봐타®코스 &nbsp;/&nbsp; 2026년 5월 2일(토) — 5월 11일(월)</span>
+      <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:1px;color:var(--green);">동화킴스호텔</span>
+    </div>
+  </div>
+</section>
+
+
+<section style="background:var(--dark);padding-top:0;">
+  <div class="section-inner" style="padding-top:80px;padding-bottom:80px;">
+    <div class="section-tag" style="color:var(--gold);">FAQ</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:#EAE0D0;margin-bottom:10px;">자주 묻는 질문</h3>
+    <div class="gold-rule" style="margin-bottom:40px;"></div>
+
+    <style>
+    .faq-item { border-bottom:0.5px solid rgba(184,147,90,0.2); }
+    .faq-q {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px 0; cursor:pointer;
+      font-family:'Noto Sans KR',sans-serif; font-size:15px;
+      color:rgba(234,224,208,0.85); font-weight:500; line-height:1.6;
+      gap:16px;
+    }
+    .faq-q:hover { color:#C9A870; }
+    .faq-icon {
+      flex-shrink:0; width:22px; height:22px;
+      border:1px solid rgba(184,147,90,0.5); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:14px; color:var(--gold); transition:transform 0.3s;
+    }
+    .faq-a {
+      display:none; padding:0 0 20px 0;
+      font-size:14px; color:rgba(234,224,208,0.65);
+      line-height:1.95; font-family:'Noto Sans KR',sans-serif;
+    }
+    .faq-item.open .faq-a { display:block; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); color:#C9A870; border-color:#C9A870; }
+    </style>
+
+    <div id="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          아봐타®는 무엇인가요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          아봐타®는 아봐타 마스터가 안내하는 9일간의 코스로, 자신에게 힘을 부여하는 훈련입니다. 아봐타® 도구는 연습과 훈련, 절차들이 모여 시너지 효과를 냅니다. 아봐타® 도구를 올바르게 이해하고 사용하면, 의도적으로 살 수 있는 능력이 향상됩니다. 아봐타® 도구는 삶을 통제할 수 있는 매우 효과적이고 효율적인 도구입니다. 자기 파괴적인 신념이나 행동을 찾아내서 해결하는 것을 아봐타® 도구가 돕습니다. 조화로운 인간관계, 성공, 혹은 기쁨과 만족의 즐거운 상태를 원하면 아봐타® 도구가 당신을 도울 수 있습니다. 또한 아봐타® 도구는 삶에서 슬픔과 스트레스를 없애고, 건강을 회복하고 마음의 평화를 이루는 데에도 효과적입니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          아봐타®는 어떻게 작용하나요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          아봐타®는 신념 관리를 통해서 작용합니다. 아봐타® 도구를 써서 삶의 패턴을 만드는 신념들을 의도적으로 재구성할 수 있습니다.<br><br>
+          당신의 신념은 당신의 존재에 영향을 미치는 사실상 가장 강력한 힘입니다. 신념은 당신이 무엇을, 어떻게 지각할지를 결정합니다. 신념은 당신의 생각, 기대 및 행동에 영향을 미치고, 성격을 형성합니다. 신념은 심지어 당신 행동의 결과와, 다른 사람들이 당신을 지각하고 당신에게 반응하는 방식에도 영향을 미칩니다.<br><br>
+          아봐타®는 당신 존재의 "배후"를 탐사하고, 당신의 삶이 현재의 모습이 되도록 했지만, 검토하지 않은, 무의식적인 신념들을 발견하도록 도와줍니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          아봐타® 코스에서 무엇을 얻을까요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          3부로 구성되어 있는 아봐타® 코스의 목표는 자신의 신념체계를 탐사하도록 안내해서 자신이 바꾸고 싶어하는 신념들을 다루는 도구를 익히게 해줍니다. 아봐타® 코스는 내면 의식을 탐사하는 문을 열어 줍니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          어떤 사람들이 아봐타® 코스를 하나요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          아봐타® 학생은 수도승에서 회계 책임자, 원리주의자에서 무신론자까지 각계각층의 다양한 신념체계를 가진 사람들입니다. 대부분의 학생들은 아봐타®가 삶을 이해하고, 다른 사람을 수용하고 자비심을 높여주는 것을 알게 됩니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          아봐타®는 종교인가요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          아봐타®는 종교가 아닙니다. 신도가 없습니다. 여러 종교를 가진 사람들이 아봐타®를 하지만, 타인의 신념을 바꾸려는 노력은 없습니다. 아봐타® 코스는 단순히 자기계발 코스이며 종교적 믿음이나, 종파 신도수, 유사종교 의례에 전혀 구애를 받지 않습니다. 코스를 마친 학생들은 "아봐타®는 가장 강력하고 순수한 최상의 자기계발 프로그램입니다."에 바로 동의합니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          아봐타®가 차별화되는 점은 무엇인가요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          아봐타®는 어떻게 살아야 한다는 신념들을 알려주기보다 자신의 신념을 만들어내거나 지워 없애는 능력을 자연스럽게 일깨워줍니다. 이런 기법을 바탕으로 스스로 결정한 삶의 청사진에 따라 삶을 재구성하게 됩니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          스타즈 에지의 역할은 무엇인가요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          스타즈 에지 인터내셔널은, 1986년 해리가 설립한 영리법인이며 사람들의 기대를 뛰어넘는 자기계발 프로그램을 제공하고 관리하기 위해 설립되었습니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          아봐타®는 무엇을 믿어야 한다고 말하나요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          아닙니다. 오히려 그 반대입니다. 아봐타®는 사람들을 세뇌하지 않습니다. 자발적으로 선택하지 않았거나 인식도 못하는 자신을 제약하는 신념들을 알아차리도록 아봐타®가 도와줍니다. 아봐타®는 스스로 바꾸기로 선택하면, 자신의 신념을 바꾸는 방법을 알려줍니다.<br><br>
+          아봐타®는 사람들에게 무엇을 믿어야 할지 가르치지 않으며, 그 어떤 신념도 참으로서 제시하지 않습니다. 아봐타®는 사람들이 삶에서 경험하는 것과 그들이 지니고 있는 신념을 서로 연관 지을 수 있도록 도와줍니다. 아봐타®는 개인의 책임을 가르칩니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          개인의 책임은 무엇인가요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          개인의 책임은 자신의 결정, 선택 및 행동을 결정하는 능력입니다. 아봐타®에서는 근원이 되기라 부릅니다. 이 능력을 향상한 결과, 삶에서 자기가 통제하지 못했던 영역이 자연스럽게 발견하게 됩니다.<br><br>
+          아봐타®는 개인의 책임을 증가시키는 데 주안점을 둠으로써 밝은 지구 문명의 창조에 직접적으로 기여합니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          아봐타®는 어디에서 시작되었나요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          교육자인 해리 팔머는 1986년에 아봐타®를 만들었습니다. 그는 사람들이 가치 있다고 여길 만한 훈련 프로그램을 제공하고자 했습니다. <em>다시 떠오르기</em> 교재에서, 해리는 이렇게 말합니다. "우리의 의도는, 아봐타® 코스를 실시하도록 우리가 훈련하고 인가해 준 사람들이, 가치 있는 봉사에(예배와 귀의 또는 숭배가 아니라) 현금으로 보상받고, 계속 많은 사람들을 일깨워서 아봐타®가 확장하는 것입니다."<br><br>
+          아봐타® 교재의 배경을 이룬 생각과 전망들은 해리 팔머의 마음 속에서 40년에 걸쳐 무르익었습니다. 우리 중의 많은 사람들과 마찬가지로 그는 창조계를 지배하는 법칙의 유형들을 얼핏얼핏 엿볼 수 있었습니다. 그러나 그는 잠깐의 엿봄으로 만족하지 않았습니다. 1976년 해리 팔머는 보장된 교사직을 사임하고 10년의 세월로 이어질 의식의 연구와 탐사에 착수했습니다.<br><br>
+          오늘날, 해리의 기법을 편견 없이 연구하는 사람이라면 그가 쓴 내용이 세상의 집합 의식에 심오한 영향을 미쳤음을 의심하는 사람은 거의 없습니다. 해리의 저서는 20개 이상의 언어로 번역되었으며, 그의 비즈니스 모델은 자기 계발 세미나 업계에 큰 영향을 미쳤습니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          명상 같은 건가요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          그렇기도 아니기도 합니다. 아봐타®는 명상이 주는 것과 같은 정신적 평온을 주지만 명상보다 재미있고 훨씬 더 빠른 방법입니다. 마음을 다스리는—마음을 고요하게 만드는—기법을 터득하는 면에서는 명상과 비슷하지만, 아봐타®는 마음과 맞서서 씨름하지 않고 즐겁게 이루어 갑니다. 금고 문을 비틀어서 여는가, 숫자 다이얼을 맞추어서 여는 가의 차이와 같습니다. 아봐타®는 그 암호 숫자입니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          아봐타®가 왜 내게 필요한가요?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          아봐타® 훈련을 경험하지 않은 사람들은 뿌리 깊게 자리잡고 있는, 심하게 저항하는 투명한 신념들에 의해 자신의 삶을 살아갑니다. 자신이 내리는 결정의 90% 이상이 자신이 두려워하거나, 가장 싫어하고, 압도된 느낌을 주는 사람에 의해 자동적으로 조정된다고 상상해 보십시오. 이것은 아봐타®를 경험되지 않은 상태의 삶입니다.<br><br>
+          아봐타® 코스는 자기 인식의 심오한 향상을 일으킵니다. 그로 인해 아봐타®를 마친 학생들은 자신의 가치와 목표를 바꾸게 됩니다. 이런 변화는 자기 결단으로, 외부의 영향이나 설득에 의한 결과가 아닙니다.
+        </div>
+      </div>
+
+    </div><!-- /faq-list -->
+  </div>
+</section>
+
+<script>
+function toggleFaq(el){
+  var item = el.parentElement;
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if(!wasOpen) item.classList.add('open');
+}
+</script>
+
+
     <div style="margin-bottom:64px;">
       <div class="section-tag" style="color:var(--gold);">Free Experience</div>
       <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:#EAE0D0;margin-bottom:20px;">무료 체험</h3>
