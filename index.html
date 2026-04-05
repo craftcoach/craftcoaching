@@ -550,7 +550,7 @@ footer {
   flex-direction:column;
   align-items:stretch;
   justify-content:flex-start;
-  overflow-y:auto;
+  overflow:hidden;
   padding-top:64px;
   padding-bottom:40px;
   gap:0;
@@ -850,36 +850,47 @@ function mobToggle(el){
   if(!isOpen){ item.classList.add('open'); }
 }
 
-/* ── 모바일 touchend 지원 (비즈니스/라이프 코칭 클릭 문제 해결) ── */
+/* ── 모바일 메뉴 터치 이벤트 위임 ── */
 (function(){
-  function attachTouchToggle(){
-    document.querySelectorAll('.mob-title').forEach(function(btn){
-      if(btn.dataset.touchBound) return;
-      btn.dataset.touchBound = '1';
-      var startY = 0;
-      btn.addEventListener('touchstart', function(e){
-        startY = e.touches[0].clientY;
-      }, {passive:true});
-      btn.addEventListener('touchend', function(e){
-        var dy = Math.abs(e.changedTouches[0].clientY - startY);
-        if(dy > 10) return; /* 스크롤이면 무시 */
-        e.preventDefault();
-        e.stopPropagation();
-        var hrefFn = btn.getAttribute('onclick');
-        if(hrefFn && hrefFn.indexOf('location.href') !== -1){
-          eval(hrefFn); return;
-        }
-        var item = btn.parentElement;
-        var isOpen = item.classList.contains('open');
-        document.querySelectorAll('.mob-item').forEach(function(i){ i.classList.remove('open'); });
-        if(!isOpen){ item.classList.add('open'); }
-      }, {passive:false});
-    });
+  function setupOverlayTouch(){
+    var ov = document.getElementById('navOverlay');
+    if(!ov || ov.dataset.touchSetup) return;
+    ov.dataset.touchSetup = '1';
+
+    /* touchstart: mob-title 위이면 스크롤 차단 */
+    ov.addEventListener('touchstart', function(e){
+      var btn = e.target.closest ? e.target.closest('.mob-title') :
+                (function(el){ while(el){ if(el.classList && el.classList.contains('mob-title')) return el; el=el.parentElement; } return null; })(e.target);
+      if(btn){ e.preventDefault(); }
+    }, {passive:false});
+
+    /* touchend: 토글 실행 */
+    ov.addEventListener('touchend', function(e){
+      var btn = e.target.closest ? e.target.closest('.mob-title') :
+                (function(el){ while(el){ if(el.classList && el.classList.contains('mob-title')) return el; el=el.parentElement; } return null; })(e.target);
+      if(!btn) return;
+      e.preventDefault();
+      e.stopPropagation();
+      /* 직접이동 버튼 */
+      var hrefFn = btn.getAttribute('onclick');
+      if(hrefFn && hrefFn.indexOf('location.href') !== -1){
+        closeNav();
+        var m = hrefFn.match(/location\.href='([^']+)'/);
+        if(m) location.href = m[1];
+        return;
+      }
+      /* 토글 버튼 */
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.mob-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!isOpen){ item.classList.add('open'); }
+    }, {passive:false});
   }
+
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', attachTouchToggle);
+    document.addEventListener('DOMContentLoaded', setupOverlayTouch);
   } else {
-    attachTouchToggle();
+    setupOverlayTouch();
   }
 })();
 </script>
