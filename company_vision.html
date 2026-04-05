@@ -730,16 +730,19 @@ function closeNav(){
   document.body.style.overflow='';
 }
 </script>
-
 <section id="vision" style="background:var(--green);scroll-margin-top:72px;">
-  <div class="section-inner" style="padding-top:80px;padding-bottom:80px;">
-    <div class="vm-grid" style="border:0.5px solid rgba(184,147,90,0.2);">
-      <div class="vm-card">
+  <div class="section-inner" style="padding-top:80px;padding-bottom:80px;max-width:1200px;">
+    <div class="vm-grid" style="border:0.5px solid rgba(184,147,90,0.2);grid-template-columns:1fr 1.5fr;">
+      <div class="vm-card" style="display:flex;flex-direction:column;">
         <div class="vm-label">Vision</div>
-        <div class="vm-title">사람과 조직이<br>신념의 힘으로<br>성장하는 세상</div>
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2px;color:rgba(184,147,90,0.6);margin-bottom:0;">비전</div>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+          <div class="vm-title" style="font-family:'Noto Sans KR',sans-serif;font-size:22px;color:rgba(234,224,208,0.85);font-weight:600;line-height:1.8;margin-bottom:0;">사람과 조직이<br>신념의 힘으로<br>성장하는 세상</div>
+        </div>
       </div>
-      <div class="vm-card">
+      <div class="vm-card" style="border-left:0.5px solid rgba(184,147,90,0.2);">
         <div class="vm-label">Mission</div>
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:2px;color:rgba(184,147,90,0.6);margin-bottom:20px;">미션</div>
         <div class="vm-items">
           <div class="vm-item">개인이 자신의 삶을 주체적으로 설계하도록 돕는다</div>
           <div class="vm-item">기업이 건강한 신념과 문화 위에서 지속 가능한 성장을 이루도록 지원한다</div>
@@ -750,6 +753,7 @@ function closeNav(){
     </div>
   </div>
 </section>
+
 
 <footer>
   <div style="cursor:default;">
