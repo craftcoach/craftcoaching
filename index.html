@@ -550,7 +550,8 @@ footer {
   flex-direction:column;
   align-items:stretch;
   justify-content:flex-start;
-  overflow:hidden;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
   padding-top:64px;
   padding-bottom:40px;
   gap:0;
@@ -669,8 +670,9 @@ footer {
   background:none; border:none;
   cursor:pointer;
   text-align:left;
-  touch-action:manipulation;
-  -webkit-tap-highlight-color:rgba(184,147,90,0.2);
+  pointer-events:auto;
+  -webkit-appearance:none;
+  outline:none;
 }
 .mob-title:active { color:#C9A870; background:rgba(184,147,90,0.05); }
 .mob-arrow {
@@ -846,53 +848,11 @@ function closeNav(){
 function mobToggle(el){
   var item = el.parentElement;
   var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.mob-item').forEach(function(i){ i.classList.remove('open'); });
+  document.querySelectorAll('#navOverlay .mob-item').forEach(function(i){
+    i.classList.remove('open');
+  });
   if(!isOpen){ item.classList.add('open'); }
 }
-
-/* ── 모바일 메뉴 터치 이벤트 위임 ── */
-(function(){
-  function setupOverlayTouch(){
-    var ov = document.getElementById('navOverlay');
-    if(!ov || ov.dataset.touchSetup) return;
-    ov.dataset.touchSetup = '1';
-
-    /* touchstart: mob-title 위이면 스크롤 차단 */
-    ov.addEventListener('touchstart', function(e){
-      var btn = e.target.closest ? e.target.closest('.mob-title') :
-                (function(el){ while(el){ if(el.classList && el.classList.contains('mob-title')) return el; el=el.parentElement; } return null; })(e.target);
-      if(btn){ e.preventDefault(); }
-    }, {passive:false});
-
-    /* touchend: 토글 실행 */
-    ov.addEventListener('touchend', function(e){
-      var btn = e.target.closest ? e.target.closest('.mob-title') :
-                (function(el){ while(el){ if(el.classList && el.classList.contains('mob-title')) return el; el=el.parentElement; } return null; })(e.target);
-      if(!btn) return;
-      e.preventDefault();
-      e.stopPropagation();
-      /* 직접이동 버튼 */
-      var hrefFn = btn.getAttribute('onclick');
-      if(hrefFn && hrefFn.indexOf('location.href') !== -1){
-        closeNav();
-        var m = hrefFn.match(/location\.href='([^']+)'/);
-        if(m) location.href = m[1];
-        return;
-      }
-      /* 토글 버튼 */
-      var item = btn.parentElement;
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.mob-item').forEach(function(i){ i.classList.remove('open'); });
-      if(!isOpen){ item.classList.add('open'); }
-    }, {passive:false});
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', setupOverlayTouch);
-  } else {
-    setupOverlayTouch();
-  }
-})();
 </script>
 
 <section id="hero">
