@@ -548,21 +548,7 @@ footer {
 
 
 /* 모바일 메뉴 오버레이 */
-.nav-overlay {
-  display:none;
-  position:fixed; top:0; left:0; right:0; bottom:0;
-  background:rgba(10,25,18,0.97);
-  z-index:10000;
-  flex-direction:column;
-  align-items:stretch;
-  justify-content:flex-start;
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-  padding-top:16px;
-  padding-bottom:40px;
-  gap:0;
-}
-.nav-overlay.open { display:flex; }
+
 .nav-overlay-item {
   width:100%;
   text-align:center;
@@ -662,49 +648,6 @@ footer {
 }
 
 
-/* ── 모바일 아코디언 (radio 방식) ── */
-.mob-radio { display:none; }
-.mob-item {
-  width:100%;
-  border-bottom:0.5px solid rgba(184,147,90,0.2);
-}
-.mob-item-link .mob-title { text-decoration:none; }
-.mob-title {
-  display:flex; justify-content:space-between; align-items:center;
-  width:100%; padding:20px 32px;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:15px; letter-spacing:2px;
-  color:rgba(234,224,208,0.85);
-  background:none; border:none;
-  cursor:pointer; text-align:left;
-  box-sizing:border-box;
-}
-.mob-title:active { background:rgba(184,147,90,0.08); }
-.mob-arrow {
-  font-size:20px; font-weight:300;
-  color:rgba(184,147,90,0.7);
-  transition:transform 0.25s;
-  flex-shrink:0; margin-left:12px;
-}
-.mob-sub {
-  display:none;
-  flex-direction:column;
-  background:rgba(8,20,14,0.8);
-  padding:4px 0 12px 0;
-}
-.mob-sub a {
-  display:block;
-  padding:12px 32px 12px 48px;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:13px; letter-spacing:1.5px;
-  color:rgba(184,147,90,0.8);
-  text-decoration:none;
-}
-.mob-sub a:active { color:#C9A870; }
-/* radio checked → 하위메뉴 표시 */
-.mob-radio:checked + .mob-title + .mob-sub { display:flex; }
-.mob-radio:checked + .mob-title .mob-arrow { transform:rotate(45deg); color:#C9A870; }
-
 
 </style>
 </head>
@@ -768,77 +711,34 @@ footer {
 <!-- ── 모바일 오버레이 메뉴 ── -->
 <div class="nav-overlay" id="navOverlay">
 
-  <!-- 닫기 버튼 -->
+  <a class="mob-sec-title" href="company.html" onclick="closeNav()">회사 소개</a>
+  <a class="mob-sub-link" href="company_ceo.html" onclick="closeNav()">CEO Message</a>
+  <a class="mob-sub-link" href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
+  <a class="mob-sub-link" href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
+  <a class="mob-sub-link" href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
+  <a class="mob-sub-link" href="company_media.html" onclick="closeNav()">미디어</a>
+  <a class="mob-sub-link" href="company_books.html" onclick="closeNav()">저서</a>
+
+  <a class="mob-sec-title" href="business.html" onclick="closeNav()">비즈니스 코칭</a>
+  <a class="mob-sub-link" href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
+  <a class="mob-sub-link" href="business_fields.html" onclick="closeNav()">코칭 분야</a>
+
+  <a class="mob-sec-title" href="life.html" onclick="closeNav()">라이프 코칭</a>
+  <a class="mob-sub-link" href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
+  <a class="mob-sub-link" href="life_fields.html" onclick="closeNav()">코칭 분야</a>
+
+  <a class="mob-sec-title" href="jc.html" onclick="closeNav()">잡 크래프팅</a>
+
+  <a class="mob-sec-title" href="avatar.html" onclick="closeNav()">아봐타®</a>
+  <a class="mob-sub-link" href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
+  <a class="mob-sub-link" href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
+  <a class="mob-sub-link" href="avatar_schedule.html" onclick="closeNav()">아봐타® 코스일정</a>
+  <a class="mob-sub-link" href="avatar_faq.html" onclick="closeNav()">FAQ</a>
+  <a class="mob-sub-link" href="avatar_books.html" onclick="closeNav()">아봐타® 도서</a>
+
+  <a class="mob-sec-title" href="contact.html" onclick="closeNav()">문의하기</a>
+
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
-
-  <!-- 회사 소개 -->
-  <div class="mob-item">
-    <input type="radio" name="mob-acc" id="mob-company" class="mob-radio">
-    <label for="mob-company" class="mob-title">
-      <span>회사 소개</span><span class="mob-arrow">+</span>
-    </label>
-    <div class="mob-sub">
-      <a href="company_ceo.html" onclick="closeNav()">CEO Message</a>
-      <a href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
-      <a href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
-      <a href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
-      <a href="company_media.html" onclick="closeNav()">미디어</a>
-      <a href="company_books.html" onclick="closeNav()">저서</a>
-    </div>
-  </div>
-
-  <!-- 비즈니스 코칭 -->
-  <div class="mob-item">
-    <input type="radio" name="mob-acc" id="mob-biz" class="mob-radio">
-    <label for="mob-biz" class="mob-title">
-      <span>비즈니스 코칭</span><span class="mob-arrow">+</span>
-    </label>
-    <div class="mob-sub">
-      <a href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
-      <a href="business_fields.html" onclick="closeNav()">코칭 분야</a>
-    </div>
-  </div>
-
-  <!-- 라이프 코칭 -->
-  <div class="mob-item">
-    <input type="radio" name="mob-acc" id="mob-life" class="mob-radio">
-    <label for="mob-life" class="mob-title">
-      <span>라이프 코칭</span><span class="mob-arrow">+</span>
-    </label>
-    <div class="mob-sub">
-      <a href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
-      <a href="life_fields.html" onclick="closeNav()">코칭 분야</a>
-    </div>
-  </div>
-
-  <!-- 잡 크래프팅 -->
-  <div class="mob-item mob-item-link">
-    <a href="jc.html" class="mob-title" onclick="closeNav()">
-      <span>잡 크래프팅</span>
-    </a>
-  </div>
-
-  <!-- 아봐타 -->
-  <div class="mob-item">
-    <input type="radio" name="mob-acc" id="mob-avatar" class="mob-radio">
-    <label for="mob-avatar" class="mob-title">
-      <span>아봐타®</span><span class="mob-arrow">+</span>
-    </label>
-    <div class="mob-sub">
-      <a href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
-      <a href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
-      <a href="avatar_schedule.html" onclick="closeNav()">아봐타® 코스일정</a>
-      <a href="avatar_faq.html" onclick="closeNav()">FAQ</a>
-      <a href="avatar_books.html" onclick="closeNav()">아봐타® 도서</a>
-    </div>
-  </div>
-
-  <!-- 문의하기 -->
-  <div class="mob-item mob-item-link">
-    <a href="contact.html" class="mob-title" onclick="closeNav()">
-      <span>문의하기</span>
-    </a>
-  </div>
 
 </div>
 

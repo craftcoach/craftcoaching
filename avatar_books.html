@@ -542,20 +542,7 @@ footer {
 
 
 /* 모바일 메뉴 오버레이 */
-.nav-overlay {
-  display:none;
-  position:fixed; top:0; left:0; right:0; bottom:0;
-  background:rgba(10,25,18,0.97);
-  z-index:10000;
-  flex-direction:column;
-  align-items:stretch;
-  justify-content:flex-start;
-  overflow-y:auto;
-  padding-top:64px;
-  padding-bottom:40px;
-  gap:0;
-}
-.nav-overlay.open { display:flex; }
+
 .nav-overlay-item {
   width:100%;
   text-align:center;
@@ -655,49 +642,6 @@ footer {
 }
 
 
-/* ── 모바일 아코디언 메뉴 ── */
-.mob-item {
-  width:100%;
-  border-bottom:0.5px solid rgba(184,147,90,0.15);
-}
-.mob-title {
-  display:flex; justify-content:space-between; align-items:center;
-  width:100%; padding:18px 32px;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:15px; letter-spacing:2px;
-  color:rgba(234,224,208,0.85);
-  background:none; border:none;
-  cursor:pointer;
-  text-align:left;
-  touch-action:manipulation;
-  -webkit-tap-highlight-color:rgba(184,147,90,0.2);
-}
-.mob-title:active { color:#C9A870; background:rgba(184,147,90,0.05); }
-.mob-arrow {
-  font-size:20px; color:rgba(184,147,90,0.7);
-  transition:transform 0.25s;
-  flex-shrink:0; margin-left:12px;
-  line-height:1;
-}
-.mob-item.open .mob-arrow { transform:rotate(45deg); color:#C9A870; }
-.mob-sub {
-  display:none;
-  flex-direction:column;
-  background:rgba(8,22,15,0.7);
-  padding:4px 0 10px 0;
-}
-.mob-item.open .mob-sub { display:flex; }
-.mob-sub a {
-  display:block;
-  padding:12px 32px 12px 48px;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:13px; letter-spacing:1.5px;
-  color:rgba(184,147,90,0.8);
-  text-decoration:none;
-  touch-action:manipulation;
-  -webkit-tap-highlight-color:rgba(184,147,90,0.2);
-}
-.mob-sub a:active { color:#C9A870; background:rgba(184,147,90,0.08); }
 
 </style>
 </head>
@@ -761,72 +705,35 @@ footer {
 <!-- ── 모바일 오버레이 메뉴 ── -->
 <div class="nav-overlay" id="navOverlay">
 
-  <!-- 회사 소개 -->
-  <div class="mob-item">
-    <button class="mob-title" type="button" onclick="mobToggle(this)">
-      <span>회사 소개</span><span class="mob-arrow">﹢</span>
-    </button>
-    <div class="mob-sub">
-      <a href="company_ceo.html" onclick="closeNav()">CEO Message</a>
-      <a href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
-      <a href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
-      <a href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
-      <a href="company_media.html" onclick="closeNav()">미디어</a>
-      <a href="company_books.html" onclick="closeNav()">저서</a>
-    </div>
-  </div>
+  <a class="mob-sec-title" href="company.html" onclick="closeNav()">회사 소개</a>
+  <a class="mob-sub-link" href="company_ceo.html" onclick="closeNav()">CEO Message</a>
+  <a class="mob-sub-link" href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
+  <a class="mob-sub-link" href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
+  <a class="mob-sub-link" href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
+  <a class="mob-sub-link" href="company_media.html" onclick="closeNav()">미디어</a>
+  <a class="mob-sub-link" href="company_books.html" onclick="closeNav()">저서</a>
 
-  <!-- 비즈니스 코칭 -->
-  <div class="mob-item">
-    <button class="mob-title" type="button" onclick="mobToggle(this)">
-      <span>비즈니스 코칭</span><span class="mob-arrow">﹢</span>
-    </button>
-    <div class="mob-sub">
-      <a href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
-      <a href="business_fields.html" onclick="closeNav()">코칭 분야</a>
-    </div>
-  </div>
+  <a class="mob-sec-title" href="business.html" onclick="closeNav()">비즈니스 코칭</a>
+  <a class="mob-sub-link" href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
+  <a class="mob-sub-link" href="business_fields.html" onclick="closeNav()">코칭 분야</a>
 
-  <!-- 라이프 코칭 -->
-  <div class="mob-item">
-    <button class="mob-title" type="button" onclick="mobToggle(this)">
-      <span>라이프 코칭</span><span class="mob-arrow">﹢</span>
-    </button>
-    <div class="mob-sub">
-      <a href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
-      <a href="life_fields.html" onclick="closeNav()">코칭 분야</a>
-    </div>
-  </div>
+  <a class="mob-sec-title" href="life.html" onclick="closeNav()">라이프 코칭</a>
+  <a class="mob-sub-link" href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
+  <a class="mob-sub-link" href="life_fields.html" onclick="closeNav()">코칭 분야</a>
 
-  <!-- 잡 크래프팅 -->
-  <div class="mob-item">
-    <button class="mob-title" type="button" onclick="closeNav();location.href='jc.html'">
-      <span>잡 크래프팅</span>
-    </button>
-  </div>
+  <a class="mob-sec-title" href="jc.html" onclick="closeNav()">잡 크래프팅</a>
 
-  <!-- 아봐타 -->
-  <div class="mob-item">
-    <button class="mob-title" type="button" onclick="mobToggle(this)">
-      <span>아봐타®</span><span class="mob-arrow">﹢</span>
-    </button>
-    <div class="mob-sub">
-      <a href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
-      <a href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
-      <a href="avatar_schedule.html" onclick="closeNav()">아봐타® 코스일정</a>
-      <a href="avatar_faq.html" onclick="closeNav()">FAQ</a>
-      <a href="avatar_books.html" onclick="closeNav()">아봐타® 도서</a>
-    </div>
-  </div>
+  <a class="mob-sec-title" href="avatar.html" onclick="closeNav()">아봐타®</a>
+  <a class="mob-sub-link" href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
+  <a class="mob-sub-link" href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
+  <a class="mob-sub-link" href="avatar_schedule.html" onclick="closeNav()">아봐타® 코스일정</a>
+  <a class="mob-sub-link" href="avatar_faq.html" onclick="closeNav()">FAQ</a>
+  <a class="mob-sub-link" href="avatar_books.html" onclick="closeNav()">아봐타® 도서</a>
 
-  <!-- 문의하기 -->
-  <div class="mob-item">
-    <button class="mob-title" type="button" onclick="closeNav();location.href='contact.html'">
-      <span>문의하기</span>
-    </button>
-  </div>
+  <a class="mob-sec-title" href="contact.html" onclick="closeNav()">문의하기</a>
 
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
+
 </div>
 
 <script>

@@ -542,21 +542,7 @@ footer {
 
 
 /* 모바일 메뉴 오버레이 */
-.nav-overlay {
-  display:none;
-  position:fixed; top:0; left:0; right:0; bottom:0;
-  background:rgba(10,25,18,0.97);
-  z-index:10000;
-  flex-direction:column;
-  align-items:stretch;
-  justify-content:flex-start;
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-  padding-top:16px;
-  padding-bottom:40px;
-  gap:0;
-}
-.nav-overlay.open { display:flex; }
+
 .nav-overlay-item {
   width:100%;
   text-align:center;
@@ -580,139 +566,6 @@ footer {
   color:var(--sage); cursor:pointer;
   background:none; border:none;
 }
-/* ── 모바일 메뉴 (details/summary 네이티브) ── */
-.mob-item {
-  width:100%;
-  border-bottom:0.5px solid rgba(184,147,90,0.2);
-}
-details.mob-item { list-style:none; }
-details.mob-item > summary {
-  list-style:none;
-}
-details.mob-item > summary::-webkit-details-marker { display:none; }
-.mob-title {
-  display:flex; justify-content:space-between; align-items:center;
-  width:100%; padding:20px 32px;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:15px; letter-spacing:2px;
-  color:rgba(234,224,208,0.85);
-  background:none; border:none;
-  cursor:pointer; text-align:left;
-  box-sizing:border-box;
-  text-decoration:none;
-}
-.mob-title:active { background:rgba(184,147,90,0.08); }
-.mob-arrow {
-  width:20px; height:20px;
-  border-right:2px solid rgba(184,147,90,0.7);
-  border-bottom:2px solid rgba(184,147,90,0.7);
-  transform:rotate(45deg);
-  display:inline-block;
-  margin-left:auto;
-  transition:transform 0.25s;
-  flex-shrink:0;
-}
-details[open] > summary .mob-arrow {
-  transform:rotate(-135deg);
-  border-color:#C9A870;
-}
-.mob-sub {
-  display:flex; flex-direction:column;
-  background:rgba(8,20,14,0.8);
-  padding:4px 0 12px 0;
-}
-.mob-sub a {
-  display:block;
-  padding:12px 32px 12px 48px;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:13px; letter-spacing:1.5px;
-  color:rgba(184,147,90,0.8);
-  text-decoration:none;
-}
-.mob-sub a:active { color:#C9A870; }
-.mob-item-link .mob-title { text-decoration:none; }
-
-
-@media (max-width:900px) {
-  nav { padding:0 16px; height:48px; display:flex; justify-content:space-between; align-items:center; }
-  .nav-logo img { height:40px !important; }
-  .section-inner { padding-top:70px !important; }
-  .nav-menu { display:none; }
-  .nav-hamburger { display:flex !important; margin-left:auto; }
-  .nav-cta { display:none; }
-  .section-inner { padding:60px 20px; }
-  .hero-grid, .company-grid, .coaching-intro, .vm-grid,
-  .avatar-grid, .contact-grid, .two-col { grid-template-columns:1fr; }
-  .brand-highlight { grid-template-columns:1fr 1fr; }
-  .biz-grid { grid-template-columns:1fr; }
-  .field-grid { grid-template-columns:1fr; }
-  .hero-title { font-size:32px; } .hero-title-sub { font-size:32px; }
-  .jc-featured { grid-template-columns:1fr; }
-  .media-grid, .book-grid { grid-template-columns:1fr; }
-  #hero { padding:90px 20px 60px; }
-  .hero-photo-frame { width:280px; height:330px; }
-  .section-title, .section-title-light { font-size:28px; }
-  .jc-featured { padding:28px; }
-  footer { flex-direction:column; align-items:flex-start; gap:16px; padding:32px 20px; }
-  .footer-links { flex-wrap:wrap; gap:10px; }
-  .hero-grid { grid-template-columns:1fr; text-align:center; }
-  .hero-photo-wrap { align-items:center; }
-  .hero-btns { justify-content:center; }
-}
-@media (max-width:480px) {
-  .hero-title { font-size:26px; }
-  .hero-title-sub { font-size:26px; }
-  .section-title, .section-title-light { font-size:24px; }
-  .hero-photo-frame { width:240px; height:280px; }
-  .section-inner { padding:48px 16px; }
-}
-/* ── Contact Info Cards ── */
-@media (max-width:600px) {
-  .contact-info > div { grid-template-columns:1fr !important; }
-}
-
-/* ── TOP 버튼 ── */
-#topBtn {
-  display:none;
-  position:fixed;
-  right:16px; bottom:80px;
-  z-index:200;
-  width:44px; height:44px;
-  background:rgba(15,32,24,0.88);
-  border:1.5px solid #C9A870;
-  border-radius:50%;
-  cursor:pointer;
-  align-items:center;
-  justify-content:center;
-  backdrop-filter:blur(8px);
-  transition:all 0.25s;
-  opacity:0;
-  pointer-events:none;
-}
-#topBtn.visible {
-  opacity:1;
-  pointer-events:auto;
-}
-#topBtn:hover, #topBtn:active {
-  background:rgba(184,147,90,0.25);
-}
-#topBtn svg {
-  width:18px; height:18px;
-  stroke:#C9A870; fill:none;
-  stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
-}
-
-@media (max-width:900px) {
-  #fixedMenuBtn { display:flex; }
-  #topBtn { display:flex; }
-}
-
-
-
-/* radio checked → 하위메뉴 표시 */
-.mob-radio:checked + .mob-title + .mob-sub { display:flex; }
-.mob-radio:checked + .mob-title .mob-arrow { transform:rotate(45deg); color:#C9A870; }
-
 
 </style>
 </head>
@@ -776,54 +629,34 @@ details[open] > summary .mob-arrow {
 <!-- ── 모바일 오버레이 메뉴 ── -->
 <div class="nav-overlay" id="navOverlay">
 
+  <a class="mob-sec-title" href="company.html" onclick="closeNav()">회사 소개</a>
+  <a class="mob-sub-link" href="company_ceo.html" onclick="closeNav()">CEO Message</a>
+  <a class="mob-sub-link" href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
+  <a class="mob-sub-link" href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
+  <a class="mob-sub-link" href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
+  <a class="mob-sub-link" href="company_media.html" onclick="closeNav()">미디어</a>
+  <a class="mob-sub-link" href="company_books.html" onclick="closeNav()">저서</a>
+
+  <a class="mob-sec-title" href="business.html" onclick="closeNav()">비즈니스 코칭</a>
+  <a class="mob-sub-link" href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
+  <a class="mob-sub-link" href="business_fields.html" onclick="closeNav()">코칭 분야</a>
+
+  <a class="mob-sec-title" href="life.html" onclick="closeNav()">라이프 코칭</a>
+  <a class="mob-sub-link" href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
+  <a class="mob-sub-link" href="life_fields.html" onclick="closeNav()">코칭 분야</a>
+
+  <a class="mob-sec-title" href="jc.html" onclick="closeNav()">잡 크래프팅</a>
+
+  <a class="mob-sec-title" href="avatar.html" onclick="closeNav()">아봐타®</a>
+  <a class="mob-sub-link" href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
+  <a class="mob-sub-link" href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
+  <a class="mob-sub-link" href="avatar_schedule.html" onclick="closeNav()">아봐타® 코스일정</a>
+  <a class="mob-sub-link" href="avatar_faq.html" onclick="closeNav()">FAQ</a>
+  <a class="mob-sub-link" href="avatar_books.html" onclick="closeNav()">아봐타® 도서</a>
+
+  <a class="mob-sec-title" href="contact.html" onclick="closeNav()">문의하기</a>
+
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
-
-  <details class="mob-item">
-    <summary class="mob-title">회사 소개 <span class="mob-arrow"></span></summary>
-    <div class="mob-sub">
-      <a href="company_ceo.html" onclick="closeNav()">CEO Message</a>
-      <a href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
-      <a href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
-      <a href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
-      <a href="company_media.html" onclick="closeNav()">미디어</a>
-      <a href="company_books.html" onclick="closeNav()">저서</a>
-    </div>
-  </details>
-
-  <details class="mob-item">
-    <summary class="mob-title">비즈니스 코칭 <span class="mob-arrow"></span></summary>
-    <div class="mob-sub">
-      <a href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
-      <a href="business_fields.html" onclick="closeNav()">코칭 분야</a>
-    </div>
-  </details>
-
-  <details class="mob-item">
-    <summary class="mob-title">라이프 코칭 <span class="mob-arrow"></span></summary>
-    <div class="mob-sub">
-      <a href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
-      <a href="life_fields.html" onclick="closeNav()">코칭 분야</a>
-    </div>
-  </details>
-
-  <div class="mob-item mob-item-link">
-    <a href="jc.html" class="mob-title" onclick="closeNav()">잡 크래프팅</a>
-  </div>
-
-  <details class="mob-item">
-    <summary class="mob-title">아봐타® <span class="mob-arrow"></span></summary>
-    <div class="mob-sub">
-      <a href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
-      <a href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
-      <a href="avatar_schedule.html" onclick="closeNav()">아봐타® 코스일정</a>
-      <a href="avatar_faq.html" onclick="closeNav()">FAQ</a>
-      <a href="avatar_books.html" onclick="closeNav()">아봐타® 도서</a>
-    </div>
-  </details>
-
-  <div class="mob-item mob-item-link">
-    <a href="contact.html" class="mob-title" onclick="closeNav()">문의하기</a>
-  </div>
 
 </div>
 
@@ -1370,31 +1203,39 @@ function toggleFaq(el){
   var btn=document.getElementById('fixedMenuBtn');
   var ov=document.getElementById('navOverlay');
   var top=document.getElementById('topBtn');
-  if(btn&&ov){
+
+  function resetOv(){
+    if(!ov||!btn) return;
+    ov.classList.remove('open');
+    btn.classList.remove('is-open');
+    document.body.style.overflow='';
+    ov.querySelectorAll('details').forEach(function(d){d.removeAttribute('open');});
+  }
+
+  if(btn&&ov&&!btn.dataset.bound){
+    btn.dataset.bound='1';
     btn.addEventListener('click',function(){
       var open=ov.classList.contains('open');
-      ov.classList.toggle('open',!open);
-      btn.classList.toggle('is-open',!open);
-      document.body.style.overflow=open?'':'hidden';
+      if(open){ resetOv(); }
+      else{ ov.classList.add('open'); btn.classList.add('is-open'); document.body.style.overflow='hidden'; }
     });
-    ov.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click',function(){
-        ov.classList.remove('open');
-        btn.classList.remove('is-open');
-        document.body.style.overflow='';
-      });
+    ov.addEventListener('click',function(e){
+      var t=e.target;
+      while(t&&t!==ov){ if(t.tagName==='A'){resetOv();return;} t=t.parentElement; }
     });
   }
-  if(top){
+
+  if(top&&!top.dataset.bound){
+    top.dataset.bound='1';
     window.addEventListener('scroll',function(){
       var show=window.scrollY>300;
       top.style.opacity=show?'1':'0';
       top.style.pointerEvents=show?'auto':'none';
     },{passive:true});
-    top.addEventListener('click',function(){
-      window.scrollTo({top:0,behavior:'smooth'});
-    });
+    top.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
   }
+
+  window.addEventListener('pageshow',function(){ resetOv(); });
 })();
 </script>
 </html>
