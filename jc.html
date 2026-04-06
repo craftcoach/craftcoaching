@@ -552,7 +552,7 @@ footer {
   justify-content:flex-start;
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
-  padding-top:64px;
+  padding-top:16px;
   padding-bottom:40px;
   gap:0;
 }
@@ -656,39 +656,36 @@ footer {
 }
 
 
-/* ── 모바일 아코디언 메뉴 ── */
+/* ── 모바일 아코디언 (radio 방식) ── */
+.mob-radio { display:none; }
 .mob-item {
   width:100%;
-  border-bottom:0.5px solid rgba(184,147,90,0.15);
+  border-bottom:0.5px solid rgba(184,147,90,0.2);
 }
+.mob-item-link .mob-title { text-decoration:none; }
 .mob-title {
   display:flex; justify-content:space-between; align-items:center;
-  width:100%; padding:18px 32px;
+  width:100%; padding:20px 32px;
   font-family:'Josefin Sans',sans-serif;
   font-size:15px; letter-spacing:2px;
   color:rgba(234,224,208,0.85);
   background:none; border:none;
-  cursor:pointer;
-  text-align:left;
-  pointer-events:auto;
-  -webkit-appearance:none;
-  outline:none;
+  cursor:pointer; text-align:left;
+  box-sizing:border-box;
 }
-.mob-title:active { color:#C9A870; background:rgba(184,147,90,0.05); }
+.mob-title:active { background:rgba(184,147,90,0.08); }
 .mob-arrow {
-  font-size:20px; color:rgba(184,147,90,0.7);
+  font-size:20px; font-weight:300;
+  color:rgba(184,147,90,0.7);
   transition:transform 0.25s;
   flex-shrink:0; margin-left:12px;
-  line-height:1;
 }
-.mob-item.open .mob-arrow { transform:rotate(45deg); color:#C9A870; }
 .mob-sub {
   display:none;
   flex-direction:column;
-  background:rgba(8,22,15,0.7);
-  padding:4px 0 10px 0;
+  background:rgba(8,20,14,0.8);
+  padding:4px 0 12px 0;
 }
-.mob-item.open .mob-sub { display:flex; }
 .mob-sub a {
   display:block;
   padding:12px 32px 12px 48px;
@@ -696,10 +693,12 @@ footer {
   font-size:13px; letter-spacing:1.5px;
   color:rgba(184,147,90,0.8);
   text-decoration:none;
-  touch-action:manipulation;
-  -webkit-tap-highlight-color:rgba(184,147,90,0.2);
 }
-.mob-sub a:active { color:#C9A870; background:rgba(184,147,90,0.08); }
+.mob-sub a:active { color:#C9A870; }
+/* radio checked → 하위메뉴 표시 */
+.mob-radio:checked + .mob-title + .mob-sub { display:flex; }
+.mob-radio:checked + .mob-title .mob-arrow { transform:rotate(45deg); color:#C9A870; }
+
 
 </style>
 </head>
@@ -763,11 +762,15 @@ footer {
 <!-- ── 모바일 오버레이 메뉴 ── -->
 <div class="nav-overlay" id="navOverlay">
 
+  <!-- 닫기 버튼 -->
+  <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
+
   <!-- 회사 소개 -->
   <div class="mob-item">
-    <button class="mob-title" type="button" onclick="mobToggle(this)">
-      <span>회사 소개</span><span class="mob-arrow">﹢</span>
-    </button>
+    <input type="radio" name="mob-acc" id="mob-company" class="mob-radio">
+    <label for="mob-company" class="mob-title">
+      <span>회사 소개</span><span class="mob-arrow">+</span>
+    </label>
     <div class="mob-sub">
       <a href="company_ceo.html" onclick="closeNav()">CEO Message</a>
       <a href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
@@ -780,9 +783,10 @@ footer {
 
   <!-- 비즈니스 코칭 -->
   <div class="mob-item">
-    <button class="mob-title" type="button" onclick="mobToggle(this)">
-      <span>비즈니스 코칭</span><span class="mob-arrow">﹢</span>
-    </button>
+    <input type="radio" name="mob-acc" id="mob-biz" class="mob-radio">
+    <label for="mob-biz" class="mob-title">
+      <span>비즈니스 코칭</span><span class="mob-arrow">+</span>
+    </label>
     <div class="mob-sub">
       <a href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
       <a href="business_fields.html" onclick="closeNav()">코칭 분야</a>
@@ -791,9 +795,10 @@ footer {
 
   <!-- 라이프 코칭 -->
   <div class="mob-item">
-    <button class="mob-title" type="button" onclick="mobToggle(this)">
-      <span>라이프 코칭</span><span class="mob-arrow">﹢</span>
-    </button>
+    <input type="radio" name="mob-acc" id="mob-life" class="mob-radio">
+    <label for="mob-life" class="mob-title">
+      <span>라이프 코칭</span><span class="mob-arrow">+</span>
+    </label>
     <div class="mob-sub">
       <a href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
       <a href="life_fields.html" onclick="closeNav()">코칭 분야</a>
@@ -801,17 +806,18 @@ footer {
   </div>
 
   <!-- 잡 크래프팅 -->
-  <div class="mob-item">
-    <button class="mob-title" type="button" onclick="closeNav();location.href='jc.html'">
+  <div class="mob-item mob-item-link">
+    <a href="jc.html" class="mob-title" onclick="closeNav()">
       <span>잡 크래프팅</span>
-    </button>
+    </a>
   </div>
 
   <!-- 아봐타 -->
   <div class="mob-item">
-    <button class="mob-title" type="button" onclick="mobToggle(this)">
-      <span>아봐타®</span><span class="mob-arrow">﹢</span>
-    </button>
+    <input type="radio" name="mob-acc" id="mob-avatar" class="mob-radio">
+    <label for="mob-avatar" class="mob-title">
+      <span>아봐타®</span><span class="mob-arrow">+</span>
+    </label>
     <div class="mob-sub">
       <a href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
       <a href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
@@ -822,14 +828,14 @@ footer {
   </div>
 
   <!-- 문의하기 -->
-  <div class="mob-item">
-    <button class="mob-title" type="button" onclick="closeNav();location.href='contact.html'">
+  <div class="mob-item mob-item-link">
+    <a href="contact.html" class="mob-title" onclick="closeNav()">
       <span>문의하기</span>
-    </button>
+    </a>
   </div>
 
-  <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
 </div>
+
 
 <script>
 function toggleNav(){
@@ -845,14 +851,7 @@ function closeNav(){
   document.body.style.overflow='';
 }
 
-function mobToggle(el){
-  var item = el.parentElement;
-  var isOpen = item.classList.contains('open');
-  document.querySelectorAll('#navOverlay .mob-item').forEach(function(i){
-    i.classList.remove('open');
-  });
-  if(!isOpen){ item.classList.add('open'); }
-}
+/* mobToggle: radio 방식으로 대체 */
 </script>
 
 <section id="jc-section" style="background:var(--dark);scroll-margin-top:72px;">
