@@ -473,12 +473,12 @@ section { scroll-margin-top: 72px; }
 footer {
   background:#0F2014;
   border-top: 0.5px solid rgba(184,147,90,0.2);
-  padding:48px;
-  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;
+  padding:14px 48px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:nowrap; gap:24px;
 }
 .footer-logo-text .nav-logo-craft { font-size:14px; }
 .footer-logo-text .nav-logo-coaching { font-size:14px; }
-.footer-info { font-size:12px; color:rgba(234,224,208,0.35); line-height:1.8; text-align:center; }
+.footer-info { font-size:12px; color:rgba(234,224,208,0.35); line-height:1.8; text-align:right; }
 .footer-links { display:flex; gap:20px; }
 .footer-links a {
   font-family:'Noto Sans KR',sans-serif; font-size:11px; letter-spacing:1.5px;
@@ -747,6 +747,66 @@ img { max-width:100%; height:auto; }
 
 }
 /* ══ END RESPONSIVE ENHANCEMENT ══ */
+
+
+/* ── 모바일 오버레이 아코디언 ── */
+.nav-overlay {
+  align-items:center !important;
+}
+details.mob-accordion {
+  border-bottom:0.5px solid rgba(184,147,90,0.15);
+  width:100%;
+  max-width:320px;
+}
+details.mob-accordion > summary {
+  list-style:none; cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:16px 24px;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:15px; letter-spacing:1.5px;
+  color:#ffffff;
+  text-align:center;
+}
+details.mob-accordion > summary::-webkit-details-marker { display:none; }
+details.mob-accordion > summary::marker { display:none; }
+details.mob-accordion[open] > summary { color:#C9A870; }
+.mob-arrow {
+  font-size:18px; color:rgba(184,147,90,0.7);
+  transition:transform 0.25s; display:inline-block;
+}
+details.mob-accordion[open] .mob-arrow { transform:rotate(90deg); color:#C9A870; }
+details.mob-accordion a.mob-sub-link {
+  display:block;
+  padding:11px 24px;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:13px; letter-spacing:1px;
+  color:rgba(255,255,255,0.75);
+  text-decoration:none;
+  border-bottom:0.5px solid rgba(184,147,90,0.08);
+  text-align:center;
+}
+details.mob-accordion a.mob-sub-link:active { color:#C9A870; }
+a.mob-sec-title.mob-direct {
+  display:block;
+  padding:16px 24px;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:15px; letter-spacing:1.5px;
+  color:#ffffff;
+  text-decoration:none;
+  border-bottom:0.5px solid rgba(184,147,90,0.15);
+  text-align:center;
+  width:100%;
+  max-width:320px;
+}
+a.mob-sec-title.mob-direct:active { color:#C9A870; }
+.nav-overlay-close {
+  text-align:center;
+  margin-top:24px;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:12px; letter-spacing:3px;
+  color:rgba(184,147,90,0.7); cursor:pointer;
+  background:none; border:none;
+}
 
 </style>
 </head>
