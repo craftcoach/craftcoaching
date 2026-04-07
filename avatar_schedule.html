@@ -541,6 +541,20 @@ footer {
 /* 열린 상태 X 표시 */
 
 
+
+.nav-overlay {
+  display:none;
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  background:rgba(10,25,18,0.97);
+  z-index:9999;
+  flex-direction:column;
+  align-items:stretch;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  padding:56px 0 40px;
+}
+.nav-overlay.open { display:flex; }
+
 /* 모바일 메뉴 오버레이 */
 
 .nav-overlay-item {
