@@ -711,7 +711,15 @@ footer {
 
 /* ── 모바일 아코디언 ── */
 details.mob-accordion { border-bottom:0.5px solid rgba(184,147,90,0.15); }
-details.mob-accordion > summary { list-style:none; cursor:pointer; }
+details.mob-accordion > summary {
+  list-style:none; cursor:pointer;
+  display:flex; justify-content:center; align-items:center; gap:10px;
+  padding:16px 24px;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:15px; letter-spacing:1.5px;
+  color:#ffffff;
+  text-align:center;
+}
 details.mob-accordion > summary::-webkit-details-marker { display:none; }
 details.mob-accordion > summary::marker { display:none; }
 .mob-arrow {
@@ -903,6 +911,141 @@ img { max-width:100%; height:auto; }
   .avatar-intro-grid { grid-template-columns:1fr !important; gap:40px !important; }
 }
 /* ══ END RESPONSIVE ENHANCEMENT ══ */
+
+/* ══════════════════════════════════════════
+   MOBILE ENHANCED — 모바일 최적화 강화
+   ══════════════════════════════════════════ */
+
+/* viewport meta 보완 */
+html { -webkit-text-size-adjust:100%; }
+
+/* ── 공통 모바일 (768px 이하) ── */
+@media (max-width:768px) {
+
+  /* Playfair 폰트 크기 모바일 축소 */
+  [style*="font-family:'Playfair Display'"],
+  [style*="Playfair Display"] {
+    font-size:clamp(16px, 4.5vw, 24px) !important;
+  }
+
+  /* 인라인 그리드 2칸 → 1칸 */
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1.5fr"],
+  [style*="grid-template-columns:repeat(2"] {
+    grid-template-columns:1fr !important;
+  }
+
+  /* 인라인 3칸 그리드 → 1칸 */
+  [style*="grid-template-columns:repeat(3"],
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns:1fr !important;
+  }
+
+  /* 큰 인라인 패딩 축소 */
+  [style*="padding:48px"],
+  [style*="padding: 48px"] {
+    padding:28px 20px !important;
+  }
+
+  /* 큰 gap 축소 */
+  [style*="gap:60px"] { gap:32px !important; }
+  [style*="gap:48px"] { gap:24px !important; }
+
+  /* 히어로 텍스트 */
+  .hero-title, .hero-title-sub { font-size:28px !important; }
+
+  /* avatar-intro 2컬럼 */
+  .avatar-intro-grid { grid-template-columns:1fr !important; }
+
+  /* company_vision 그리드 */
+  .vm-grid { grid-template-columns:1fr !important; }
+
+  /* jc types 세로 */
+  .jc-types { gap:12px !important; }
+  .jc-type { flex-direction:column !important; gap:8px !important; }
+
+  /* contact 폼 */
+  .form-row { grid-template-columns:1fr !important; }
+
+  /* audio 플레이어 */
+  audio { width:100% !important; }
+
+  /* 책 그리드 */
+  .book-grid { grid-template-columns:1fr !important; }
+
+  /* footer */
+  footer {
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:16px !important;
+    padding:20px 16px !important;
+  }
+  .footer-info { text-align:left !important; font-size:11px; }
+
+  /* 섹션 태그 */
+  .section-tag { font-size:9px !important; }
+
+  /* avatar courses 카드 내부 flex → column */
+  .avatar-course { flex-direction:column !important; }
+
+  /* schedule 테이블 */
+  .schedule-table, .schedule-table th, .schedule-table td {
+    font-size:12px !important;
+    padding:8px 6px !important;
+  }
+
+}
+
+/* ── 소형 (480px 이하) ── */
+@media (max-width:480px) {
+
+  .section-inner { padding:80px 16px 48px !important; }
+
+  /* 섹션 타이틀 */
+  .section-title,
+  .section-title-light { font-size:22px !important; }
+
+  /* contact 큰 타이틀 */
+  [style*="font-size:58px"] { font-size:32px !important; }
+  [style*="font-size:40px"] { font-size:26px !important; }
+  [style*="font-size:26px"] { font-size:20px !important; }
+  [style*="font-size:24px"] { font-size:19px !important; }
+
+  /* 브랜드 하이라이트 → 1칸 */
+  .brand-highlight { grid-template-columns:1fr !important; }
+
+  /* jc featured 패딩 */
+  .jc-featured { padding:20px 16px !important; }
+
+  /* avatar course 아이템 */
+  .avatar-course-grid { grid-template-columns:1fr !important; }
+
+  /* VM 카드 */
+  .vm-card { padding:24px 16px !important; }
+
+  /* 미디어 카드 */
+  .media-card { padding:20px 16px !important; }
+
+  /* biz/field 카드 */
+  .biz-card, .field-card { padding:24px 16px !important; }
+
+  /* FAQ 항목 */
+  .faq-question { font-size:14px !important; }
+  .faq-answer { font-size:13px !important; }
+
+  /* 책 카드 */
+  .book-card { padding:20px !important; }
+
+  /* 오디오 컨트롤 */
+  audio { height:40px !important; }
+
+  /* 인라인 큰 padding 추가 축소 */
+  [style*="padding:28px"] { padding:20px 14px !important; }
+
+}
+/* ══ END MOBILE ENHANCED ══ */
+
 
 
 /* ── 모바일 오버레이 아코디언 ── */
