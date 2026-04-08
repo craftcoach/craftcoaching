@@ -752,15 +752,16 @@ img { max-width:100%; height:auto; }
 /* ── 모바일 오버레이 아코디언 ── */
 .nav-overlay {
   align-items:center !important;
+  background:rgba(27,58,42,0.98) !important;
 }
 details.mob-accordion {
-  border-bottom:0.5px solid rgba(184,147,90,0.15);
+  border-bottom:0.5px solid rgba(184,147,90,0.2);
   width:100%;
   max-width:320px;
 }
 details.mob-accordion > summary {
   list-style:none; cursor:pointer;
-  display:flex; justify-content:space-between; align-items:center;
+  display:flex; justify-content:center; align-items:center; gap:10px;
   padding:16px 24px;
   font-family:'Noto Sans KR',sans-serif;
   font-size:15px; letter-spacing:1.5px;
@@ -771,8 +772,9 @@ details.mob-accordion > summary::-webkit-details-marker { display:none; }
 details.mob-accordion > summary::marker { display:none; }
 details.mob-accordion[open] > summary { color:#C9A870; }
 .mob-arrow {
-  font-size:18px; color:rgba(184,147,90,0.7);
+  font-size:14px; color:rgba(184,147,90,0.8);
   transition:transform 0.25s; display:inline-block;
+  flex-shrink:0;
 }
 details.mob-accordion[open] .mob-arrow { transform:rotate(90deg); color:#C9A870; }
 details.mob-accordion a.mob-sub-link {
@@ -780,9 +782,9 @@ details.mob-accordion a.mob-sub-link {
   padding:11px 24px;
   font-family:'Noto Sans KR',sans-serif;
   font-size:13px; letter-spacing:1px;
-  color:rgba(255,255,255,0.75);
+  color:rgba(255,255,255,0.8);
   text-decoration:none;
-  border-bottom:0.5px solid rgba(184,147,90,0.08);
+  border-bottom:0.5px solid rgba(184,147,90,0.1);
   text-align:center;
 }
 details.mob-accordion a.mob-sub-link:active { color:#C9A870; }
@@ -793,7 +795,7 @@ a.mob-sec-title.mob-direct {
   font-size:15px; letter-spacing:1.5px;
   color:#ffffff;
   text-decoration:none;
-  border-bottom:0.5px solid rgba(184,147,90,0.15);
+  border-bottom:0.5px solid rgba(184,147,90,0.2);
   text-align:center;
   width:100%;
   max-width:320px;
@@ -804,7 +806,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
   margin-top:24px;
   font-family:'Noto Sans KR',sans-serif;
   font-size:12px; letter-spacing:3px;
-  color:rgba(184,147,90,0.7); cursor:pointer;
+  color:rgba(184,147,90,0.8); cursor:pointer;
   background:none; border:none;
 }
 
