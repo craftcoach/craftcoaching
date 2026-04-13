@@ -1061,7 +1061,12 @@ function toggleNav(){
   const ov=document.getElementById('navOverlay');
   btn.classList.toggle('open');
   ov.classList.toggle('open');
-  document.body.style.overflow=ov.classList.contains('open')?'hidden':'';
+  if(ov.classList.contains('open')){
+    document.body.style.overflow='hidden';
+    history.pushState({navOpen:true}, '');
+  } else {
+    document.body.style.overflow='';
+  }
 }
 function closeNav(){
   document.getElementById('navBtn').classList.remove('open');
@@ -1069,6 +1074,12 @@ function closeNav(){
   document.body.style.overflow='';
   document.querySelectorAll('#navOverlay details').forEach(function(d){ d.removeAttribute('open'); });
 }
+window.addEventListener('popstate', function(e){
+  const ov=document.getElementById('navOverlay');
+  if(ov && ov.classList.contains('open')){
+    closeNav();
+  }
+});
 
 /* mobToggle: radio 방식으로 대체 */
 </script>

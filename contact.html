@@ -1052,8 +1052,12 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
 </div>
 <script>
-function toggleNav(){var btn=document.getElementById('fixedMenuBtn');var ov=document.getElementById('navOverlay');if(!btn||!ov)return;var open=ov.classList.contains('open');if(open){ov.classList.remove('open');btn.classList.remove('is-open');document.body.style.overflow='';}else{ov.classList.add('open');btn.classList.add('is-open');document.body.style.overflow='hidden';}}
-function closeNav(){var ov=document.getElementById('navOverlay');var btn=document.getElementById('fixedMenuBtn');if(ov)ov.classList.remove('open');if(btn)btn.classList.remove('is-open');document.body.style.overflow='';}
+function toggleNav(){var btn=document.getElementById('fixedMenuBtn');var ov=document.getElementById('navOverlay');if(!btn||!ov)return;var open=ov.classList.contains('open');if(open){ov.classList.remove('open');btn.classList.remove('is-open');document.body.style.overflow='';}else{ov.classList.add('open');btn.classList.add('is-open');document.body.style.overflow='hidden';history.pushState({navOpen:true},'');}}
+function closeNav(){var ov=document.getElementById('navOverlay');var btn=document.getElementById('fixedMenuBtn');if(ov)ov.classList.remove('open');if(btn)btn.classList.remove('is-open');document.body.style.overflow='';
+window.addEventListener('popstate', function(e){
+  var ov=document.getElementById('navOverlay');
+  if(ov && ov.classList.contains('open')){ closeNav(); }
+});}
 </script>
 
 <section id="contact" style="background:var(--cream);">
