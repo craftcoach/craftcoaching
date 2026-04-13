@@ -1183,6 +1183,7 @@ function toggleNav(){
   if(ov.classList.contains('open')){
     document.body.style.overflow='hidden';
     history.pushState({navOpen:true}, '');
+    sessionStorage.setItem('navWasOpen','1');
   } else {
     document.body.style.overflow='';
   }
@@ -1292,7 +1293,11 @@ window.addEventListener('popstate', function(e){
     window.addEventListener('scroll',function(){var s=window.scrollY>300;top.style.opacity=s?'1':'0';top.style.pointerEvents=s?'auto':'none';},{passive:true});
     top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
   }
-  window.addEventListener('pageshow',function(){resetOv();});
+  window.addEventListener('pageshow',function(e){
+    if(sessionStorage.getItem('navWasOpen')==='1'){
+      if(ov&&btn){ ov.classList.add('open'); btn.classList.add('is-open'); document.body.style.overflow='hidden'; history.pushState({navOpen:true},''); }
+    } else { resetOv(); }
+  });
 })();
 </script>
 </html>

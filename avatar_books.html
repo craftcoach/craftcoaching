@@ -1138,6 +1138,7 @@ function toggleNav(){
   if(ov.classList.contains('open')){
     document.body.style.overflow='hidden';
     history.pushState({navOpen:true}, '');
+    sessionStorage.setItem('navWasOpen','1');
   } else {
     document.body.style.overflow='';
   }
