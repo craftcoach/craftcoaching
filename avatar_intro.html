@@ -1170,7 +1170,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 </nav>
 <!-- ── 모바일 오버레이 메뉴 ── -->
 <div class="nav-overlay" id="navOverlay">
-  <details class="mob-accordion">
+  <details class="mob-accordion" data-key="company">
     <summary class="mob-sec-title">회사 소개<span class="mob-arrow">›</span></summary>
     <a class="mob-sub-link" href="company_ceo.html" onclick="closeNav()">CEO Message</a>
     <a class="mob-sub-link" href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
@@ -1180,13 +1180,13 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
     <a class="mob-sub-link" href="company_books.html" onclick="closeNav()">저서</a>
   </details>
 
-  <details class="mob-accordion">
+  <details class="mob-accordion" data-key="business">
     <summary class="mob-sec-title">비즈니스 코칭<span class="mob-arrow">›</span></summary>
     <a class="mob-sub-link" href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
     <a class="mob-sub-link" href="business_fields.html" onclick="closeNav()">코칭 분야</a>
   </details>
 
-  <details class="mob-accordion">
+  <details class="mob-accordion" data-key="life">
     <summary class="mob-sec-title">라이프 코칭<span class="mob-arrow">›</span></summary>
     <a class="mob-sub-link" href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
     <a class="mob-sub-link" href="life_fields.html" onclick="closeNav()">코칭 분야</a>
@@ -1194,7 +1194,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 
   <a class="mob-sec-title mob-direct" href="jc.html" onclick="closeNav()">잡 크래프팅</a>
 
-  <details class="mob-accordion">
+  <details class="mob-accordion" data-key="avatar">
     <summary class="mob-sec-title">아봐타®<span class="mob-arrow">›</span></summary>
     <a class="mob-sub-link" href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
     <a class="mob-sub-link" href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
@@ -1211,29 +1211,52 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 
 
 <script>
-function toggleNav(){
-  const btn=document.getElementById('navBtn');
-  const ov=document.getElementById('navOverlay');
-  btn.classList.toggle('open');
-  ov.classList.toggle('open');
-  if(ov.classList.contains('open')){
-    document.body.style.overflow='hidden';
-    history.pushState({navOpen:true}, '');
-    sessionStorage.setItem('navWasOpen','1');
-  } else {
-    document.body.style.overflow='';
+function openNav(){
+  var btn=document.getElementById('navBtn');
+  var ov=document.getElementById('navOverlay');
+  if(!btn||!ov) return;
+  btn.classList.add('open');
+  ov.classList.add('open');
+  document.body.style.overflow='hidden';
+  // 저장된 아코디언 상태 복원
+  var saved=sessionStorage.getItem('navAccordion');
+  if(saved){
+    ov.querySelectorAll('details').forEach(function(d){ d.removeAttribute('open'); });
+    var el=ov.querySelector('details[data-key="'+saved+'"]');
+    if(el) el.setAttribute('open','');
   }
 }
-function closeNav(){
-  document.getElementById('navBtn').classList.remove('open');
-  document.getElementById('navOverlay').classList.remove('open');
-  document.body.style.overflow='';
-  document.querySelectorAll('#navOverlay details').forEach(function(d){ d.removeAttribute('open'); });
+function toggleNav(){
+  var ov=document.getElementById('navOverlay');
+  if(ov && ov.classList.contains('open')){ closeNav(); }
+  else { history.pushState({navOpen:true},''); openNav(); }
 }
+function closeNav(){
+  var btn=document.getElementById('navBtn');
+  var ov=document.getElementById('navOverlay');
+  if(btn) btn.classList.remove('open');
+  if(ov){
+    // 현재 열린 아코디언 저장
+    var opened=ov.querySelector('details[open]');
+    if(opened && opened.dataset.key) sessionStorage.setItem('navAccordion', opened.dataset.key);
+    else sessionStorage.removeItem('navAccordion');
+    ov.classList.remove('open');
+    ov.querySelectorAll('details').forEach(function(d){ d.removeAttribute('open'); });
+  }
+  document.body.style.overflow='';
+}
+// 페이지 로드 시 history 상태 추가 (뒤로가기 가로채기용)
+history.pushState({page:true},'');
 window.addEventListener('popstate', function(e){
-  const ov=document.getElementById('navOverlay');
+  var ov=document.getElementById('navOverlay');
   if(ov && ov.classList.contains('open')){
+    // overlay 열린 상태에서 뒤로가기 → overlay 닫고 실제 이전 페이지로
     closeNav();
+    history.back();
+  } else {
+    // overlay 닫힌 상태에서 뒤로가기 → overlay 열기
+    history.pushState({navOpen:true},'');
+    openNav();
   }
 });
 

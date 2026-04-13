@@ -1014,7 +1014,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 </nav>
 <!-- 모바일 오버레이 -->
 <div class="nav-overlay" id="navOverlay">
-  <details class="mob-accordion">
+  <details class="mob-accordion" data-key="company">
     <summary class="mob-sec-title">회사 소개<span class="mob-arrow">›</span></summary>
     <a class="mob-sub-link" href="company_ceo.html" onclick="closeNav()">CEO Message</a>
     <a class="mob-sub-link" href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
@@ -1024,13 +1024,13 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
     <a class="mob-sub-link" href="company_books.html" onclick="closeNav()">저서</a>
   </details>
 
-  <details class="mob-accordion">
+  <details class="mob-accordion" data-key="business">
     <summary class="mob-sec-title">비즈니스 코칭<span class="mob-arrow">›</span></summary>
     <a class="mob-sub-link" href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
     <a class="mob-sub-link" href="business_fields.html" onclick="closeNav()">코칭 분야</a>
   </details>
 
-  <details class="mob-accordion">
+  <details class="mob-accordion" data-key="life">
     <summary class="mob-sec-title">라이프 코칭<span class="mob-arrow">›</span></summary>
     <a class="mob-sub-link" href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
     <a class="mob-sub-link" href="life_fields.html" onclick="closeNav()">코칭 분야</a>
@@ -1038,7 +1038,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 
   <a class="mob-sec-title mob-direct" href="jc.html" onclick="closeNav()">잡 크래프팅</a>
 
-  <details class="mob-accordion">
+  <details class="mob-accordion" data-key="avatar">
     <summary class="mob-sec-title">아봐타®<span class="mob-arrow">›</span></summary>
     <a class="mob-sub-link" href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
     <a class="mob-sub-link" href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
@@ -1052,12 +1052,44 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
 </div>
 <script>
-function toggleNav(){var btn=document.getElementById('fixedMenuBtn');var ov=document.getElementById('navOverlay');if(!btn||!ov)return;var open=ov.classList.contains('open');if(open){ov.classList.remove('open');btn.classList.remove('is-open');document.body.style.overflow='';}else{ov.classList.add('open');btn.classList.add('is-open');document.body.style.overflow='hidden';history.pushState({navOpen:true},'');}}
-function closeNav(){var ov=document.getElementById('navOverlay');var btn=document.getElementById('fixedMenuBtn');if(ov)ov.classList.remove('open');if(btn)btn.classList.remove('is-open');document.body.style.overflow='';
-window.addEventListener('popstate', function(e){
+function openNav(){
+  var btn=document.getElementById('fixedMenuBtn');
+  var ov=document.getElementById('navOverlay');
+  if(!btn||!ov) return;
+  btn.classList.add('open'); btn.classList.add('is-open');
+  ov.classList.add('open');
+  document.body.style.overflow='hidden';
+  var saved=sessionStorage.getItem('navAccordion');
+  if(saved){
+    ov.querySelectorAll('details').forEach(function(d){ d.removeAttribute('open'); });
+    var el=ov.querySelector('details[data-key="'+saved+'"]');
+    if(el) el.setAttribute('open','');
+  }
+}
+function toggleNav(){
   var ov=document.getElementById('navOverlay');
   if(ov && ov.classList.contains('open')){ closeNav(); }
-});}
+  else { history.pushState({navOpen:true},''); openNav(); }
+}
+function closeNav(){
+  var ov=document.getElementById('navOverlay');
+  var btn=document.getElementById('fixedMenuBtn');
+  if(ov){
+    var opened=ov.querySelector('details[open]');
+    if(opened && opened.dataset.key) sessionStorage.setItem('navAccordion', opened.dataset.key);
+    else sessionStorage.removeItem('navAccordion');
+    ov.classList.remove('open');
+    ov.querySelectorAll('details').forEach(function(d){ d.removeAttribute('open'); });
+  }
+  if(btn){ btn.classList.remove('open'); btn.classList.remove('is-open'); }
+  document.body.style.overflow='';
+}
+history.pushState({page:true},'');
+window.addEventListener('popstate', function(e){
+  var ov=document.getElementById('navOverlay');
+  if(ov && ov.classList.contains('open')){ closeNav(); history.back(); }
+  else { history.pushState({navOpen:true},''); openNav(); }
+});
 </script>
 
 <section id="contact" style="background:var(--cream);">
