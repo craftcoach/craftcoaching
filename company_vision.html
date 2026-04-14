@@ -1237,44 +1237,47 @@ function openNav(){
   document.body.style.overflow='hidden';
   // 저장된 아코디언 상태 복원
   var saved=sessionStorage.getItem('navAccordion');
+  ov.querySelectorAll('details').forEach(function(d){ d.removeAttribute('open'); });
   if(saved){
-    ov.querySelectorAll('details').forEach(function(d){ d.removeAttribute('open'); });
     var el=ov.querySelector('details[data-key="'+saved+'"]');
-    if(el) el.setAttribute('open','');
+    if(el) el.open=true;
   }
 }
 function toggleNav(){
   var ov=document.getElementById('navOverlay');
   if(ov && ov.classList.contains('open')){ closeNav(); }
-  else { history.pushState({navOpen:true},''); openNav(); }
+  else { openNav(); history.pushState({nav:'open'},''); }
 }
 function closeNav(){
   var btn=document.getElementById('navBtn');
   var ov=document.getElementById('navOverlay');
+  // 현재 열린 아코디언 저장 (닫기 전에)
+  if(ov){
+    var opened=ov.querySelector('details[open]');
+    if(opened && opened.dataset.key){
+      sessionStorage.setItem('navAccordion', opened.dataset.key);
+    } else {
+      sessionStorage.removeItem('navAccordion');
+    }
+  }
   if(btn) btn.classList.remove('open');
   if(ov){
-    // 현재 열린 아코디언 저장
-    var opened=ov.querySelector('details[open]');
-    if(opened && opened.dataset.key) sessionStorage.setItem('navAccordion', opened.dataset.key);
-    else sessionStorage.removeItem('navAccordion');
     ov.classList.remove('open');
-    ov.querySelectorAll('details').forEach(function(d){ d.removeAttribute('open'); });
+    ov.querySelectorAll('details').forEach(function(d){ d.open=false; });
   }
   document.body.style.overflow='';
 }
-// 페이지 로드 시 history 상태 추가 (뒤로가기 가로채기용)
-history.pushState({page:true},'');
+// 뒤로가기 버튼 → 항상 메뉴로
+history.pushState({nav:'page'},'');
 window.addEventListener('popstate', function(e){
   var ov=document.getElementById('navOverlay');
   if(ov && ov.classList.contains('open')){
-    // overlay 열린 상태에서 뒤로가기 → overlay 닫고 실제 이전 페이지로
     closeNav();
-    history.back();
   } else {
-    // overlay 닫힌 상태에서 뒤로가기 → overlay 열기
-    history.pushState({navOpen:true},'');
     openNav();
   }
+  // 항상 새 상태를 추가해 다음 뒤로가기도 캐치
+  setTimeout(function(){ history.pushState({nav:'ready'},''); }, 0);
 });
 
 /* mobToggle: radio 방식으로 대체 */

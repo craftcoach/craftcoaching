@@ -1067,16 +1067,16 @@ function openNav(){
   ov.classList.add('open');
   document.body.style.overflow='hidden';
   var saved=sessionStorage.getItem('navAccordion');
+  ov.querySelectorAll('details').forEach(function(d){ d.open=false; });
   if(saved){
-    ov.querySelectorAll('details').forEach(function(d){ d.removeAttribute('open'); });
     var el=ov.querySelector('details[data-key="'+saved+'"]');
-    if(el) el.setAttribute('open','');
+    if(el) el.open=true;
   }
 }
 function toggleNav(){
   var ov=document.getElementById('navOverlay');
   if(ov && ov.classList.contains('open')){ closeNav(); }
-  else { history.pushState({navOpen:true},''); openNav(); }
+  else { openNav(); history.pushState({nav:'open'},''); }
 }
 function closeNav(){
   var ov=document.getElementById('navOverlay');
@@ -1086,16 +1086,17 @@ function closeNav(){
     if(opened && opened.dataset.key) sessionStorage.setItem('navAccordion', opened.dataset.key);
     else sessionStorage.removeItem('navAccordion');
     ov.classList.remove('open');
-    ov.querySelectorAll('details').forEach(function(d){ d.removeAttribute('open'); });
+    ov.querySelectorAll('details').forEach(function(d){ d.open=false; });
   }
   if(btn){ btn.classList.remove('open'); btn.classList.remove('is-open'); }
   document.body.style.overflow='';
 }
-history.pushState({page:true},'');
+history.pushState({nav:'page'},'');
 window.addEventListener('popstate', function(e){
   var ov=document.getElementById('navOverlay');
-  if(ov && ov.classList.contains('open')){ closeNav(); history.back(); }
-  else { history.pushState({navOpen:true},''); openNav(); }
+  if(ov && ov.classList.contains('open')){ closeNav(); }
+  else { openNav(); }
+  setTimeout(function(){ history.pushState({nav:'ready'},''); }, 0);
 });
 </script>
 
