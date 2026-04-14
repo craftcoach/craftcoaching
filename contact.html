@@ -1091,8 +1091,12 @@ function closeNav(){
   if(btn){ btn.classList.remove('open'); btn.classList.remove('is-open'); }
   document.body.style.overflow='';
 }
-history.pushState({nav:'page'},'');
+function isMobile(){ return window.innerWidth <= 900; }
+if(isMobile()){
+  history.pushState({nav:'page'},'');
+}
 window.addEventListener('popstate', function(e){
+  if(!isMobile()) return;
   var ov=document.getElementById('navOverlay');
   if(ov && ov.classList.contains('open')){ closeNav(); }
   else { openNav(); }

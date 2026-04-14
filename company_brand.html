@@ -1167,16 +1167,19 @@ function closeNav(){
   }
   document.body.style.overflow='';
 }
-// 뒤로가기 버튼 → 항상 메뉴로
-history.pushState({nav:'page'},'');
+// 뒤로가기 버튼 → 모바일에서만 메뉴로
+function isMobile(){ return window.innerWidth <= 900; }
+if(isMobile()){
+  history.pushState({nav:'page'},'');
+}
 window.addEventListener('popstate', function(e){
+  if(!isMobile()) return; // PC에서는 기본 동작 유지
   var ov=document.getElementById('navOverlay');
   if(ov && ov.classList.contains('open')){
     closeNav();
   } else {
     openNav();
   }
-  // 항상 새 상태를 추가해 다음 뒤로가기도 캐치
   setTimeout(function(){ history.pushState({nav:'ready'},''); }, 0);
 });
 </script>
