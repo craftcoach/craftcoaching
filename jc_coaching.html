@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.craftcoaching.kr/">
-  <meta property="og:title" content="Craft Coaching — 삶과 비즈니스를 정교하게 빚어갑니다">
+  <meta property="og:url" content="https://www.craftcoaching.kr/jc.html">
+  <meta property="og:title" content="잡 크래프팅 — Craft Coaching">
   <meta property="og:description" content="신념이 바뀌면 삶이 바뀝니다. 삶이 바뀌면 가치가 바뀝니다. 온전한 가치를 찾는 고객의 크래프팅 여정에 함께합니다.">
   <meta property="og:image" content="https://www.craftcoaching.kr/og_image.png">
   <meta property="og:image:type" content="image/png">
@@ -13,11 +13,11 @@
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="Craft Coaching">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Craft Coaching — 삶과 비즈니스를 정교하게 빚어갑니다">
+  <meta name="twitter:title" content="잡 크래프팅 — Craft Coaching">
   <meta name="twitter:description" content="신념이 바뀌면 삶이 바뀝니다. 삶이 바뀌면 가치가 바뀝니다. 온전한 가치를 찾는 고객의 크래프팅 여정에 함께합니다.">
   <meta name="twitter:image" content="https://www.craftcoaching.kr/og_image.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>회사 철학 — Craft Coaching</title>
+<title>잡 크래프팅 코칭 프로그램 — Craft Coaching</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 /* ── CSS Variables ── */
@@ -358,7 +358,7 @@ section { scroll-margin-top: 108px; }
   font-family:'Playfair Display',serif; font-size:15px; font-weight:600;
   color:#EAE0D0; margin-bottom:4px;
 }
-.jc-type-desc { font-size:12px; color:rgba(234,224,208,0.55); line-height:1.7; }
+.jc-type-desc { font-size:12px; color:rgba(234,224,208,0.55); line-height:1.7; white-space:nowrap; }
 
 /* ── Hero Photo ── */
 .hero-photo-wrap {
@@ -580,82 +580,6 @@ footer {
   color:var(--sage); cursor:pointer;
   background:none; border:none;
 }
-
-@media (max-width:900px) {
-  nav { padding:0 16px; height:48px; display:flex; justify-content:space-between; align-items:center; }
-  .nav-logo img { height:56px !important; }
-  .section-inner { padding-top:118px !important; }
-  .nav-menu { display:none; }
-  .nav-hamburger { display:flex !important; margin-left:auto; }
-  .nav-cta { display:none; }
-  .section-inner { padding:108px 20px 60px; }
-  .hero-grid, .company-grid, .coaching-intro, .vm-grid,
-  .avatar-grid, .contact-grid, .two-col { grid-template-columns:1fr; }
-  .brand-highlight { grid-template-columns:1fr 1fr; }
-  .biz-grid { grid-template-columns:1fr; }
-  .field-grid { grid-template-columns:1fr; }
-  .hero-title { font-size:32px; } .hero-title-sub { font-size:32px; }
-  .jc-featured { grid-template-columns:1fr; }
-  .media-grid, .book-grid { grid-template-columns:1fr; }
-  #hero { padding:90px 20px 60px; }
-  .hero-photo-frame { width:280px; height:330px; }
-  .section-title, .section-title-light { font-size:28px; }
-  .jc-featured { padding:28px; }
-  footer { flex-direction:column; align-items:flex-start; gap:16px; padding:32px 20px; }
-  .footer-links { flex-wrap:wrap; gap:10px; }
-  .hero-grid { grid-template-columns:1fr; text-align:center; }
-  .hero-photo-wrap { align-items:center; }
-  .hero-btns { justify-content:center; }
-}
-@media (max-width:480px) {
-  .hero-title { font-size:26px; }
-  .hero-title-sub { font-size:26px; }
-  .section-title, .section-title-light { font-size:24px; }
-  .hero-photo-frame { width:240px; height:280px; }
-  .section-inner { padding:96px 16px 48px; }
-}
-/* ── Contact Info Cards ── */
-@media (max-width:600px) {
-  .contact-info > div { grid-template-columns:1fr !important; }
-}
-
-/* ── TOP 버튼 ── */
-#topBtn {
-  display:none;
-  position:fixed;
-  right:16px; bottom:80px;
-  z-index:200;
-  width:44px; height:44px;
-  background:rgba(15,32,24,0.88);
-  border:1.5px solid #C9A870;
-  border-radius:50%;
-  cursor:pointer;
-  align-items:center;
-  justify-content:center;
-  backdrop-filter:blur(8px);
-  transition:all 0.25s;
-  opacity:0;
-  pointer-events:none;
-}
-#topBtn.visible {
-  opacity:1;
-  pointer-events:auto;
-}
-#topBtn:hover, #topBtn:active {
-  background:rgba(184,147,90,0.25);
-}
-#topBtn svg {
-  width:18px; height:18px;
-  stroke:#C9A870; fill:none;
-  stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
-}
-
-@media (max-width:900px) {
-  #fixedMenuBtn { display:flex; }
-  #topBtn { display:flex; }
-}
-
-
 
 
 /* nav 섹션 제목 (클릭 불가) */
@@ -954,6 +878,15 @@ html { -webkit-text-size-adjust:100%; }
   [style*="padding:28px"] { padding:20px 14px !important; }
 
 }
+
+/* jc-type 모바일 */
+@media (max-width:600px) {
+  .jc-type { flex-direction:column !important; gap:12px !important; padding:18px 14px !important; }
+  .jc-type-icon { width:36px !important; height:36px !important; flex-shrink:0; }
+  .jc-type-name { font-size:14px !important; }
+  .jc-type-desc { white-space:normal !important; font-size:12px !important; }
+}
+
 /* ══ END MOBILE ENHANCED ══ */
 
 
@@ -1030,7 +963,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
   </a>
   <ul class="nav-menu">
     <li>
-      <a href="company.html" style="border-bottom:2px solid #C9A870;color:#C9A870;padding-bottom:2px;">회사 소개</a>
+      <span class="nav-sec-label">회사 소개</span>
       <div class="dropdown">
         <a href="company_ceo.html">CEO Message</a>
         <a href="company_philosophy.html">회사 철학</a>
@@ -1055,11 +988,9 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
       </div>
     </li>
     <li>
-      <span class="nav-sec-label">잡 크래프팅</span>
+      <a href="jc.html" style="border-bottom:2px solid #C9A870;color:#C9A870;padding-bottom:2px;">잡 크래프팅</a>
       <div class="dropdown">
-        <a href="jc_intro.html">잡 크래프팅이란</a>
-        <a href="jc_coaching.html">코칭 프로그램</a>
-        <a href="jc_book.html">저서</a>
+        <a href="jc.html">잡 크래프팅 코칭</a>
       </div>
     </li>
     <li>
@@ -1127,6 +1058,8 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 
 </div>
 
+
+
 <script>
 function openNav(){
   var btn=document.getElementById('navBtn');
@@ -1176,29 +1109,116 @@ window.addEventListener('popstate', function(e){
     openNav();
   }
 });
+
+/* mobToggle: radio 방식으로 대체 */
 </script>
-<section style="background:var(--green);">
-  <div class="section-inner">
-    <div class="section-tag" style="color:var(--gold-lt);">Philosophy</div>
-    <h2 class="section-title-light" style="margin-bottom:32px;">회사 철학</h2>
-    <div id="philosophy" class="philosophy-block">
-        <div class="philosophy-quote">
-          "신념이 바뀌면 삶이 바뀝니다.<br>
-          삶이 바뀌면 가치가 바뀝니다.<br>
-          온전한 가치는 세상을 바꿉니다."
+
+<section id="jc-coaching" style="background:var(--cream);">
+  <div class="section-inner" style="padding-top:148px;">
+    <div class="section-tag">Coaching Programs</div>
+    <h2 class="section-title">잡 크래프팅 코칭 프로그램</h2>
+    <div class="gold-rule"></div>
+    <p style="font-size:15px;color:var(--text-lt);line-height:2;max-width:680px;margin-bottom:60px;">
+      이정숙 코치의 잡 크래프팅 코칭은 이론에 그치지 않고, 36년 기업 현장 경험과 KPC 인증 코칭 역량을 바탕으로 실제 삶과 일터에서 변화를 만들어냅니다.
+    </p>
+
+    <!-- 개인 코칭 -->
+    <div style="margin-bottom:60px;">
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:48px;padding:48px;background:var(--dark);align-items:start;">
+        <div>
+          <div style="font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;">PROGRAM 01</div>
+          <div style="font-family:'Playfair Display',serif;font-size:26px;color:#EAE0D0;margin-bottom:8px;line-height:1.3;">개인<br>잡 크래프팅 코칭</div>
+          <div style="font-size:12px;color:var(--sage-lt);margin-top:12px;line-height:1.8;">Individual<br>Job Crafting Coaching</div>
         </div>
-        <p class="philosophy-body">
-          우리는 코칭을 통해 사람의 내면을 깊이 이해하고, 조직의 본질을 탐구하며,
-          삶과 비즈니스의 구조를 정교하게 다듬는 장인정신 기반의 코칭을 실천합니다.
-        </p>
-        <div style="margin-top:36px;padding-top:28px;border-top:0.5px solid rgba(184,147,90,0.2);">
-          <p style="font-size:13px;color:rgba(234,224,208,0.4);line-height:1.8;font-family:'Noto Sans KR',sans-serif;letter-spacing:0.5px;">
-            Craft Coaching — 앞에서 끌지 않고, 뒤에서 밀지 않고. 함께 걸으며 성장의 속도를 존중하는 코칭.
+        <div>
+          <p style="font-size:14px;color:rgba(234,224,208,0.7);line-height:2;margin-bottom:28px;">
+            현재 직무에서 의미와 몰입을 잃어가고 있거나, 번아웃을 경험하고 있거나, 커리어 전환을 고민하는 분들을 위한 1:1 심층 코칭입니다. 자신의 강점·가치·동기를 탐색하고, 지금의 일을 '나답게' 재설계합니다.
           </p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+            <div style="background:rgba(255,255,255,0.05);padding:16px 20px;">
+              <div style="font-size:11px;letter-spacing:1px;color:var(--gold);margin-bottom:6px;">대상</div>
+              <div style="font-size:13px;color:rgba(234,224,208,0.8);line-height:1.7;">직무 의미 상실을 느끼는 직장인<br>번아웃·무기력을 경험 중인 분<br>커리어 변화를 원하는 분</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.05);padding:16px 20px;">
+              <div style="font-size:11px;letter-spacing:1px;color:var(--gold);margin-bottom:6px;">구성</div>
+              <div style="font-size:13px;color:rgba(234,224,208,0.8);line-height:1.7;">총 6~8회기 (회기당 60분)<br>잡 크래프팅 자가진단 포함<br>강점·가치 탐색 워크시트 활용</div>
+            </div>
+          </div>
+          <div style="padding:16px 20px;background:rgba(184,147,90,0.08);border-left:2px solid var(--gold);">
+            <div style="font-size:12px;color:rgba(184,147,90,0.9);line-height:1.8;">기대 효과: 직무 만족도 향상 · 자기 주도적 일 경험 회복 · 번아웃 예방 · 커리어 방향성 정립</div>
+          </div>
         </div>
+      </div>
     </div>
+
+    <!-- 팀/조직 코칭 -->
+    <div style="margin-bottom:60px;">
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:48px;padding:48px;background:white;border:0.5px solid rgba(27,58,42,0.1);align-items:start;">
+        <div>
+          <div style="font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;">PROGRAM 02</div>
+          <div style="font-family:'Playfair Display',serif;font-size:26px;color:var(--green);margin-bottom:8px;line-height:1.3;">팀·조직<br>잡 크래프팅 코칭</div>
+          <div style="font-size:12px;color:var(--sage);margin-top:12px;line-height:1.8;">Team & Organization<br>Job Crafting Coaching</div>
+        </div>
+        <div>
+          <p style="font-size:14px;color:var(--text-lt);line-height:2;margin-bottom:28px;">
+            구성원 개개인의 강점을 살리면서도 팀 전체의 협업과 성과를 높이는 팀 단위 잡 크래프팅 프로그램입니다. TCA 공인 팀코칭 역량과 Octagons 프레임워크를 바탕으로 팀 차원의 크래프팅을 설계합니다.
+          </p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+            <div style="background:rgba(27,58,42,0.05);padding:16px 20px;">
+              <div style="font-size:11px;letter-spacing:1px;color:var(--sage);margin-bottom:6px;">대상</div>
+              <div style="font-size:13px;color:var(--text-lt);line-height:1.7;">팀 몰입·협업 향상을 원하는 리더<br>조직 변화를 추진하는 HR 담당자<br>구성원 동기부여가 필요한 팀</div>
+            </div>
+            <div style="background:rgba(27,58,42,0.05);padding:16px 20px;">
+              <div style="font-size:11px;letter-spacing:1px;color:var(--sage);margin-bottom:6px;">구성</div>
+              <div style="font-size:13px;color:var(--text-lt);line-height:1.7;">워크숍 + 팀 코칭 병행<br>팀원 개별 진단 포함<br>조직 맞춤형 설계</div>
+            </div>
+          </div>
+          <div style="padding:16px 20px;background:rgba(27,58,42,0.05);border-left:2px solid var(--gold);">
+            <div style="font-size:12px;color:var(--text-lt);line-height:1.8;">기대 효과: 팀 내 역할 재조정 · 구성원 몰입도 향상 · 협업 품질 개선 · 조직 내 의미 있는 문화 형성</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 워크숍 -->
+    <div style="margin-bottom:60px;">
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:48px;padding:48px;background:white;border:0.5px solid rgba(27,58,42,0.1);align-items:start;">
+        <div>
+          <div style="font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;">PROGRAM 03</div>
+          <div style="font-family:'Playfair Display',serif;font-size:26px;color:var(--green);margin-bottom:8px;line-height:1.3;">잡 크래프팅<br>체험 워크숍</div>
+          <div style="font-size:12px;color:var(--sage);margin-top:12px;line-height:1.8;">Job Crafting<br>Workshop</div>
+        </div>
+        <div>
+          <p style="font-size:14px;color:var(--text-lt);line-height:2;margin-bottom:28px;">
+            잡 크래프팅 개념과 실습을 한 번에 경험하는 반일(3시간)~전일(6시간) 워크숍입니다. 이론 강의, 자가진단, 소그룹 토론, 개인 크래프팅 설계까지 단계별로 진행됩니다. 기업 강의·HR 교육·리더십 프로그램에 적합합니다.
+          </p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+            <div style="background:rgba(27,58,42,0.05);padding:16px 20px;">
+              <div style="font-size:11px;letter-spacing:1px;color:var(--sage);margin-bottom:6px;">형태</div>
+              <div style="font-size:13px;color:var(--text-lt);line-height:1.7;">반일 워크숍 (3시간)<br>전일 워크숍 (6시간)<br>온라인·오프라인 모두 가능</div>
+            </div>
+            <div style="background:rgba(27,58,42,0.05);padding:16px 20px;">
+              <div style="font-size:11px;letter-spacing:1px;color:var(--sage);margin-bottom:6px;">포함 내용</div>
+              <div style="font-size:13px;color:var(--text-lt);line-height:1.7;">잡 크래프팅 자가진단<br>강점·가치 탐색 워크시트<br>나만의 크래프팅 플랜 수립</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 문의 CTA -->
+    <div style="text-align:center;padding:48px;background:var(--dark);">
+      <div style="font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:16px;">GET STARTED</div>
+      <p style="font-size:17px;color:#EAE0D0;margin-bottom:8px;">어떤 프로그램이 맞는지 모르겠다면</p>
+      <p style="font-size:14px;color:rgba(234,224,208,0.6);margin-bottom:28px;">먼저 무료 상담을 통해 함께 방향을 찾아드립니다.</p>
+      <a href="contact.html" style="display:inline-block;padding:14px 32px;background:var(--gold);color:var(--dark);font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:2px;text-decoration:none;">상담 문의하기 →</a>
+    </div>
+
   </div>
 </section>
+
+<div style="height:60px;background:var(--cream);"></div>
+
 
 
 <footer>

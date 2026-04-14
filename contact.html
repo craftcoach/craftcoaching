@@ -605,7 +605,7 @@ img { max-width:100%; height:auto; }
 
   /* Nav */
   nav { padding:0 16px; height:48px; }
-  .nav-logo img { height:36px !important; }
+  .nav-logo img { height:56px !important; }
   .nav-menu { display:none !important; }
   .nav-hamburger { display:flex !important; }
   .nav-cta { display:none !important; }
@@ -989,9 +989,11 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
       </div>
     </li>
     <li>
-      <a href="jc.html">잡 크래프팅</a>
+      <span class="nav-sec-label">잡 크래프팅</span>
       <div class="dropdown">
-        <a href="jc.html">잡 크래프팅 코칭</a>
+        <a href="jc_intro.html">잡 크래프팅이란</a>
+        <a href="jc_coaching.html">코칭 프로그램</a>
+        <a href="jc_book.html">저서</a>
       </div>
     </li>
     <li>
@@ -1036,7 +1038,12 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
     <a class="mob-sub-link" href="life_fields.html" onclick="closeNav()">코칭 분야</a>
   </details>
 
-  <a class="mob-sec-title mob-direct" href="jc.html" onclick="closeNav()">잡 크래프팅</a>
+  <details class="mob-accordion" data-key="jc">
+    <summary class="mob-sec-title">잡 크래프팅<span class="mob-arrow">›</span></summary>
+    <a class="mob-sub-link" href="jc_intro.html" onclick="closeNav()">잡 크래프팅이란</a>
+    <a class="mob-sub-link" href="jc_coaching.html" onclick="closeNav()">코칭 프로그램</a>
+    <a class="mob-sub-link" href="jc_book.html" onclick="closeNav()">저서</a>
+  </details>
 
   <details class="mob-accordion" data-key="avatar">
     <summary class="mob-sec-title">아봐타®<span class="mob-arrow">›</span></summary>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.craftcoaching.kr/">
-  <meta property="og:title" content="Craft Coaching — 삶과 비즈니스를 정교하게 빚어갑니다">
+  <meta property="og:url" content="https://www.craftcoaching.kr/jc.html">
+  <meta property="og:title" content="잡 크래프팅 — Craft Coaching">
   <meta property="og:description" content="신념이 바뀌면 삶이 바뀝니다. 삶이 바뀌면 가치가 바뀝니다. 온전한 가치를 찾는 고객의 크래프팅 여정에 함께합니다.">
   <meta property="og:image" content="https://www.craftcoaching.kr/og_image.png">
   <meta property="og:image:type" content="image/png">
@@ -13,11 +13,11 @@
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="Craft Coaching">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Craft Coaching — 삶과 비즈니스를 정교하게 빚어갑니다">
+  <meta name="twitter:title" content="잡 크래프팅 — Craft Coaching">
   <meta name="twitter:description" content="신념이 바뀌면 삶이 바뀝니다. 삶이 바뀌면 가치가 바뀝니다. 온전한 가치를 찾는 고객의 크래프팅 여정에 함께합니다.">
   <meta name="twitter:image" content="https://www.craftcoaching.kr/og_image.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>회사 철학 — Craft Coaching</title>
+<title>잡 크래프팅이란 — Craft Coaching</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 /* ── CSS Variables ── */
@@ -358,7 +358,7 @@ section { scroll-margin-top: 108px; }
   font-family:'Playfair Display',serif; font-size:15px; font-weight:600;
   color:#EAE0D0; margin-bottom:4px;
 }
-.jc-type-desc { font-size:12px; color:rgba(234,224,208,0.55); line-height:1.7; }
+.jc-type-desc { font-size:12px; color:rgba(234,224,208,0.55); line-height:1.7; white-space:nowrap; }
 
 /* ── Hero Photo ── */
 .hero-photo-wrap {
@@ -580,82 +580,6 @@ footer {
   color:var(--sage); cursor:pointer;
   background:none; border:none;
 }
-
-@media (max-width:900px) {
-  nav { padding:0 16px; height:48px; display:flex; justify-content:space-between; align-items:center; }
-  .nav-logo img { height:56px !important; }
-  .section-inner { padding-top:118px !important; }
-  .nav-menu { display:none; }
-  .nav-hamburger { display:flex !important; margin-left:auto; }
-  .nav-cta { display:none; }
-  .section-inner { padding:108px 20px 60px; }
-  .hero-grid, .company-grid, .coaching-intro, .vm-grid,
-  .avatar-grid, .contact-grid, .two-col { grid-template-columns:1fr; }
-  .brand-highlight { grid-template-columns:1fr 1fr; }
-  .biz-grid { grid-template-columns:1fr; }
-  .field-grid { grid-template-columns:1fr; }
-  .hero-title { font-size:32px; } .hero-title-sub { font-size:32px; }
-  .jc-featured { grid-template-columns:1fr; }
-  .media-grid, .book-grid { grid-template-columns:1fr; }
-  #hero { padding:90px 20px 60px; }
-  .hero-photo-frame { width:280px; height:330px; }
-  .section-title, .section-title-light { font-size:28px; }
-  .jc-featured { padding:28px; }
-  footer { flex-direction:column; align-items:flex-start; gap:16px; padding:32px 20px; }
-  .footer-links { flex-wrap:wrap; gap:10px; }
-  .hero-grid { grid-template-columns:1fr; text-align:center; }
-  .hero-photo-wrap { align-items:center; }
-  .hero-btns { justify-content:center; }
-}
-@media (max-width:480px) {
-  .hero-title { font-size:26px; }
-  .hero-title-sub { font-size:26px; }
-  .section-title, .section-title-light { font-size:24px; }
-  .hero-photo-frame { width:240px; height:280px; }
-  .section-inner { padding:96px 16px 48px; }
-}
-/* ── Contact Info Cards ── */
-@media (max-width:600px) {
-  .contact-info > div { grid-template-columns:1fr !important; }
-}
-
-/* ── TOP 버튼 ── */
-#topBtn {
-  display:none;
-  position:fixed;
-  right:16px; bottom:80px;
-  z-index:200;
-  width:44px; height:44px;
-  background:rgba(15,32,24,0.88);
-  border:1.5px solid #C9A870;
-  border-radius:50%;
-  cursor:pointer;
-  align-items:center;
-  justify-content:center;
-  backdrop-filter:blur(8px);
-  transition:all 0.25s;
-  opacity:0;
-  pointer-events:none;
-}
-#topBtn.visible {
-  opacity:1;
-  pointer-events:auto;
-}
-#topBtn:hover, #topBtn:active {
-  background:rgba(184,147,90,0.25);
-}
-#topBtn svg {
-  width:18px; height:18px;
-  stroke:#C9A870; fill:none;
-  stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
-}
-
-@media (max-width:900px) {
-  #fixedMenuBtn { display:flex; }
-  #topBtn { display:flex; }
-}
-
-
 
 
 /* nav 섹션 제목 (클릭 불가) */
@@ -954,6 +878,15 @@ html { -webkit-text-size-adjust:100%; }
   [style*="padding:28px"] { padding:20px 14px !important; }
 
 }
+
+/* jc-type 모바일 */
+@media (max-width:600px) {
+  .jc-type { flex-direction:column !important; gap:12px !important; padding:18px 14px !important; }
+  .jc-type-icon { width:36px !important; height:36px !important; flex-shrink:0; }
+  .jc-type-name { font-size:14px !important; }
+  .jc-type-desc { white-space:normal !important; font-size:12px !important; }
+}
+
 /* ══ END MOBILE ENHANCED ══ */
 
 
@@ -1030,7 +963,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
   </a>
   <ul class="nav-menu">
     <li>
-      <a href="company.html" style="border-bottom:2px solid #C9A870;color:#C9A870;padding-bottom:2px;">회사 소개</a>
+      <span class="nav-sec-label">회사 소개</span>
       <div class="dropdown">
         <a href="company_ceo.html">CEO Message</a>
         <a href="company_philosophy.html">회사 철학</a>
@@ -1055,11 +988,9 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
       </div>
     </li>
     <li>
-      <span class="nav-sec-label">잡 크래프팅</span>
+      <span class="nav-sec-label" style="border-bottom:2px solid #C9A870;color:#C9A870;">잡 크래프팅</span>
       <div class="dropdown">
-        <a href="jc_intro.html">잡 크래프팅이란</a>
-        <a href="jc_coaching.html">코칭 프로그램</a>
-        <a href="jc_book.html">저서</a>
+        <a href="jc.html">잡 크래프팅 코칭</a>
       </div>
     </li>
     <li>
@@ -1127,6 +1058,8 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 
 </div>
 
+
+
 <script>
 function openNav(){
   var btn=document.getElementById('navBtn');
@@ -1176,29 +1109,144 @@ window.addEventListener('popstate', function(e){
     openNav();
   }
 });
+
+/* mobToggle: radio 방식으로 대체 */
 </script>
-<section style="background:var(--green);">
-  <div class="section-inner">
-    <div class="section-tag" style="color:var(--gold-lt);">Philosophy</div>
-    <h2 class="section-title-light" style="margin-bottom:32px;">회사 철학</h2>
-    <div id="philosophy" class="philosophy-block">
-        <div class="philosophy-quote">
-          "신념이 바뀌면 삶이 바뀝니다.<br>
-          삶이 바뀌면 가치가 바뀝니다.<br>
-          온전한 가치는 세상을 바꿉니다."
-        </div>
-        <p class="philosophy-body">
-          우리는 코칭을 통해 사람의 내면을 깊이 이해하고, 조직의 본질을 탐구하며,
-          삶과 비즈니스의 구조를 정교하게 다듬는 장인정신 기반의 코칭을 실천합니다.
+
+<section id="jc-intro" style="background:var(--dark);">
+  <div class="section-inner" style="padding-top:148px;">
+    <div class="section-tag">What is Job Crafting</div>
+    <h2 class="section-title-light">잡 크래프팅이란</h2>
+    <div class="gold-rule"></div>
+
+    <!-- 정의 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:72px;align-items:start;" class="avatar-intro-grid">
+      <div>
+        <div class="section-tag" style="color:var(--gold);">Definition</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:24px;color:#EAE0D0;margin-bottom:20px;line-height:1.3;">
+          일을 수동적으로 받아들이지 않고,<br>능동적으로 재설계하는 힘
+        </h3>
+        <p style="font-size:15px;color:rgba(234,224,208,0.7);line-height:2;margin-bottom:20px;">
+          잡 크래프팅(Job Crafting)은 미국 미시간대학교 에이미 브제스니에프스키(Amy Wrzesniewski) 교수와 예일대학교 제인 더튼(Jane Dutton) 교수가 2001년에 제안한 개념입니다.
         </p>
-        <div style="margin-top:36px;padding-top:28px;border-top:0.5px solid rgba(184,147,90,0.2);">
-          <p style="font-size:13px;color:rgba(234,224,208,0.4);line-height:1.8;font-family:'Noto Sans KR',sans-serif;letter-spacing:0.5px;">
-            Craft Coaching — 앞에서 끌지 않고, 뒤에서 밀지 않고. 함께 걸으며 성장의 속도를 존중하는 코칭.
-          </p>
+        <p style="font-size:15px;color:rgba(234,224,208,0.7);line-height:2;margin-bottom:20px;">
+          직무 기술서에 적힌 그대로 일하는 것이 아니라, 스스로 일의 내용·방식·관계·의미를 능동적으로 조정함으로써 일에 대한 몰입과 의미를 높이는 프로세스입니다.
+        </p>
+        <p style="font-size:15px;color:rgba(234,224,208,0.7);line-height:2;">
+          같은 직무라도 어떻게 크래프팅하느냐에 따라 일의 경험이 전혀 달라집니다.
+        </p>
+      </div>
+      <div>
+        <div class="section-tag" style="color:var(--gold);">핵심 원리</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="padding:20px 24px;background:rgba(255,255,255,0.05);border-left:2px solid var(--gold);">
+            <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;">PRINCIPLE 01</div>
+            <div style="font-size:15px;color:#EAE0D0;font-weight:600;margin-bottom:6px;">일은 주어지는 것이 아니라 만들어가는 것</div>
+            <div style="font-size:13px;color:rgba(234,224,208,0.6);line-height:1.8;">직무는 고정된 틀이 아닙니다. 개인의 의도와 노력에 따라 언제든 재설계할 수 있습니다.</div>
+          </div>
+          <div style="padding:20px 24px;background:rgba(255,255,255,0.05);border-left:2px solid var(--gold);">
+            <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;">PRINCIPLE 02</div>
+            <div style="font-size:15px;color:#EAE0D0;font-weight:600;margin-bottom:6px;">강점에서 출발하는 직무 재설계</div>
+            <div style="font-size:13px;color:rgba(234,224,208,0.6);line-height:1.8;">자신의 강점·가치·관심사를 기반으로 일을 재구성하면 몰입과 성과가 함께 높아집니다.</div>
+          </div>
+          <div style="padding:20px 24px;background:rgba(255,255,255,0.05);border-left:2px solid var(--gold);">
+            <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;">PRINCIPLE 03</div>
+            <div style="font-size:15px;color:#EAE0D0;font-weight:600;margin-bottom:6px;">의미(meaning)가 지속적 동기를 만든다</div>
+            <div style="font-size:13px;color:rgba(234,224,208,0.6);line-height:1.8;">외부 보상이 아닌 내면의 의미 발견이 지속 가능한 몰입과 성장을 가능하게 합니다.</div>
+          </div>
         </div>
+      </div>
     </div>
+
+    <!-- 3가지 유형 -->
+    <div style="margin-bottom:72px;">
+      <div class="section-tag" style="color:var(--gold);">3 Types of Job Crafting</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:#EAE0D0;margin-bottom:40px;">잡 크래프팅의 3가지 유형</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div style="background:rgba(27,58,42,0.5);border-top:2px solid var(--gold);padding:36px 28px;">
+          <div style="font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:16px;">TASK CRAFTING</div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:#EAE0D0;margin-bottom:12px;">과업 크래프팅</div>
+          <p style="font-size:13px;color:rgba(234,224,208,0.65);line-height:1.9;margin-bottom:20px;">
+            업무의 내용·방식·범위·시간을 능동적으로 조정합니다. 좋아하는 업무를 늘리고, 의미 없다고 느끼는 과업을 줄이거나 재구성합니다.
+          </p>
+          <div style="font-size:11px;color:var(--sage-lt);letter-spacing:1px;">예시: 보고서 작성을 스토리텔링 방식으로 전환, 반복 업무를 자동화하여 창의적 작업에 집중</div>
+        </div>
+        <div style="background:rgba(27,58,42,0.5);border-top:2px solid var(--gold);padding:36px 28px;">
+          <div style="font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:16px;">RELATIONAL CRAFTING</div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:#EAE0D0;margin-bottom:12px;">관계 크래프팅</div>
+          <p style="font-size:13px;color:rgba(234,224,208,0.65);line-height:1.9;margin-bottom:20px;">
+            함께 일하는 사람들과의 상호작용 방식을 재구성합니다. 누구와, 어떻게, 얼마나 소통할지를 스스로 설계합니다.
+          </p>
+          <div style="font-size:11px;color:var(--sage-lt);letter-spacing:1px;">예시: 후배 멘토링 관계 구축, 타 부서와 협업 확대, 고객과의 관계 깊이 더하기</div>
+        </div>
+        <div style="background:rgba(27,58,42,0.5);border-top:2px solid var(--gold);padding:36px 28px;">
+          <div style="font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:16px;">COGNITIVE CRAFTING</div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:#EAE0D0;margin-bottom:12px;">인지 크래프팅</div>
+          <p style="font-size:13px;color:rgba(234,224,208,0.65);line-height:1.9;margin-bottom:20px;">
+            일의 의미와 목적을 바라보는 관점을 바꿉니다. 같은 일이라도 어떻게 해석하느냐에 따라 몰입도와 만족감이 달라집니다.
+          </p>
+          <div style="font-size:11px;color:var(--sage-lt);letter-spacing:1px;">예시: "문서 정리"를 "팀의 지식 자산 구축"으로 인식, "고객 응대"를 "삶에 도움을 주는 일"로 재해석</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사례 -->
+    <div style="margin-bottom:72px;">
+      <div class="section-tag" style="color:var(--gold);">Case Studies</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:#EAE0D0;margin-bottom:12px;">같은 일, 다른 의미 — 실제 사례</h3>
+      <p style="font-size:14px;color:rgba(234,224,208,0.55);margin-bottom:36px;line-height:1.8;">잡 크래프팅 연구의 출발점이 된 3가지 대표 사례입니다.</p>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:32px;padding:28px 32px;background:rgba(184,147,90,0.07);border-left:2px solid var(--gold);align-items:start;">
+          <div>
+            <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;">CASE 01</div>
+            <div style="font-family:'Playfair Display',serif;font-size:20px;color:#EAE0D0;line-height:1.3;">석공</div>
+            <div style="font-size:12px;color:var(--sage-lt);margin-top:6px;">Stonemason</div>
+          </div>
+          <div>
+            <p style="font-size:14px;color:rgba(234,224,208,0.7);line-height:1.9;">
+              같은 돌을 쌓는 석공이라도 어떤 이는 "돌을 쌓는 일"을 하고, 어떤 이는 "성당을 짓는 일"을 하고, 또 어떤 이는 "신께 봉헌하는 일"을 한다고 생각합니다. 동일한 물리적 행위가 인지 크래프팅에 따라 전혀 다른 의미와 몰입으로 이어집니다.
+            </p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:32px;padding:28px 32px;background:rgba(184,147,90,0.07);border-left:2px solid var(--gold);align-items:start;">
+          <div>
+            <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;">CASE 02</div>
+            <div style="font-family:'Playfair Display',serif;font-size:20px;color:#EAE0D0;line-height:1.3;">병원 청소부</div>
+            <div style="font-size:12px;color:var(--sage-lt);margin-top:6px;">Hospital Cleaner</div>
+          </div>
+          <div>
+            <p style="font-size:14px;color:rgba(234,224,208,0.7);line-height:1.9;">
+              병원에서 바닥을 닦는 청소부 중 일부는 자신의 일을 단순 청소가 아닌 "환자 회복에 기여하는 치유 환경 조성"으로 인식했습니다. 이들은 환자와 적극적으로 소통하고, 병실 분위기를 밝게 만드는 관계 크래프팅도 함께 실천했습니다.
+            </p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:32px;padding:28px 32px;background:rgba(184,147,90,0.07);border-left:2px solid var(--gold);align-items:start;">
+          <div>
+            <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;">CASE 03</div>
+            <div style="font-family:'Playfair Display',serif;font-size:20px;color:#EAE0D0;line-height:1.3;">디즈니랜드<br>커스토디얼</div>
+            <div style="font-size:12px;color:var(--sage-lt);margin-top:6px;">Disneyland Custodial</div>
+          </div>
+          <div>
+            <p style="font-size:14px;color:rgba(234,224,208,0.7);line-height:1.9;">
+              디즈니랜드 청소 직원들은 자신을 단순 미화원이 아닌 "마법 같은 경험을 선사하는 퍼포머"로 정의했습니다. 방문객에게 방향 안내를 하고, 아이들과 교류하며, 공원의 분위기를 만들어가는 과업·관계·인지 크래프팅의 조화가 높은 직무 만족으로 이어졌습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;padding:48px;background:rgba(184,147,90,0.08);border:0.5px solid rgba(184,147,90,0.2);">
+      <div style="font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:16px;">NEXT STEP</div>
+      <p style="font-size:17px;color:#EAE0D0;margin-bottom:24px;line-height:1.6;">당신의 일을 어떻게 크래프팅할 수 있을지 함께 탐색해 보세요.</p>
+      <a href="jc_coaching.html" style="display:inline-block;padding:14px 32px;background:var(--gold);color:var(--dark);font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:2px;text-decoration:none;">코칭 프로그램 보기 →</a>
+    </div>
+
   </div>
 </section>
+
+<div style="height:60px;background:var(--dark);"></div>
+
 
 
 <footer>
