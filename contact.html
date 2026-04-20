@@ -1124,13 +1124,16 @@ function isMobile(){ return window.innerWidth <= 900; }
 
 window.addEventListener('pageshow', function(e){
   if(!isMobile()) return;
-  if(sessionStorage.getItem('navReturnExpected')==='1'){
+  var navType = (performance.getEntriesByType('navigation')[0] || {}).type || '';
+  var isBack = e.persisted || navType === 'back_forward';
+  if(isBack && sessionStorage.getItem('navReturnExpected')==='1'){
     sessionStorage.removeItem('navReturnExpected');
     setTimeout(function(){
       openNav();
       history.pushState({nav:'open'},'');
     }, 50);
   } else {
+    if(!isBack) sessionStorage.removeItem('navReturnExpected');
     history.pushState({nav:'page'},'');
   }
 });

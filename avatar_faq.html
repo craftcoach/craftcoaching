@@ -1203,14 +1203,18 @@ function isMobile(){ return window.innerWidth <= 900; }
 // 페이지 로드/복귀 시 처리
 window.addEventListener('pageshow', function(e){
   if(!isMobile()) return;
-  if(sessionStorage.getItem('navReturnExpected')==='1'){
-    sessionStorage.removeItem('navReturnExpected');
+  // back_forward = 뒤로가기/앞으로가기 / navigate = 일반 이동
+  var navType = (performance.getEntriesByType('navigation')[0] || {}).type || '';
+  var isBack = e.persisted || navType === 'back_forward';
+  if(isBack && sessionStorage.getItem('navReturnExpected')==='1'){
     // 뒤로가기로 복귀 → 이전 섹션 메뉴 자동 열기
+    sessionStorage.removeItem('navReturnExpected');
     setTimeout(function(){
       openNav();
       history.pushState({nav:'open'},'');
     }, 50);
   } else {
+    if(!isBack) sessionStorage.removeItem('navReturnExpected'); // 앞으로 이동 시 플래그 초기화
     history.pushState({nav:'page'},'');
   }
 });
