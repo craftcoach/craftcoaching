@@ -1061,14 +1061,15 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 
 
 <script>
-var _lastNavKey = null; // 마지막으로 열린 아코디언 키 추적
+var _lastNavKey = null;
 
 function _initAccordion(ov){
+  if(ov._accordionInit) return; // 중복 등록 방지
+  ov._accordionInit = true;
   ov.querySelectorAll('details[data-key]').forEach(function(d){
     d.addEventListener('toggle', function(){
       if(d.open){
         _lastNavKey = d.dataset.key;
-        // 다른 아코디언 모두 닫기
         ov.querySelectorAll('details[data-key]').forEach(function(other){
           if(other !== d) other.open = false;
         });
@@ -1084,7 +1085,6 @@ function openNav(){
   btn.classList.add('open');
   ov.classList.add('open');
   document.body.style.overflow='hidden';
-  // 저장된 아코디언 상태 복원
   var saved=sessionStorage.getItem('navAccordion');
   ov.querySelectorAll('details').forEach(function(d){ d.open=false; });
   if(saved){
@@ -1097,13 +1097,13 @@ function openNav(){
 }
 function toggleNav(){
   var ov=document.getElementById('navOverlay');
-  if(ov && ov.classList.contains('open')){ closeNav(); }
+  if(ov && ov.classList.contains('open')){ closeNav(false); }
   else { openNav(); history.pushState({nav:'open'},''); }
 }
-function closeNav(){
+function closeNav(navigating){
+  // navigating=true : 링크 클릭으로 페이지 이동 → 복귀 시 메뉴 자동 표시
   var btn=document.getElementById('navBtn');
   var ov=document.getElementById('navOverlay');
-  // _lastNavKey 우선, 없으면 DOM에서 찾기
   if(_lastNavKey){
     sessionStorage.setItem('navAccordion', _lastNavKey);
   } else if(ov){
@@ -1111,24 +1111,41 @@ function closeNav(){
     if(opened && opened.dataset.key) sessionStorage.setItem('navAccordion', opened.dataset.key);
     else sessionStorage.removeItem('navAccordion');
   }
+  if(navigating !== false){
+    // 링크 클릭으로 닫힘 → 돌아왔을 때 메뉴 복원 예약
+    sessionStorage.setItem('navReturnExpected','1');
+  }
   if(btn) btn.classList.remove('open');
   if(ov){
     ov.classList.remove('open');
+    ov._accordionInit = false;
     ov.querySelectorAll('details').forEach(function(d){ d.open=false; });
   }
   _lastNavKey=null;
   document.body.style.overflow='';
 }
-// 뒤로가기 버튼 → 모바일에서만 메뉴로
 function isMobile(){ return window.innerWidth <= 900; }
-if(isMobile()){
-  history.pushState({nav:'page'},'');
-}
+
+// 페이지 로드/복귀 시 처리
+window.addEventListener('pageshow', function(e){
+  if(!isMobile()) return;
+  if(sessionStorage.getItem('navReturnExpected')==='1'){
+    sessionStorage.removeItem('navReturnExpected');
+    // 뒤로가기로 복귀 → 이전 섹션 메뉴 자동 열기
+    setTimeout(function(){
+      openNav();
+      history.pushState({nav:'open'},'');
+    }, 50);
+  } else {
+    history.pushState({nav:'page'},'');
+  }
+});
+
 window.addEventListener('popstate', function(e){
-  if(!isMobile()) return; // PC에서는 기본 동작 유지
+  if(!isMobile()) return;
   var ov=document.getElementById('navOverlay');
   if(ov && ov.classList.contains('open')){
-    closeNav();
+    closeNav(false);
   } else {
     openNav();
   }
