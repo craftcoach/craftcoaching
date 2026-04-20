@@ -1228,6 +1228,22 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 
 
 <script>
+var _lastNavKey = null; // 마지막으로 열린 아코디언 키 추적
+
+function _initAccordion(ov){
+  ov.querySelectorAll('details[data-key]').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(d.open){
+        _lastNavKey = d.dataset.key;
+        // 다른 아코디언 모두 닫기
+        ov.querySelectorAll('details[data-key]').forEach(function(other){
+          if(other !== d) other.open = false;
+        });
+      }
+    });
+  });
+}
+
 function openNav(){
   var btn=document.getElementById('navBtn');
   var ov=document.getElementById('navOverlay');
@@ -1237,11 +1253,14 @@ function openNav(){
   document.body.style.overflow='hidden';
   // 저장된 아코디언 상태 복원
   var saved=sessionStorage.getItem('navAccordion');
-  ov.querySelectorAll('details').forEach(function(d){ d.removeAttribute('open'); });
+  ov.querySelectorAll('details').forEach(function(d){ d.open=false; });
   if(saved){
     var el=ov.querySelector('details[data-key="'+saved+'"]');
-    if(el) el.open=true;
+    if(el){ el.open=true; _lastNavKey=saved; }
+  } else {
+    _lastNavKey=null;
   }
+  _initAccordion(ov);
 }
 function toggleNav(){
   var ov=document.getElementById('navOverlay');
@@ -1251,20 +1270,20 @@ function toggleNav(){
 function closeNav(){
   var btn=document.getElementById('navBtn');
   var ov=document.getElementById('navOverlay');
-  // 현재 열린 아코디언 저장 (닫기 전에)
-  if(ov){
+  // _lastNavKey 우선, 없으면 DOM에서 찾기
+  if(_lastNavKey){
+    sessionStorage.setItem('navAccordion', _lastNavKey);
+  } else if(ov){
     var opened=ov.querySelector('details[open]');
-    if(opened && opened.dataset.key){
-      sessionStorage.setItem('navAccordion', opened.dataset.key);
-    } else {
-      sessionStorage.removeItem('navAccordion');
-    }
+    if(opened && opened.dataset.key) sessionStorage.setItem('navAccordion', opened.dataset.key);
+    else sessionStorage.removeItem('navAccordion');
   }
   if(btn) btn.classList.remove('open');
   if(ov){
     ov.classList.remove('open');
     ov.querySelectorAll('details').forEach(function(d){ d.open=false; });
   }
+  _lastNavKey=null;
   document.body.style.overflow='';
 }
 // 뒤로가기 버튼 → 모바일에서만 메뉴로
