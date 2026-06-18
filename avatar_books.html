@@ -677,11 +677,14 @@ img { max-width:100%; height:auto; }
 /* ── 태블릿 이하 (900px) ── */
 @media (max-width:900px) {
 
-  /* Nav */
-  nav { padding:0 16px; height:48px; }
+  /* Nav - PC 메뉴 항상 표시 */
+  nav { padding:0 16px; height:64px; overflow-x:auto; }
   .nav-logo img { height:39px !important; }
-  .nav-menu { display:none !important; }
-  .nav-hamburger { display:flex !important; }
+  .nav-menu { display:flex !important; flex-wrap:nowrap; }
+  .nav-menu > li { flex-shrink:0; }
+  .nav-menu > li > a { padding:0 10px; font-size:12px; letter-spacing:0.5px; height:64px; line-height:64px; }
+  .nav-hamburger { display:none !important; }
+  .nav-sec-label { display:none !important; }
   .nav-cta { display:none !important; }
 
   /* Section 기본 */
@@ -1203,7 +1206,7 @@ function closeNav(navigating){
   _lastNavKey=null;
   document.body.style.overflow='';
 }
-function isMobile(){ return window.innerWidth <= 900; }
+function isMobile(){ return false; } /* PC 메뉴 항상 표시 */
 
 // 페이지 로드/복귀 시 처리
 window.addEventListener('pageshow', function(e){
