@@ -599,27 +599,7 @@ footer {
 img { max-width:100%; height:auto; }
 
 /* ── Nav 반응형: PC는 항상 메뉴, 모바일은 hamburger ── */
-@media (max-width:900px) and (pointer:fine) {
-  /* PC 작은 모니터: 메뉴 항상 표시 */
-  nav { padding:0 16px; height:64px; overflow-x:auto; }
-  .nav-logo img { height:39px !important; }
-  .nav-menu { display:flex !important; flex-wrap:nowrap; }
-  .nav-menu > li { flex-shrink:0; }
-  .nav-menu > li > a { padding:0 10px; font-size:12px; letter-spacing:0.5px; height:64px; line-height:64px; }
-  .nav-hamburger { display:none !important; }
-  .nav-sec-label { display:none !important; }
-  .nav-cta { display:none !important; }
-  #fixedMenuBtn { display:none !important; }
-}
-@media (max-width:900px) and (pointer:coarse) {
-  /* 모바일 터치: 메뉴 숨기고 hamburger 표시 */
-  nav { padding:0 16px; height:64px; }
-  .nav-menu { display:none !important; }
-  .nav-hamburger { display:none !important; }
-  .nav-sec-label { display:none !important; }
-  .nav-cta { display:none !important; }
-  #fixedMenuBtn { display:flex !important; }
-
+@media (max-width:900px) {
   /* Section 기본 */
   .section-inner { padding:120px 20px 60px !important; }
 
@@ -967,6 +947,22 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 
 /* ── PC 메뉴 강제 표시 (모든 화면 너비) ── */
 
+
+/* ── Nav 반응형 ── */
+@media (max-width:900px) {
+  nav { padding:0 16px; height:64px; overflow-x:auto; }
+  .nav-logo img { height:39px !important; }
+  .nav-menu { display:flex !important; flex-wrap:nowrap; }
+  .nav-menu > li { flex-shrink:0; }
+  .nav-menu > li > a { padding:0 10px; font-size:12px; letter-spacing:0.5px; height:64px; line-height:64px; }
+  .nav-hamburger { display:none !important; }
+  .nav-sec-label { display:none !important; }
+  .nav-cta { display:none !important; }
+  #fixedMenuBtn { display:none !important; }
+}
+/* 모바일 기기일 때만 (JS가 body에 is-mobile 클래스 추가) */
+body.is-mobile.small-screen .nav-menu { display:none !important; }
+body.is-mobile.small-screen #fixedMenuBtn { display:flex !important; }
 </style>
 </head>
 <body>
@@ -1141,9 +1137,19 @@ function closeNav(navigating){
   _lastNavKey=null;
   document.body.style.overflow='';
 }
-function isMobile(){ return window.matchMedia("(pointer:coarse)").matches; }
+function isMobile(){ return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent); }
 
 // 페이지 로드/복귀 시 처리
+// 모바일 기기 + 작은 화면일 때 body에 클래스 추가
+(function(){
+  if(isMobile()) document.body.classList.add('is-mobile');
+  if(window.innerWidth <= 900) document.body.classList.add('small-screen');
+  window.addEventListener('resize', function(){
+    if(window.innerWidth <= 900) document.body.classList.add('small-screen');
+    else document.body.classList.remove('small-screen');
+  });
+})();
+
 window.addEventListener('pageshow', function(e){
   if(!isMobile()) return;
   // back_forward = 뒤로가기/앞으로가기 / navigate = 일반 이동
