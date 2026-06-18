@@ -81,7 +81,7 @@ nav {
 .nav-menu > li > a:hover { color: #C9A870; border-bottom: 1px solid rgba(201,168,112,0.4); }
 .nav-menu > li > a.active-page { border-bottom:2px solid #C9A870; color:#C9A870; }
 .dropdown {
-  display:none; position:absolute; top:72px; left:0;
+  display:none; position:absolute; top:64px; left:0;
   background: rgba(15,32,24,0.98);
   border: 0.5px solid rgba(184,147,90,0.25);
   border-top: 2px solid var(--gold);
@@ -1121,13 +1121,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 
 
 /* ── PC 메뉴 강제 표시 (모든 화면 너비) ── */
-@media (max-width:900px) {
-  nav { height:52px; padding:0 16px; }
-  .nav-menu { display:none !important; }
-  .nav-hamburger { display:flex !important; margin-left:auto; }
-  .nav-sec-label { display:none !important; }
-  .nav-cta { display:none; }
-}
+
 </style>
 </head>
 <body>
@@ -1334,7 +1328,7 @@ window.addEventListener('popstate', function(e){
 
 /* mobToggle: radio 방식으로 대체 */
 </script>
-<section id="vision" style="background:var(--green);scroll-margin-top:72px;">
+<section id="vision" style="background:var(--green);scroll-margin-top:64px;">
   <div class="section-inner" style="padding-top:80px;padding-bottom:80px;max-width:1200px;">
     <div class="vm-grid" style="border:0.5px solid rgba(184,147,90,0.2);grid-template-columns:1fr 1.5fr;">
       <div class="vm-card" style="display:flex;flex-direction:column;">
