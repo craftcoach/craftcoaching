@@ -56,8 +56,8 @@ nav {
   padding: 0 48px; height: 96px;
 }
 .nav-logo {
-  display: flex; align-items: center; gap: 16px; cursor:pointer;
-  text-decoration: none;
+  display: block; cursor:pointer;
+  text-decoration: none; line-height:0;
 }
 .nav-logo svg { width:44px; height:44px; }
 .nav-logo-text { display:flex; flex-direction:column; gap:0; }
@@ -1112,10 +1112,10 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 
 /* ── PC 메뉴 강제 표시 (모든 화면 너비) ── */
 @media (max-width:900px) {
-  nav { overflow-x:auto; height:auto; min-height:48px; flex-wrap:nowrap; padding:0 12px; }
-  .nav-menu { display:flex !important; flex-shrink:0; }
-  .nav-menu > li { flex-shrink:0; }
-  .nav-hamburger { display:none !important; }
+  nav { height:52px; padding:0 16px; }
+  .nav-menu { display:none !important; }
+  .nav-hamburger { display:flex !important; margin-left:auto; }
+  .nav-sec-label { display:none !important; }
   .nav-cta { display:none; }
 }
 </style>
