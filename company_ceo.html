@@ -585,9 +585,6 @@ footer {
   nav { padding:0 16px; height:48px; display:flex; justify-content:space-between; align-items:center; }
   .nav-logo img { height:39px !important; }
   .section-inner { padding-top:118px !important; }
-  .nav-menu { display:flex; }
-  .nav-hamburger { display:none !important; margin-left:auto; }
-  .nav-cta { display:none; }
   .section-inner { padding:108px 20px 60px; }
   .hero-grid, .company-grid, .coaching-intro, .vm-grid,
   .avatar-grid, .contact-grid, .two-col { grid-template-columns:1fr; }
@@ -650,10 +647,7 @@ footer {
   stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
 }
 
-@media (max-width:900px) {
-  #fixedMenuBtn { display:flex; }
-  #topBtn { display:flex; }
-}
+
 
 
 
@@ -674,24 +668,27 @@ footer {
 /* 이미지 기본 스케일 */
 img { max-width:100%; height:auto; }
 
-/* ── 태블릿 이하 (900px) ── */
-@media (max-width:900px) {
-
-  /* Nav - PC 작은화면: 메뉴 표시 */
+/* ── Nav 반응형: PC는 항상 메뉴, 모바일은 hamburger ── */
+@media (max-width:900px) and (pointer:fine) {
+  /* PC 작은 모니터: 메뉴 항상 표시 */
   nav { padding:0 16px; height:64px; overflow-x:auto; }
   .nav-logo img { height:39px !important; }
-  .nav-hamburger { display:none !important; }
-  .nav-sec-label { display:none !important; }
-  .nav-cta { display:none !important; }
-}
-@media(max-width:900px) and (pointer:fine){
   .nav-menu { display:flex !important; flex-wrap:nowrap; }
   .nav-menu > li { flex-shrink:0; }
   .nav-menu > li > a { padding:0 10px; font-size:12px; letter-spacing:0.5px; height:64px; line-height:64px; }
+  .nav-hamburger { display:none !important; }
+  .nav-sec-label { display:none !important; }
+  .nav-cta { display:none !important; }
+  #fixedMenuBtn { display:none !important; }
 }
-@media(max-width:900px) and (pointer:coarse){
+@media (max-width:900px) and (pointer:coarse) {
+  /* 모바일 터치: 메뉴 숨기고 hamburger 표시 */
+  nav { padding:0 16px; height:64px; }
   .nav-menu { display:none !important; }
-  .nav-hamburger { display:none; }
+  .nav-hamburger { display:none !important; }
+  .nav-sec-label { display:none !important; }
+  .nav-cta { display:none !important; }
+  #fixedMenuBtn { display:flex !important; }
 
   /* Section 기본 */
   .section-inner { padding:120px 20px 60px !important; }
@@ -1203,7 +1200,7 @@ function closeNav(navigating){
   _lastNavKey=null;
   document.body.style.overflow='';
 }
-function isMobile(){ return false; } /* PC 메뉴 항상 표시 */
+function isMobile(){ return window.matchMedia("(pointer:coarse)").matches; }
 
 // 페이지 로드/복귀 시 처리
 window.addEventListener('pageshow', function(e){
@@ -1307,7 +1304,7 @@ window.addEventListener('popstate', function(e){
 #fixedMenuBtn.is-open .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
 #topBtn{position:fixed;right:14px;bottom:80px;z-index:9999;display:none;width:44px;height:44px;background:rgba(10,26,18,0.92);border:1.5px solid #C9A870;border-radius:50%;cursor:pointer;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 #topBtn svg{width:18px;height:18px;stroke:#C9A870;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
-@media(max-width:900px) and (pointer:coarse){#fixedMenuBtn{display:flex;}#topBtn{display:flex;}} @media(max-width:900px) and (pointer:fine){#fixedMenuBtn{display:none !important;}#topBtn{display:flex;}}
+@media(max-width:900px){#topBtn{display:flex;}}
 </style>
 
 <script>
