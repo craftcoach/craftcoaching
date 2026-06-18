@@ -603,15 +603,21 @@ img { max-width:100%; height:auto; }
 /* ── 태블릿 이하 (900px) ── */
 @media (max-width:900px) {
 
-  /* Nav - PC 메뉴 항상 표시 */
+  /* Nav - PC 작은화면: 메뉴 표시 */
   nav { padding:0 16px; height:64px; overflow-x:auto; }
   .nav-logo img { height:39px !important; }
-  .nav-menu { display:flex !important; flex-wrap:nowrap; }
-  .nav-menu > li { flex-shrink:0; }
-  .nav-menu > li > a { padding:0 10px; font-size:12px; letter-spacing:0.5px; height:64px; line-height:64px; }
   .nav-hamburger { display:none !important; }
   .nav-sec-label { display:none !important; }
   .nav-cta { display:none !important; }
+}
+@media(max-width:900px) and (pointer:fine){
+  .nav-menu { display:flex !important; flex-wrap:nowrap; }
+  .nav-menu > li { flex-shrink:0; }
+  .nav-menu > li > a { padding:0 10px; font-size:12px; letter-spacing:0.5px; height:64px; line-height:64px; }
+}
+@media(max-width:900px) and (pointer:coarse){
+  .nav-menu { display:none !important; }
+  .nav-hamburger { display:none; }
 
   /* Section 기본 */
   .section-inner { padding:72px 20px 60px !important; }
