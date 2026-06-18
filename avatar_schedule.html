@@ -53,7 +53,7 @@ nav {
   backdrop-filter: blur(12px);
   border-bottom: 0.5px solid rgba(184,147,90,0.25);
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px; height: 96px;
+  padding: 0 48px; height: 64px;
 }
 .nav-logo {
   display: block; cursor:pointer;
@@ -72,7 +72,7 @@ nav {
 .nav-menu { display:flex; gap:0; list-style:none; }
 .nav-menu > li { position:relative; }
 .nav-menu > li > a {
-  display: block; padding: 0 20px; height:72px; line-height:72px;
+  display: block; padding: 0 20px; height:64px; line-height:64px;
   font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:15px;
   letter-spacing:1.5px; color:rgba(234,224,208,0.75);
   text-decoration:none; transition: color 0.2s;
@@ -583,7 +583,7 @@ footer {
 
 @media (max-width:900px) {
   nav { padding:0 16px; height:48px; display:flex; justify-content:space-between; align-items:center; }
-  .nav-logo img { height:40px !important; }
+  .nav-logo img { height:28px !important; }
   .section-inner { padding-top:118px !important; }
   .nav-menu { display:flex; }
   .nav-hamburger { display:none !important; margin-left:auto; }
@@ -660,7 +660,7 @@ footer {
 
 /* nav 섹션 제목 (클릭 불가) */
 .nav-sec-label {
-  display: block; padding: 0 20px; height:72px; line-height:72px;
+  display: block; padding: 0 20px; height:64px; line-height:64px;
   font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:15px;
   letter-spacing:1.5px; color:rgba(234,224,208,0.75);
   cursor:default; white-space:nowrap;
@@ -679,7 +679,7 @@ img { max-width:100%; height:auto; }
 
   /* Nav */
   nav { padding:0 16px; height:48px; }
-  .nav-logo img { height:56px !important; }
+  .nav-logo img { height:39px !important; }
   .nav-menu { display:none !important; }
   .nav-hamburger { display:flex !important; }
   .nav-cta { display:none !important; }
@@ -1047,7 +1047,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 <!-- ── NAVIGATION ── -->
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="images/logo.png" alt="Craft Coaching" style="height:72px;width:auto;display:block;"/>
+    <img src="images/logo.png" alt="Craft Coaching" style="height:50px;width:auto;display:block;"/>
   </a>
   <ul class="nav-menu">
     <li>
@@ -1262,7 +1262,7 @@ function mobToggle(el){
     <div style="position:relative;overflow:hidden;border-radius:2px;background:linear-gradient(135deg,#0F2014 0%,#1B3A2A 40%,#1a3828 70%,#0d1e14 100%);min-height:320px;display:flex;align-items:center;justify-content:center;">
 
       <!-- 해바라기 왼쪽 -->
-      <svg style="position:absolute;left:-10px;bottom:-10px;width:340px;height:400px;opacity:0.92;" viewBox="0 0 280 400" xmlns="http://www.w3.org/2000/svg">
+      <svg style="position:absolute;left:-10px;bottom:-10px;width:220px;height:260px;opacity:0.92;" viewBox="0 0 280 400" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="sfcenter1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#5C3A1E"/><stop offset="60%" stop-color="#3B2008"/><stop offset="100%" stop-color="#2A1505"/></radialGradient>
           <radialGradient id="sfpetal1" cx="30%" cy="20%" r="70%"><stop offset="0%" stop-color="#FFE566"/><stop offset="50%" stop-color="#FFC200"/><stop offset="100%" stop-color="#E08800"/></radialGradient>
@@ -1390,7 +1390,7 @@ function mobToggle(el){
       </svg>
 
       <!-- 해바라기 오른쪽 (반전) -->
-      <svg style="position:absolute;right:-10px;top:-5px;width:290px;height:350px;opacity:0.88;transform:scaleX(-1) rotate(6deg);" viewBox="0 0 260 360" xmlns="http://www.w3.org/2000/svg">
+      <svg style="position:absolute;right:-10px;top:-5px;width:200px;height:240px;opacity:0.88;transform:scaleX(-1) rotate(6deg);" viewBox="0 0 260 360" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="sfcenter2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#5C3A1E"/><stop offset="60%" stop-color="#3B2008"/><stop offset="100%" stop-color="#2A1505"/></radialGradient>
           <radialGradient id="sfpetal3" cx="30%" cy="20%" r="70%"><stop offset="0%" stop-color="#FFE566"/><stop offset="50%" stop-color="#FFC200"/><stop offset="100%" stop-color="#E08800"/></radialGradient>
@@ -1470,145 +1470,6 @@ function mobToggle(el){
         <circle cx="158" cy="186" r="1.6" fill="#5D4037" opacity="0.8"/>
         <ellipse cx="157" cy="182" rx="7" ry="4.5" fill="rgba(255,255,255,0.16)" filter="url(#sfbl2)"/>
       </svg>
-
-      <!-- 장미 왼쪽 3개 -->
-      <svg style="position:absolute;left:-15px;bottom:-15px;width:360px;height:410px;opacity:0.93;" viewBox="0 0 295 410" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="r1o" cx="42%" cy="32%" r="62%"><stop offset="0%" stop-color="#FFAEC2"/><stop offset="42%" stop-color="#E02448"/><stop offset="100%" stop-color="#7C0A20"/></radialGradient>
-          <radialGradient id="r1m" cx="45%" cy="35%" r="58%"><stop offset="0%" stop-color="#FF8FAF"/><stop offset="38%" stop-color="#C91C3A"/><stop offset="100%" stop-color="#680618"/></radialGradient>
-          <radialGradient id="r1i" cx="50%" cy="42%" r="52%"><stop offset="0%" stop-color="#FFC4D2"/><stop offset="48%" stop-color="#DC2244"/><stop offset="100%" stop-color="#8A1025"/></radialGradient>
-          <radialGradient id="r1c" cx="48%" cy="38%" r="50%"><stop offset="0%" stop-color="#FFD5E0"/><stop offset="45%" stop-color="#FF4A6E"/><stop offset="100%" stop-color="#9B1530"/></radialGradient>
-          <radialGradient id="r2o" cx="42%" cy="30%" r="64%"><stop offset="0%" stop-color="#FF9EC0"/><stop offset="40%" stop-color="#D41E42"/><stop offset="100%" stop-color="#720820"/></radialGradient>
-          <radialGradient id="r2m" cx="44%" cy="33%" r="58%"><stop offset="0%" stop-color="#FF80A8"/><stop offset="36%" stop-color="#BE1838"/><stop offset="100%" stop-color="#600618"/></radialGradient>
-          <radialGradient id="r2i" cx="50%" cy="40%" r="54%"><stop offset="0%" stop-color="#FFBACE"/><stop offset="46%" stop-color="#D62040"/><stop offset="100%" stop-color="#841020"/></radialGradient>
-          <radialGradient id="r2c" cx="46%" cy="36%" r="52%"><stop offset="0%" stop-color="#FFD0DE"/><stop offset="44%" stop-color="#FF3C66"/><stop offset="100%" stop-color="#951430"/></radialGradient>
-          <radialGradient id="l1" cx="35%" cy="42%" r="65%"><stop offset="0%" stop-color="#69BF68"/><stop offset="55%" stop-color="#2E7D32"/><stop offset="100%" stop-color="#1A5216"/></radialGradient>
-          <radialGradient id="l2" cx="60%" cy="32%" r="62%"><stop offset="0%" stop-color="#80C784"/><stop offset="50%" stop-color="#388E3C"/><stop offset="100%" stop-color="#1A5216"/></radialGradient>
-          <filter id="bl"><feGaussianBlur stdDeviation="1.2"/></filter>
-        </defs>
-        
-        <!-- 줄기 -->
-        <path d="M 85 395 Q 82 320 90 255 Q 98 190 108 150" stroke="#2E7D32" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M 165 395 Q 162 335 160 275 Q 158 215 162 170" stroke="#2E7D32" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-        <path d="M 240 395 Q 235 350 230 300 Q 225 255 228 220" stroke="#2E7D32" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <!-- 곁가지 -->
-        <path d="M 92 280 Q 60 258 45 240" stroke="#2E7D32" stroke-width="2.5" fill="none"/>
-        <path d="M 162 260 Q 195 242 210 228" stroke="#2E7D32" stroke-width="2.5" fill="none"/>
-        <!-- 잎들 -->
-        <path d="M 45 240 Q 28 210 58 222 Q 52 220 45 240 Z" fill="url(#l1)"/><path d="M 45 240 Q 52 225 58 222" stroke="#1A5216" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M 92 280 Q 62 258 78 270 Q 85 266 92 280 Z" fill="url(#l2)"/><path d="M 92 280 Q 85 269 78 270" stroke="#1A5216" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M 210 228 Q 228 205 215 220 Q 212 214 210 228 Z" fill="url(#l1)"/><path d="M 210 228 Q 212 216 215 220" stroke="#1A5216" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M 160 290 Q 135 272 148 280 Q 154 278 160 290 Z" fill="url(#l2)"/><path d="M 160 290 Q 154 281 148 280" stroke="#1A5216" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M 228 280 Q 255 262 240 275 Q 234 270 228 280 Z" fill="url(#l1)"/><path d="M 228 280 Q 234 271 240 275" stroke="#1A5216" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <!-- 가시 -->
-        <path d="M 88 310 Q 76 303 79 295 Q 85 302 88 310Z" fill="#2E7D32"/>
-        <path d="M 163 305 Q 175 297 173 288 Q 168 296 163 305Z" fill="#2E7D32"/>
-        <!-- 꽃받침 -->
-        <path d="M 100 160 Q 92 148 95 138 Q 100 132 108 138 Q 116 132 121 138 Q 124 148 116 160 Q 108 155 100 160Z" fill="#2D6A2D"/>
-        <path d="M 154 178 Q 147 166 150 156 Q 155 150 163 156 Q 171 150 176 156 Q 179 166 171 178 Q 163 173 154 178Z" fill="#2D6A2D"/>
-        <path d="M 220 228 Q 213 216 216 206 Q 221 200 229 206 Q 237 200 242 206 Q 245 216 237 228 Q 229 223 220 228Z" fill="#2D6A2D"/>
-        <!-- 장미 1: 크게 핀 장미 (중앙, 108,148) -->
-        <path d="M 108.0 148.0 Q 96.1 103.8 103.8 75.4 Q 120.7 100.6 119.5 105.2 Q 120.7 100.6 148.0 87.2 Q 140.3 115.7 108.0 148.0 Z" fill="url(#r1o)" opacity="0.92"/>
-        <path d="M 108.0 148.0 Q 146.3 123.1 175.8 121.5 Q 157.0 145.4 152.3 145.7 Q 157.0 145.4 178.2 167.2 Q 148.7 168.8 108.0 148.0 Z" fill="url(#r1o)" opacity="0.92"/>
-        <path d="M 108.0 148.0 Q 143.6 176.8 154.1 204.3 Q 125.6 193.8 123.9 189.4 Q 125.6 193.8 111.4 220.7 Q 100.8 193.2 108.0 148.0 Z" fill="url(#r1o)" opacity="0.92"/>
-        <path d="M 108.0 148.0 Q 91.6 190.7 68.7 209.2 Q 69.8 178.9 73.5 175.9 Q 69.8 178.9 39.9 173.7 Q 62.8 155.1 108.0 148.0 Z" fill="url(#r1o)" opacity="0.92"/>
-        <path d="M 108.0 148.0 Q 62.3 145.6 37.6 129.6 Q 66.8 121.3 70.8 123.8 Q 66.8 121.3 62.5 91.2 Q 87.2 107.2 108.0 148.0 Z" fill="url(#r1o)" opacity="0.92"/>
-        <path d="M 108.0 148.0 Q 121.3 121.1 135.1 109.9 Q 133.1 127.7 130.9 129.5 Q 133.1 127.7 150.9 129.4 Q 137.1 140.6 108.0 148.0 Z" fill="url(#r1m)" opacity="0.95"/>
-        <path d="M 108.0 148.0 Q 137.7 152.3 152.6 162.0 Q 135.0 165.6 132.7 164.0 Q 135.0 165.6 138.9 183.0 Q 124.0 173.4 108.0 148.0 Z" fill="url(#r1m)" opacity="0.95"/>
-        <path d="M 108.0 148.0 Q 113.1 177.6 108.5 194.7 Q 99.7 179.1 100.4 176.4 Q 99.7 179.1 84.2 188.2 Q 88.8 171.1 108.0 148.0 Z" fill="url(#r1m)" opacity="0.95"/>
-        <path d="M 108.0 148.0 Q 81.4 162.0 63.7 162.9 Q 75.8 149.7 78.6 149.5 Q 75.8 149.7 62.4 137.8 Q 80.1 136.9 108.0 148.0 Z" fill="url(#r1m)" opacity="0.95"/>
-        <path d="M 108.0 148.0 Q 86.5 127.0 80.2 110.5 Q 96.4 117.9 97.5 120.5 Q 96.4 117.9 103.6 101.5 Q 109.9 118.0 108.0 148.0 Z" fill="url(#r1m)" opacity="0.95"/>
-        <path d="M 108.0 148.0 Q 117.1 133.0 124.5 128.7 122.8 139.5 Q 133.0 143.4 125.6 147.6 108.0 148.0 Z" fill="url(#r1i)" opacity="0.97"/>
-        <path d="M 108.0 148.0 Q 123.0 157.1 127.3 164.5 116.5 162.8 Q 112.6 173.0 108.4 165.6 108.0 148.0 Z" fill="url(#r1i)" opacity="0.97"/>
-        <path d="M 108.0 148.0 Q 98.9 163.0 91.5 167.3 93.2 156.5 Q 83.0 152.6 90.4 148.4 108.0 148.0 Z" fill="url(#r1i)" opacity="0.97"/>
-        <path d="M 108.0 148.0 Q 93.0 138.9 88.7 131.5 99.5 133.2 Q 103.4 123.0 107.6 130.4 108.0 148.0 Z" fill="url(#r1i)" opacity="0.97"/>
-        <ellipse cx="108.0" cy="148.0" rx="7.9" ry="6.7" fill="url(#r1c)"/>
-        <ellipse cx="108.0" cy="148.0" rx="4.4" ry="3.7" fill="#FFCCD5" opacity="0.9"/>
-        <ellipse cx="102.3" cy="135.1" rx="11.0" ry="7.9" fill="rgba(255,255,255,0.35)" filter="url(#bl)"/>
-        <!-- 장미 2: 반쯤 핀 장미 (왼쪽, 163,170) -->
-        <path d="M 163.0 170.0 Q 137.6 139.8 133.2 114.7 Q 155.6 128.2 156.3 132.3 Q 155.6 128.2 172.1 107.8 Q 176.5 132.9 163.0 170.0 Z" fill="url(#r2o)" opacity="0.92"/>
-        <path d="M 163.0 170.0 Q 183.9 136.5 206.4 124.6 Q 200.4 150.1 196.8 152.0 Q 200.4 150.1 224.9 159.4 Q 202.5 171.4 163.0 170.0 Z" fill="url(#r2o)" opacity="0.92"/>
-        <path d="M 163.0 170.0 Q 201.3 179.5 219.6 197.2 Q 193.5 199.5 190.6 196.6 Q 193.5 199.5 192.2 225.6 Q 173.9 208.0 163.0 170.0 Z" fill="url(#r2o)" opacity="0.92"/>
-        <path d="M 163.0 170.0 Q 165.8 209.4 154.6 232.3 Q 144.4 208.1 146.2 204.4 Q 144.4 208.1 119.1 214.9 Q 130.2 192.1 163.0 170.0 Z" fill="url(#r2o)" opacity="0.92"/>
-        <path d="M 163.0 170.0 Q 126.4 184.8 101.2 181.3 Q 121.0 164.1 125.1 164.7 Q 121.0 164.1 106.7 142.1 Q 131.9 145.7 163.0 170.0 Z" fill="url(#r2o)" opacity="0.92"/>
-        <path d="M 163.0 170.0 Q 163.6 144.1 170.3 130.3 Q 175.2 145.0 174.1 147.2 Q 175.2 145.0 189.8 139.8 Q 183.1 153.6 163.0 170.0 Z" fill="url(#r2m)" opacity="0.95"/>
-        <path d="M 163.0 170.0 Q 187.8 162.5 203.0 164.7 Q 190.6 173.9 188.2 173.5 Q 190.6 173.9 200.0 186.1 Q 184.8 184.0 163.0 170.0 Z" fill="url(#r2m)" opacity="0.95"/>
-        <path d="M 163.0 170.0 Q 177.8 191.3 180.4 206.4 Q 167.8 197.4 167.4 195.0 Q 167.8 197.4 159.1 210.2 Q 156.4 195.1 163.0 170.0 Z" fill="url(#r2m)" opacity="0.95"/>
-        <path d="M 163.0 170.0 Q 147.3 190.6 133.8 197.8 Q 138.4 183.1 140.6 181.9 Q 138.4 183.1 123.6 178.7 Q 137.1 171.5 163.0 170.0 Z" fill="url(#r2m)" opacity="0.95"/>
-        <path d="M 163.0 170.0 Q 138.5 161.4 127.5 150.8 Q 143.0 150.7 144.7 152.4 Q 143.0 150.7 142.6 135.2 Q 153.6 145.8 163.0 170.0 Z" fill="url(#r2m)" opacity="0.95"/>
-        <path d="M 163.0 170.0 Q 164.6 154.9 168.9 148.9 171.5 157.9 Q 180.9 157.3 176.6 163.3 163.0 170.0 Z" fill="url(#r2i)" opacity="0.97"/>
-        <path d="M 163.0 170.0 Q 178.1 171.6 184.1 175.9 175.1 178.5 Q 175.7 187.9 169.7 183.6 163.0 170.0 Z" fill="url(#r2i)" opacity="0.97"/>
-        <path d="M 163.0 170.0 Q 161.4 185.1 157.1 191.1 154.5 182.1 Q 145.1 182.7 149.4 176.7 163.0 170.0 Z" fill="url(#r2i)" opacity="0.97"/>
-        <path d="M 163.0 170.0 Q 147.9 168.4 141.9 164.1 150.9 161.5 Q 150.3 152.1 156.3 156.4 163.0 170.0 Z" fill="url(#r2i)" opacity="0.97"/>
-        <ellipse cx="163.0" cy="170.0" rx="6.8" ry="5.8" fill="url(#r2c)"/>
-        <ellipse cx="163.0" cy="170.0" rx="3.8" ry="3.2" fill="#FFCCD5" opacity="0.9"/>
-        <ellipse cx="153.9" cy="162.0" rx="9.5" ry="6.8" fill="rgba(255,255,255,0.35)" filter="url(#bl)"/>
-        <!-- 장미 3: 봉오리 (오른쪽, 229,218) -->
-        <path d="M 227.5 235.0 Q 209.8 235.4 215.5 220.6 Q 230.3 202.9 229.0 218.0 Z" fill="#2E7D32" opacity="0.9"/>
-        <path d="M 227.5 235.0 Q 244.9 238.5 241.8 222.9 Q 230.3 202.9 229.0 218.0 Z" fill="#388E3C" opacity="0.85"/>
-        <path d="M 227.5 235.0 Q 216.8 218.8 230.8 197.2 Q 240.9 220.9 227.5 235.0 Z" fill="url(#r1o)"/>
-        <path d="M 227.5 235.0 Q 222.4 217.4 229.5 199.7 Q 235.6 218.6 227.5 235.0 Z" fill="url(#r1m)"/>
-        <ellipse cx="226.2" cy="212.0" rx="4.0" ry="8.4" fill="rgba(255,255,255,0.3)" filter="url(#bl)"/>
-
-      </svg>
-
-      <!-- 장미 오른쪽 2개 (좌우 반전) -->
-      <svg style="position:absolute;right:-10px;top:-10px;width:300px;height:360px;opacity:0.88;transform:scaleX(-1) rotate(8deg);" viewBox="0 0 260 380" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="r1o" cx="42%" cy="32%" r="62%"><stop offset="0%" stop-color="#FFAEC2"/><stop offset="42%" stop-color="#E02448"/><stop offset="100%" stop-color="#7C0A20"/></radialGradient>
-          <radialGradient id="r1m" cx="45%" cy="35%" r="58%"><stop offset="0%" stop-color="#FF8FAF"/><stop offset="38%" stop-color="#C91C3A"/><stop offset="100%" stop-color="#680618"/></radialGradient>
-          <radialGradient id="r1i" cx="50%" cy="42%" r="52%"><stop offset="0%" stop-color="#FFC4D2"/><stop offset="48%" stop-color="#DC2244"/><stop offset="100%" stop-color="#8A1025"/></radialGradient>
-          <radialGradient id="r1c" cx="48%" cy="38%" r="50%"><stop offset="0%" stop-color="#FFD5E0"/><stop offset="45%" stop-color="#FF4A6E"/><stop offset="100%" stop-color="#9B1530"/></radialGradient>
-          <radialGradient id="r2o" cx="42%" cy="30%" r="64%"><stop offset="0%" stop-color="#FF9EC0"/><stop offset="40%" stop-color="#D41E42"/><stop offset="100%" stop-color="#720820"/></radialGradient>
-          <radialGradient id="r2m" cx="44%" cy="33%" r="58%"><stop offset="0%" stop-color="#FF80A8"/><stop offset="36%" stop-color="#BE1838"/><stop offset="100%" stop-color="#600618"/></radialGradient>
-          <radialGradient id="r2i" cx="50%" cy="40%" r="54%"><stop offset="0%" stop-color="#FFBACE"/><stop offset="46%" stop-color="#D62040"/><stop offset="100%" stop-color="#841020"/></radialGradient>
-          <radialGradient id="r2c" cx="46%" cy="36%" r="52%"><stop offset="0%" stop-color="#FFD0DE"/><stop offset="44%" stop-color="#FF3C66"/><stop offset="100%" stop-color="#951430"/></radialGradient>
-          <radialGradient id="l1" cx="35%" cy="42%" r="65%"><stop offset="0%" stop-color="#69BF68"/><stop offset="55%" stop-color="#2E7D32"/><stop offset="100%" stop-color="#1A5216"/></radialGradient>
-          <radialGradient id="l2" cx="60%" cy="32%" r="62%"><stop offset="0%" stop-color="#80C784"/><stop offset="50%" stop-color="#388E3C"/><stop offset="100%" stop-color="#1A5216"/></radialGradient>
-          <filter id="bl"><feGaussianBlur stdDeviation="1.2"/></filter>
-        </defs>
-        
-        <!-- 줄기 -->
-        <path d="M 100 395 Q 105 330 108 265 Q 111 200 115 158" stroke="#2E7D32" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-        <path d="M 175 395 Q 172 345 170 290 Q 168 240 165 205" stroke="#2E7D32" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <!-- 곁가지 -->
-        <path d="M 112 240 Q 85 220 72 208" stroke="#2E7D32" stroke-width="2.5" fill="none"/>
-        <!-- 잎들 -->
-        <path d="M 72 208 Q 52 185 68 198 Q 70 194 72 208 Z" fill="url(#l1)"/><path d="M 72 208 Q 70 196 68 198" stroke="#1A5216" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M 112 268 Q 88 250 100 260 Q 106 257 112 268 Z" fill="url(#l2)"/><path d="M 112 268 Q 106 259 100 260" stroke="#1A5216" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M 168 255 Q 192 235 178 248 Q 173 243 168 255 Z" fill="url(#l1)"/><path d="M 168 255 Q 173 245 178 248" stroke="#1A5216" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <!-- 가시 -->
-        <path d="M 114 290 Q 126 283 123 274 Q 118 282 114 290Z" fill="#2E7D32"/>
-        <!-- 꽃받침 -->
-        <path d="M 107 168 Q 100 156 103 146 Q 108 140 116 146 Q 124 140 129 146 Q 132 156 124 168 Q 116 163 107 168Z" fill="#2D6A2D"/>
-        <path d="M 157 213 Q 150 201 153 191 Q 158 185 166 191 Q 174 185 179 191 Q 182 201 174 213 Q 166 208 157 213Z" fill="#2D6A2D"/>
-        <!-- 장미 1: 크게 핀 (116,158) -->
-        <path d="M 116.0 158.0 Q 89.1 123.6 85.2 95.8 Q 109.5 111.6 110.1 116.1 Q 109.5 111.6 128.5 89.7 Q 132.4 117.5 116.0 158.0 Z" fill="url(#r2o)" opacity="0.92"/>
-        <path d="M 116.0 158.0 Q 140.4 121.8 165.7 109.5 Q 158.1 137.5 154.1 139.4 Q 158.1 137.5 184.8 148.7 Q 159.5 161.1 116.0 158.0 Z" fill="url(#r2o)" opacity="0.92"/>
-        <path d="M 116.0 158.0 Q 158.0 170.0 177.5 190.2 Q 148.6 191.7 145.4 188.5 Q 148.6 191.7 146.1 220.6 Q 126.5 200.4 116.0 158.0 Z" fill="url(#r2o)" opacity="0.92"/>
-        <path d="M 116.0 158.0 Q 117.5 201.6 104.3 226.5 Q 94.0 199.4 96.1 195.4 Q 94.0 199.4 65.8 206.0 Q 79.0 181.1 116.0 158.0 Z" fill="url(#r2o)" opacity="0.92"/>
-        <path d="M 116.0 158.0 Q 75.0 172.9 47.3 168.1 Q 69.8 149.9 74.3 150.6 Q 69.8 149.9 54.9 125.0 Q 82.6 129.9 116.0 158.0 Z" fill="url(#r2o)" opacity="0.92"/>
-        <path d="M 116.0 158.0 Q 117.6 129.4 125.6 114.4 Q 130.4 130.8 129.2 133.2 Q 130.4 130.8 146.7 125.7 Q 138.8 140.6 116.0 158.0 Z" fill="url(#r2m)" opacity="0.95"/>
-        <path d="M 116.0 158.0 Q 143.7 150.7 160.4 153.7 Q 146.3 163.3 143.6 162.9 Q 146.3 163.3 156.2 177.3 Q 139.6 174.3 116.0 158.0 Z" fill="url(#r2m)" opacity="0.95"/>
-        <path d="M 116.0 158.0 Q 131.5 182.1 133.8 198.9 Q 120.3 188.5 119.9 185.8 Q 120.3 188.5 110.1 202.2 Q 107.8 185.5 116.0 158.0 Z" fill="url(#r2m)" opacity="0.95"/>
-        <path d="M 116.0 158.0 Q 97.8 180.2 82.6 187.6 Q 88.3 171.5 90.8 170.3 Q 88.3 171.5 72.1 166.1 Q 87.3 158.6 116.0 158.0 Z" fill="url(#r2m)" opacity="0.95"/>
-        <path d="M 116.0 158.0 Q 89.3 147.6 77.5 135.4 Q 94.6 135.9 96.5 137.8 Q 94.6 135.9 94.8 118.8 Q 106.5 130.9 116.0 158.0 Z" fill="url(#r2m)" opacity="0.95"/>
-        <path d="M 116.0 158.0 Q 118.4 141.4 123.3 134.9 125.8 145.0 Q 136.2 144.6 131.3 151.1 116.0 158.0 Z" fill="url(#r2i)" opacity="0.97"/>
-        <path d="M 116.0 158.0 Q 132.6 160.4 139.1 165.3 129.0 167.8 Q 129.4 178.2 122.9 173.3 116.0 158.0 Z" fill="url(#r2i)" opacity="0.97"/>
-        <path d="M 116.0 158.0 Q 113.6 174.6 108.7 181.1 106.2 171.0 Q 95.8 171.4 100.7 164.9 116.0 158.0 Z" fill="url(#r2i)" opacity="0.97"/>
-        <path d="M 116.0 158.0 Q 99.4 155.6 92.9 150.7 103.0 148.2 Q 102.6 137.8 109.1 142.7 116.0 158.0 Z" fill="url(#r2i)" opacity="0.97"/>
-        <ellipse cx="116.0" cy="158.0" rx="7.6" ry="6.4" fill="url(#r2c)"/>
-        <ellipse cx="116.0" cy="158.0" rx="4.2" ry="3.6" fill="#FFCCD5" opacity="0.9"/>
-        <ellipse cx="106.2" cy="148.8" rx="10.5" ry="7.6" fill="rgba(255,255,255,0.35)" filter="url(#bl)"/>
-        <!-- 장미 2: 봉오리 (166,203) -->
-        <path d="M 167.3 218.2 Q 151.5 221.3 154.3 207.4 Q 164.8 189.5 166.0 203.0 Z" fill="#2E7D32" opacity="0.9"/>
-        <path d="M 167.3 218.2 Q 183.4 218.5 178.3 205.3 Q 164.8 189.5 166.0 203.0 Z" fill="#388E3C" opacity="0.85"/>
-        <path d="M 167.3 218.2 Q 155.2 205.7 164.4 184.4 Q 177.1 203.7 167.3 218.2 Z" fill="url(#r1o)"/>
-        <path d="M 167.3 218.2 Q 160.0 203.5 163.6 186.8 Q 172.0 202.5 167.3 218.2 Z" fill="url(#r1m)"/>
-        <ellipse cx="162.6" cy="198.2" rx="3.6" ry="7.5" fill="rgba(255,255,255,0.3)" filter="url(#bl)"/>
-
-      </svg>
-
       <!-- 텍스트 중앙 -->
       <div style="position:relative;z-index:2;text-align:center;padding:48px 24px;">
         <h2 style="font-family:'Playfair Display',serif;font-size:36px;color:#EAE0D0;font-weight:700;margin-bottom:20px;line-height:1.3;">7월 아봐타® 코스</h2>
