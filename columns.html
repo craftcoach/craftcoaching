@@ -978,8 +978,6 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
         <a href="company_philosophy.html">회사 철학</a>
         <a href="company_brand.html">브랜드 스토리</a>
         <a href="company_vision.html">비전 &amp; 미션</a>
-        <a href="company_media.html">미디어</a>
-        <a href="company_books.html">저서</a>
       </div>
     </li>
     <li>
@@ -1005,10 +1003,11 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
       </div>
     </li>
     <li>
-      <span class="nav-sec-label">칼럼</span>
+      <span class="nav-sec-label">자료</span>
       <div class="dropdown">
-        <a href="columns.html">전체 보기</a>
-        <a href="job-crafting-column-01.html">잡 크래프팅이란 무엇인가</a>
+        <a href="columns.html">칼럼</a>
+        <a href="company_media.html">미디어</a>
+        <a href="company_books.html">저서</a>
       </div>
     </li>
     <li>
@@ -1037,8 +1036,6 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
     <a class="mob-sub-link" href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
     <a class="mob-sub-link" href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
     <a class="mob-sub-link" href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
-    <a class="mob-sub-link" href="company_media.html" onclick="closeNav()">미디어</a>
-    <a class="mob-sub-link" href="company_books.html" onclick="closeNav()">저서</a>
   </details>
 
   <details class="mob-accordion" data-key="jc">
@@ -1061,9 +1058,10 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
   </details>
 
   <details class="mob-accordion" data-key="column">
-    <summary class="mob-sec-title">칼럼<span class="mob-arrow">›</span></summary>
-    <a class="mob-sub-link" href="columns.html" onclick="closeNav()">전체 보기</a>
-    <a class="mob-sub-link" href="job-crafting-column-01.html" onclick="closeNav()">잡 크래프팅이란 무엇인가</a>
+    <summary class="mob-sec-title">자료<span class="mob-arrow">›</span></summary>
+    <a class="mob-sub-link" href="columns.html" onclick="closeNav()">칼럼</a>
+    <a class="mob-sub-link" href="company_media.html" onclick="closeNav()">미디어</a>
+    <a class="mob-sub-link" href="company_books.html" onclick="closeNav()">저서</a>
   </details>
 
   <details class="mob-accordion" data-key="avatar">
@@ -1183,7 +1181,7 @@ window.addEventListener('popstate', function(e){
 </script>
 
 <section id="columns" style="background:var(--cream);">
-  <div class="section-inner" style="padding-top:148px;">
+  <div class="section-inner" style="padding-top:148px; max-width:none; padding-left:48px; padding-right:48px;">
     <div class="section-tag">Column</div>
     <h2 class="section-title">칼럼</h2>
     <div class="gold-rule"></div>
@@ -1194,7 +1192,7 @@ window.addEventListener('popstate', function(e){
       .col-table{width:100%;border-collapse:collapse;}
       .col-table thead th{
         font-size:12px;font-weight:700;letter-spacing:1px;color:#fff;
-        background:var(--green);padding:14px 16px;text-align:left;
+        background:var(--green);padding:10.5px 16px;text-align:left;
       }
       .col-table thead th.col-th-num{width:70px;text-align:center;}
       .col-table thead th.col-th-date{width:110px;text-align:center;}
@@ -1212,7 +1210,7 @@ window.addEventListener('popstate', function(e){
       .col-row-empty td{text-align:center;color:var(--text-lt);font-size:13px;padding:28px;font-style:italic;}
     </style>
 
-    <div class="col-count">전체: 1개 (1/1페이지)</div>
+    <div class="col-count" id="col-count">불러오는 중...</div>
 
     <table class="col-table">
       <thead>
@@ -1222,17 +1220,37 @@ window.addEventListener('popstate', function(e){
           <th class="col-th-date">날짜</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td class="col-td-num">01</td>
-          <td class="col-td-title"><a href="job-crafting-column-01.html">잡 크래프팅이란 무엇인가</a></td>
-          <td class="col-td-date">2026-07-06</td>
-        </tr>
-        <tr class="col-row-empty">
-          <td colspan="3">다음 칼럼이 곧 이어집니다</td>
-        </tr>
+      <tbody id="col-tbody">
+        <tr class="col-row-empty"><td colspan="3">불러오는 중...</td></tr>
       </tbody>
     </table>
+
+    <script>
+    (function () {
+      fetch('columns-data.json')
+        .then(function (res) { return res.json(); })
+        .then(function (items) {
+          items.sort(function (a, b) { return b.num.localeCompare(a.num); });
+          var tbody = document.getElementById('col-tbody');
+          var countEl = document.getElementById('col-count');
+          countEl.textContent = '전체: ' + items.length + '개 (1/1페이지)';
+          var html = '';
+          items.forEach(function (item) {
+            html += '<tr>' +
+              '<td class="col-td-num">' + item.num + '</td>' +
+              '<td class="col-td-title"><a href="' + item.url + '">' + item.title + '</a></td>' +
+              '<td class="col-td-date">' + item.date + '</td>' +
+              '</tr>';
+          });
+          html += '<tr class="col-row-empty"><td colspan="3">다음 칼럼이 곧 이어집니다</td></tr>';
+          tbody.innerHTML = html;
+        })
+        .catch(function () {
+          document.getElementById('col-tbody').innerHTML =
+            '<tr class="col-row-empty"><td colspan="3">칼럼 목록을 불러오지 못했습니다.</td></tr>';
+        });
+    })();
+    </script>
   </div>
 </section>
 
