@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.craftcoaching.kr/">
-  <meta property="og:title" content="Craft Coaching — 삶과 비즈니스를 정교하게 빚어갑니다">
-  <meta property="og:description" content="신념이 바뀌면 삶이 바뀝니다. 삶이 바뀌면 가치가 바뀝니다. 온전한 가치를 찾는 고객의 크래프팅 여정에 함께합니다.">
+  <meta property="og:url" content="https://www.craftcoaching.kr/columns.html">
+  <meta property="og:title" content="칼럼 — Craft Coaching">
+  <meta property="og:description" content="크래프트코칭 이정숙 코치의 잡 크래프팅, 코칭, 코칭 수퍼비전 칼럼. 현장 경험을 바탕으로 한 코칭 인사이트를 연재합니다.">
   <meta property="og:image" content="https://www.craftcoaching.kr/og_image.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
@@ -13,11 +13,11 @@
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="Craft Coaching">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Craft Coaching — 삶과 비즈니스를 정교하게 빚어갑니다">
-  <meta name="twitter:description" content="신념이 바뀌면 삶이 바뀝니다. 삶이 바뀌면 가치가 바뀝니다. 온전한 가치를 찾는 고객의 크래프팅 여정에 함께합니다.">
+  <meta name="twitter:title" content="칼럼 — Craft Coaching">
+  <meta name="twitter:description" content="크래프트코칭 이정숙 코치의 잡 크래프팅, 코칭, 코칭 수퍼비전 칼럼. 현장 경험을 바탕으로 한 코칭 인사이트를 연재합니다.">
   <meta name="twitter:image" content="https://www.craftcoaching.kr/og_image.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>브랜드 스토리 — Craft Coaching</title>
+<title>칼럼 — Craft Coaching</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 /* ── CSS Variables ── */
@@ -358,7 +358,7 @@ section { scroll-margin-top: 108px; }
   font-family:'Playfair Display',serif; font-size:15px; font-weight:600;
   color:#EAE0D0; margin-bottom:4px;
 }
-.jc-type-desc { font-size:12px; color:rgba(234,224,208,0.55); line-height:1.7; }
+.jc-type-desc { font-size:12px; color:rgba(234,224,208,0.55); line-height:1.7; white-space:nowrap; }
 
 /* ── Hero Photo ── */
 .hero-photo-wrap {
@@ -580,82 +580,6 @@ footer {
   color:var(--sage); cursor:pointer;
   background:none; border:none;
 }
-
-@media (max-width:900px) {
-  nav { padding:0 16px; height:48px; display:flex; justify-content:space-between; align-items:center; }
-  .nav-logo img { height:39px !important; }
-  .section-inner { padding-top:118px !important; }
-  .nav-menu { display:flex; }
-  .nav-hamburger { display:none !important; margin-left:auto; }
-  .nav-cta { display:none; }
-  .section-inner { padding:108px 20px 60px; }
-  .hero-grid, .company-grid, .coaching-intro, .vm-grid,
-  .avatar-grid, .contact-grid, .two-col { grid-template-columns:1fr; }
-  .brand-highlight { grid-template-columns:1fr 1fr; }
-  .biz-grid { grid-template-columns:1fr; }
-  .field-grid { grid-template-columns:1fr; }
-  .hero-title { font-size:32px; } .hero-title-sub { font-size:32px; }
-  .jc-featured { grid-template-columns:1fr; }
-  .media-grid, .book-grid { grid-template-columns:1fr; }
-  #hero { padding:90px 20px 60px; }
-  .hero-photo-frame { width:280px; height:330px; }
-  .section-title, .section-title-light { font-size:28px; }
-  .jc-featured { padding:28px; }
-  footer { flex-direction:column; align-items:flex-start; gap:16px; padding:32px 20px; }
-  .footer-links { flex-wrap:wrap; gap:10px; }
-  .hero-grid { grid-template-columns:1fr; text-align:center; }
-  .hero-photo-wrap { align-items:center; }
-  .hero-btns { justify-content:center; }
-}
-@media (max-width:480px) {
-  .hero-title { font-size:26px; }
-  .hero-title-sub { font-size:26px; }
-  .section-title, .section-title-light { font-size:24px; }
-  .hero-photo-frame { width:240px; height:280px; }
-  .section-inner { padding:96px 16px 48px; }
-}
-/* ── Contact Info Cards ── */
-@media (max-width:600px) {
-  .contact-info > div { grid-template-columns:1fr !important; }
-}
-
-/* ── TOP 버튼 ── */
-#topBtn {
-  display:none;
-  position:fixed;
-  right:16px; bottom:80px;
-  z-index:200;
-  width:44px; height:44px;
-  background:rgba(15,32,24,0.88);
-  border:1.5px solid #C9A870;
-  border-radius:50%;
-  cursor:pointer;
-  align-items:center;
-  justify-content:center;
-  backdrop-filter:blur(8px);
-  transition:all 0.25s;
-  opacity:0;
-  pointer-events:none;
-}
-#topBtn.visible {
-  opacity:1;
-  pointer-events:auto;
-}
-#topBtn:hover, #topBtn:active {
-  background:rgba(184,147,90,0.25);
-}
-#topBtn svg {
-  width:18px; height:18px;
-  stroke:#C9A870; fill:none;
-  stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
-}
-
-@media (max-width:900px) {
-  #fixedMenuBtn { display:flex; }
-  #topBtn { display:flex; }
-}
-
-
 
 
 /* nav 섹션 제목 (클릭 불가) */
@@ -954,6 +878,15 @@ html { -webkit-text-size-adjust:100%; }
   [style*="padding:28px"] { padding:20px 14px !important; }
 
 }
+
+/* jc-type 모바일 */
+@media (max-width:600px) {
+  .jc-type { flex-direction:column !important; gap:12px !important; padding:18px 14px !important; }
+  .jc-type-icon { width:36px !important; height:36px !important; flex-shrink:0; }
+  .jc-type-name { font-size:14px !important; }
+  .jc-type-desc { white-space:normal !important; font-size:12px !important; }
+}
+
 /* ══ END MOBILE ENHANCED ══ */
 
 
@@ -1039,7 +972,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
   </a>
   <ul class="nav-menu">
     <li>
-      <a href="company.html" style="border-bottom:2px solid #C9A870;color:#C9A870;padding-bottom:2px;">회사 소개</a>
+      <span class="nav-sec-label">회사 소개</span>
       <div class="dropdown">
         <a href="company_ceo.html">CEO Message</a>
         <a href="company_philosophy.html">회사 철학</a>
@@ -1082,7 +1015,7 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
       </div>
     </li>
     <li>
-      <span class="nav-sec-label">칼럼</span>
+      <span class="nav-sec-label" style="color:#C9A870;border-bottom:2px solid #C9A870;padding-bottom:2px;cursor:default;">칼럼</span>
       <div class="dropdown">
         <a href="columns.html">전체 보기</a>
         <a href="job-crafting-column-01.html">잡 크래프팅이란 무엇인가</a>
@@ -1148,6 +1081,8 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
 
 </div>
+
+
 
 <script>
 var _lastNavKey = null;
@@ -1244,34 +1179,58 @@ window.addEventListener('popstate', function(e){
   }
   setTimeout(function(){ history.pushState({nav:'ready'},''); }, 0);
 });
-</script>
 
-<section id="brand" style="background:var(--dark);">
-  <div class="section-inner">
-    <div class="section-tag">Brand Story</div>
-    <h2 class="section-title-light">브랜드 스토리</h2>
+/* mobToggle: radio 방식으로 대체 */
+</script>
+<section id="columns" style="background:var(--cream);">
+  <div class="section-inner" style="padding-top:148px;">
+    <div class="section-tag">Column</div>
+    <h2 class="section-title">칼럼</h2>
     <div class="gold-rule"></div>
-    <div class="brand-story">
-      <div class="brand-line" style="color:#EAE0D0;">"사람과 조직을 움직이는 것은<br>기술이 아니라 <span style="color:var(--gold);">신념</span>이었습니다."</div>
-      <p class="brand-body" style="color:rgba(234,224,208,0.6);">
-        기업 현장에서 수많은 사람들과 팀을 만나며 성과와 관계, 성장의 흐름을 관찰해왔습니다.
-        그 과정에서 깨달은 것은, 사람과 조직을 움직이는 것은 기술이 아니라 '신념'이라는 사실이었습니다.
-      </p>
-      <p class="brand-body" style="color:rgba(234,224,208,0.6); margin-top:20px;">
-        이 깨달음은 코칭의 방향을 완전히 바꾸어 놓았습니다.
-        우리는 문제를 해결하는 코칭이 아니라, 신념을 정돈하고 가능성을 빚어내는 코칭을 선택했습니다.
-      </p>
-      <div style="margin-top:40px;padding:32px;background:rgba(184,147,90,0.06);border-left:2px solid var(--gold);">
-        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:#EAE0D0;line-height:1.9;">
-          정답을 주지 않고,<br>
-          앞에서 끌지 않고,<br>
-          뒤에서 밀지 않고,<br>
-          함께 걸으며 성장의 속도를 존중하는 코칭.
-        </p>
+    <p class="section-lead">잡 크래프팅, 코칭, 코칭 수퍼비전 — 현장에서 길어 올린 인사이트를 연재합니다.</p>
+
+    <style>
+      .col-list{display:flex;flex-direction:column;gap:20px;max-width:720px;}
+      .col-card{display:block;background:#fff;padding:32px 36px;text-decoration:none;
+        box-shadow:0 2px 12px rgba(27,58,42,0.04);border-top:2px solid transparent;transition:all .3s;}
+      .col-card:hover{border-top-color:var(--gold);box-shadow:0 16px 48px rgba(27,58,42,0.1);transform:translateY(-3px);}
+      .col-card-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+      .col-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;
+        border-radius:50%;background:var(--green);color:#EAE0D0;font-family:'Playfair Display',serif;
+        font-size:13px;font-weight:700;flex-shrink:0;}
+      .col-num-soft{background:rgba(184,147,90,0.15);color:var(--gold);}
+      .col-tag{font-size:11px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;}
+      .col-card-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:var(--green);margin-bottom:10px;}
+      .col-card-desc{font-size:14px;color:var(--text-lt);line-height:1.8;}
+      .col-card-meta{margin-top:16px;font-size:12px;color:var(--text-lt);letter-spacing:0.5px;}
+      .col-card-placeholder{background:transparent;border:1px dashed rgba(184,147,90,0.35);
+        box-shadow:none;text-align:center;padding:30px;cursor:default;}
+      .col-card-placeholder p{color:var(--text-lt);font-size:14px;margin-top:10px;}
+    </style>
+
+    <div class="col-list">
+      <a class="col-card" href="job-crafting-column-01.html">
+        <div class="col-card-head">
+          <span class="col-num">01</span>
+          <span class="col-tag">잡 크래프팅</span>
+        </div>
+        <h3 class="col-card-title">잡 크래프팅이란 무엇인가</h3>
+        <p class="col-card-desc">같은 일을 하면서도 어떤 사람은 무기력해지고, 어떤 사람은 의미를 찾습니다. 그 차이를 만드는 잡 크래프팅의 개념과 세 가지 크래프팅을 소개합니다.</p>
+        <div class="col-card-meta">2026.07.06</div>
+      </a>
+
+      <div class="col-card col-card-placeholder">
+        <span class="col-num col-num-soft">02</span>
+        <p>다음 칼럼이 곧 이어집니다</p>
       </div>
     </div>
   </div>
 </section>
+
+<div style="height:60px;background:var(--cream);"></div>
+<div style="height:60px;background:var(--cream);"></div>
+
+
 
 <footer>
   <div style="cursor:default;">
