@@ -1440,4 +1440,29 @@ window.addEventListener('popstate', function(e){
 /* 드롭다운 메뉴 끊김(사라짐) 방지 — li 바로 아래에 딱 붙도록 고정 */
 .dropdown { top:100% !important; margin-top:0 !important; }
 </style>
+
+<style>
+/* ══════════════════════════════════════════
+   콘텐츠 그리드 반응형 고정 보정 (자동 삽입)
+   601px 이상에서는 항상 원래(2단/3단) 레이아웃 유지
+   ══════════════════════════════════════════ */
+@media (min-width:601px) {
+  .hero-grid,
+  .company-grid,
+  .coaching-intro,
+  .vm-grid,
+  .avatar-grid,
+  .contact-grid,
+  .two-col,
+  .jc-featured,
+  .brand-highlight,
+  .form-row { grid-template-columns:1fr 1fr !important; }
+  .biz-grid,
+  .field-grid { grid-template-columns:repeat(2,1fr) !important; }
+  .media-grid,
+  .book-grid { grid-template-columns:repeat(3,1fr) !important; }
+  .hero-grid { text-align:left !important; }
+  .hero-photo-wrap { align-items:center !important; }
+}
+</style>
 </html>
