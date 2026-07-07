@@ -1595,4 +1595,19 @@ function mobToggle(el){
   .hero-photo-wrap { align-items:center !important; }
 }
 </style>
+
+<style>
+/* ══════════════════════════════════════════
+   Footer 반응형 고정 보정 (자동 삽입)
+   601px 이상: 로고-왼쪽 / 저작권 텍스트-오른쪽 한 줄 고정
+   ══════════════════════════════════════════ */
+@media (min-width:601px) {
+  footer {
+    flex-direction:row !important;
+    align-items:center !important;
+    padding:14px 48px !important;
+  }
+  .footer-info { text-align:right !important; }
+}
+</style>
 </html>
