@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.craftcoaching.kr/columns.html">
+  <meta property="og:url" content="https://www.craftcoaching.kr/column-view.html">
   <meta property="og:title" content="칼럼 — Craft Coaching">
-  <meta property="og:description" content="크래프트코칭 이정숙 코치의 잡 크래프팅, 코칭, 코칭 수퍼비전 칼럼. 현장 경험을 바탕으로 한 코칭 인사이트를 연재합니다.">
+  <meta property="og:description" content="크래프트코칭 이정숙 코치의 잡 크래프팅, 코칭, 코칭 수퍼비전 칼럼.">
   <meta property="og:image" content="https://www.craftcoaching.kr/og_image.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
@@ -14,7 +14,7 @@
   <meta property="og:site_name" content="Craft Coaching">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="칼럼 — Craft Coaching">
-  <meta name="twitter:description" content="크래프트코칭 이정숙 코치의 잡 크래프팅, 코칭, 코칭 수퍼비전 칼럼. 현장 경험을 바탕으로 한 코칭 인사이트를 연재합니다.">
+  <meta name="twitter:description" content="크래프트코칭 이정숙 코치의 잡 크래프팅, 코칭, 코칭 수퍼비전 칼럼.">
   <meta name="twitter:image" content="https://www.craftcoaching.kr/og_image.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>칼럼 — Craft Coaching</title>
@@ -978,14 +978,8 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
         <a href="company_philosophy.html">회사 철학</a>
         <a href="company_brand.html">브랜드 스토리</a>
         <a href="company_vision.html">비전 &amp; 미션</a>
-      </div>
-    </li>
-    <li>
-      <span class="nav-sec-label">잡 크래프팅</span>
-      <div class="dropdown">
-        <a href="jc_intro.html">잡 크래프팅이란</a>
-        <a href="jc_coaching.html">코칭 프로그램</a>
-        <a href="jc_book.html">저서</a>
+        <a href="company_media.html">미디어</a>
+        <a href="company_books.html">저서</a>
       </div>
     </li>
     <li>
@@ -1003,11 +997,11 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
       </div>
     </li>
     <li>
-      <span class="nav-sec-label">자료</span>
+      <span class="nav-sec-label">잡 크래프팅</span>
       <div class="dropdown">
-        <a href="columns.html">칼럼</a>
-        <a href="company_media.html">미디어</a>
-        <a href="company_books.html">저서</a>
+        <a href="jc_intro.html">잡 크래프팅이란</a>
+        <a href="jc_coaching.html">코칭 프로그램</a>
+        <a href="jc_book.html">저서</a>
       </div>
     </li>
     <li>
@@ -1020,6 +1014,12 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
         <a href="avatar_books.html">아봐타® 도서</a>
       </div>
     </li>
+    <li>
+      <span class="nav-sec-label">자료</span>
+      <div class="dropdown">
+        <a href="columns.html">칼럼</a>
+      </div>
+    </li>
   </ul>
   <button class="nav-hamburger" id="navBtn" onclick="toggleNav()" aria-label="메뉴열기">
     <span class="nav-ham-line"></span>
@@ -1030,19 +1030,15 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
 </nav>
 <!-- ── 모바일 오버레이 메뉴 ── -->
 <div class="nav-overlay" id="navOverlay">
+
   <details class="mob-accordion" data-key="company">
     <summary class="mob-sec-title">회사 소개<span class="mob-arrow">›</span></summary>
     <a class="mob-sub-link" href="company_ceo.html" onclick="closeNav()">CEO Message</a>
     <a class="mob-sub-link" href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
     <a class="mob-sub-link" href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
     <a class="mob-sub-link" href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
-  </details>
-
-  <details class="mob-accordion" data-key="jc">
-    <summary class="mob-sec-title">잡 크래프팅<span class="mob-arrow">›</span></summary>
-    <a class="mob-sub-link" href="jc_intro.html" onclick="closeNav()">잡 크래프팅이란</a>
-    <a class="mob-sub-link" href="jc_coaching.html" onclick="closeNav()">코칭 프로그램</a>
-    <a class="mob-sub-link" href="jc_book.html" onclick="closeNav()">저서</a>
+    <a class="mob-sub-link" href="company_media.html" onclick="closeNav()">미디어</a>
+    <a class="mob-sub-link" href="company_books.html" onclick="closeNav()">저서</a>
   </details>
 
   <details class="mob-accordion" data-key="business">
@@ -1057,11 +1053,11 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
     <a class="mob-sub-link" href="life_fields.html" onclick="closeNav()">코칭 분야</a>
   </details>
 
-  <details class="mob-accordion" data-key="column">
-    <summary class="mob-sec-title">자료<span class="mob-arrow">›</span></summary>
-    <a class="mob-sub-link" href="columns.html" onclick="closeNav()">칼럼</a>
-    <a class="mob-sub-link" href="company_media.html" onclick="closeNav()">미디어</a>
-    <a class="mob-sub-link" href="company_books.html" onclick="closeNav()">저서</a>
+  <details class="mob-accordion" data-key="jc">
+    <summary class="mob-sec-title">잡 크래프팅<span class="mob-arrow">›</span></summary>
+    <a class="mob-sub-link" href="jc_intro.html" onclick="closeNav()">잡 크래프팅이란</a>
+    <a class="mob-sub-link" href="jc_coaching.html" onclick="closeNav()">코칭 프로그램</a>
+    <a class="mob-sub-link" href="jc_book.html" onclick="closeNav()">저서</a>
   </details>
 
   <details class="mob-accordion" data-key="avatar">
@@ -1071,6 +1067,11 @@ a.mob-sec-title.mob-direct:active { color:#C9A870; }
     <a class="mob-sub-link" href="avatar_schedule.html" onclick="closeNav()">아봐타® 코스일정</a>
     <a class="mob-sub-link" href="avatar_faq.html" onclick="closeNav()">FAQ</a>
     <a class="mob-sub-link" href="avatar_books.html" onclick="closeNav()">아봐타® 도서</a>
+  </details>
+
+    <details class="mob-accordion" data-key="column">
+    <summary class="mob-sec-title">자료<span class="mob-arrow">›</span></summary>
+    <a class="mob-sub-link" href="columns.html" onclick="closeNav()">칼럼</a>
   </details>
 
   <a class="mob-sec-title mob-direct" href="contact.html" onclick="closeNav()">문의하기</a>
@@ -1180,105 +1181,77 @@ window.addEventListener('popstate', function(e){
 /* mobToggle: radio 방식으로 대체 */
 </script>
 
-<section id="columns" style="background:var(--cream);">
-  <div class="section-inner" style="padding-top:148px; max-width:none; padding-left:72px; padding-right:48px;">
-    <div class="section-tag">Column</div>
-    <h2 class="section-title">칼럼</h2>
-    <div class="gold-rule"></div>
-    <p class="section-lead">잡 크래프팅, 코칭, 코칭 수퍼비전 — 현장에서 길어 올린 인사이트를 연재합니다.</p>
-
+<section id="column-view" style="background:var(--cream);">
+  <div class="section-inner" style="padding-top:148px; max-width:760px;">
     <style>
-      .col-count{font-size:13px;color:var(--text-lt);margin-bottom:16px;letter-spacing:0.2px;}
-      .col-table{width:100%;border-collapse:collapse;}
-      .col-table thead th{
-        font-size:12px;font-weight:700;letter-spacing:1px;color:#fff;
-        background:var(--green);padding:7px 16px;text-align:left;
-      }
-      .col-table thead th.col-th-num{width:70px;text-align:center;}
-      .col-table thead th.col-th-date{width:110px;text-align:center;}
-      .col-table tbody td{
-        padding:16px;border-bottom:1px solid var(--border);
-        font-size:14.5px;color:var(--text);vertical-align:middle;
-      }
-      .col-table tbody td.col-td-num{text-align:center;color:var(--text-lt);font-family:'Playfair Display',serif;}
-      .col-table tbody td.col-td-date{text-align:center;color:var(--text-lt);font-size:13px;}
-      .col-table tbody tr{transition:background .2s;}
-      .col-table tbody tr:hover{background:#fff;}
-      .col-table tbody tr:hover td.col-td-title a{color:var(--gold);}
-      .col-td-title a{color:var(--green);text-decoration:none;font-weight:500;transition:color .2s;}
-      .col-td-title .col-new{color:#C0463C;font-size:11px;font-weight:700;margin-left:6px;}
-      .col-row-empty td{text-align:center;color:var(--text-lt);font-size:13px;padding:28px;font-style:italic;}
+      .colv-back{display:inline-block;margin-bottom:36px;font-size:13px;color:var(--text-lt);text-decoration:none;letter-spacing:0.3px;}
+      .colv-back:hover{color:var(--gold);}
+      .colv-meta{font-size:13px;color:var(--text-lt);margin:18px 0 44px;letter-spacing:0.3px;}
+      #doc-content h1{font-family:'Playfair Display',serif;color:var(--green);font-size:32px;font-weight:700;margin:0 0 30px;}
+      #doc-content h2{font-family:'Playfair Display',serif;color:var(--green);font-size:22px;font-weight:600;margin:48px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+      #doc-content h3{font-family:'Playfair Display',serif;color:var(--gold);font-size:17px;font-weight:600;margin:30px 0 10px;}
+      #doc-content p{font-size:14px;color:var(--text-lt);line-height:1.75;margin:0 0 16px;max-width:660px;}
+      #doc-content p:first-of-type{font-style:italic;color:var(--green);font-size:18px;border-left:3px solid var(--gold);padding-left:18px;}
+      #doc-content strong{color:var(--green);}
+      #doc-content hr{border:none;border-top:1px solid var(--border);margin:56px 0 28px;}
+      #doc-content > p:last-child{text-align:center;font-style:italic;font-size:13.5px;color:var(--text-lt);}
+      .colv-state{color:var(--text-lt);font-size:14px;font-style:italic;}
     </style>
 
-    <div class="col-count" id="col-count">불러오는 중...</div>
+    <a href="columns.html" class="colv-back">← 칼럼 목록으로</a>
+    <div class="section-tag" id="colv-tag">Column</div>
+    <h1 class="section-title" id="colv-title" style="font-size:34px;">불러오는 중...</h1>
+    <div class="gold-rule"></div>
+    <div class="colv-meta" id="colv-meta"></div>
 
-    <table class="col-table">
-      <thead>
-        <tr>
-          <th class="col-th-num">번호</th>
-          <th>제목</th>
-          <th class="col-th-date">날짜</th>
-        </tr>
-      </thead>
-      <tbody id="col-tbody">
-        <tr class="col-row-empty"><td colspan="3">불러오는 중...</td></tr>
-      </tbody>
-    </table>
-
-    <script>
-    (function () {
-      var REPO = 'craftcoach/craftcoaching';
-      var FOLDER = 'columns';
-
-      function parseName(filename) {
-        var base = filename.replace(/\.docx$/i, '');
-        var parts = base.split('_');
-        return {
-          num: parts[0] || '',
-          date: parts[1] || '',
-          category: parts[2] || '',
-          title: parts.slice(3).join('_') || base,
-          file: filename
-        };
-      }
-
-      fetch('https://api.github.com/repos/' + REPO + '/contents/' + FOLDER)
-        .then(function (res) {
-          if (!res.ok) throw new Error('GitHub API error: ' + res.status);
-          return res.json();
-        })
-        .then(function (files) {
-          var items = files
-            .filter(function (f) { return /\.docx$/i.test(f.name); })
-            .map(function (f) { return parseName(f.name); });
-
-          items.sort(function (a, b) { return b.num.localeCompare(a.num); });
-
-          var tbody = document.getElementById('col-tbody');
-          var countEl = document.getElementById('col-count');
-          countEl.textContent = '전체: ' + items.length + '개 (1/1페이지)';
-          var html = '';
-          items.forEach(function (item) {
-            html += '<tr>' +
-              '<td class="col-td-num">' + item.num + '</td>' +
-              '<td class="col-td-title"><a href="column-view.html?file=' + encodeURIComponent(item.file) + '">' + item.title + '</a></td>' +
-              '<td class="col-td-date">' + item.date + '</td>' +
-              '</tr>';
-          });
-          html += '<tr class="col-row-empty"><td colspan="3">다음 칼럼이 곧 이어집니다</td></tr>';
-          tbody.innerHTML = html || '<tr class="col-row-empty"><td colspan="3">등록된 칼럼이 없습니다.</td></tr>';
-        })
-        .catch(function (err) {
-          console.error(err);
-          document.getElementById('col-tbody').innerHTML =
-            '<tr class="col-row-empty"><td colspan="3">칼럼 목록을 불러오지 못했습니다.</td></tr>';
-        });
-    })();
-    </script>
+    <div id="doc-content"><p class="colv-state">칼럼 내용을 불러오는 중입니다...</p></div>
   </div>
 </section>
 
 <div style="height:60px;background:var(--cream);"></div>
+
+<script src="mammoth.browser.min.js"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var file = params.get('file');
+
+  function parseName(filename) {
+    var base = filename.replace(/\.docx$/i, '');
+    var parts = base.split('_');
+    return {
+      num: parts[0] || '',
+      date: parts[1] || '',
+      category: parts[2] || '',
+      title: parts.slice(3).join('_') || base,
+      file: filename
+    };
+  }
+
+  if (!file) {
+    document.getElementById('colv-title').textContent = '칼럼을 찾을 수 없습니다';
+    return;
+  }
+
+  var item = parseName(file);
+  document.title = item.title + ' | Craft Coaching';
+  document.getElementById('colv-tag').textContent = 'Column ' + item.num + ' · ' + item.category;
+  document.getElementById('colv-title').textContent = item.title;
+  document.getElementById('colv-meta').textContent = item.date;
+
+  fetch('columns/' + encodeURIComponent(item.file))
+    .then(function (res) { return res.arrayBuffer(); })
+    .then(function (buf) { return mammoth.convertToHtml({ arrayBuffer: buf }); })
+    .then(function (result) {
+      document.getElementById('doc-content').innerHTML = result.value;
+    })
+    .catch(function (err) {
+      document.getElementById('doc-content').innerHTML =
+        '<p class="colv-state">칼럼을 불러오지 못했습니다.</p>';
+      console.error(err);
+    });
+})();
+</script>
 <div style="height:60px;background:var(--cream);"></div>
 
 
@@ -1403,64 +1376,5 @@ window.addEventListener('popstate', function(e){
   #topBtn { display:flex !important; }
 }
 
-</style>
-
-<style>
-/* 드롭다운 메뉴 끊김(사라짐) 방지 — li 바로 아래에 딱 붙도록 고정 */
-.dropdown { top:100% !important; margin-top:0 !important; }
-</style>
-
-<style>
-/* ══════════════════════════════════════════
-   콘텐츠 그리드 반응형 고정 보정 (자동 삽입)
-   601px 이상에서는 항상 원래(2단/3단) 레이아웃 유지
-   ══════════════════════════════════════════ */
-@media (min-width:601px) {
-  .hero-grid,
-  .company-grid,
-  .coaching-intro,
-  .vm-grid,
-  .avatar-grid,
-  .contact-grid,
-  .two-col,
-  .jc-featured,
-  .brand-highlight,
-  .form-row { grid-template-columns:1fr 1fr !important; }
-  .biz-grid,
-  .field-grid { grid-template-columns:repeat(2,1fr) !important; }
-  .media-grid,
-  .book-grid { grid-template-columns:repeat(3,1fr) !important; }
-  .hero-grid { text-align:left !important; }
-  .hero-photo-wrap { align-items:center !important; }
-}
-</style>
-
-<style>
-/* ══════════════════════════════════════════
-   Footer 반응형 고정 보정 (자동 삽입)
-   601px 이상: 로고-왼쪽 / 저작권 텍스트-오른쪽 한 줄 고정
-   ══════════════════════════════════════════ */
-@media (min-width:601px) {
-  footer {
-    flex-direction:row !important;
-    align-items:center !important;
-    padding:14px 48px !important;
-  }
-  .footer-info { text-align:right !important; }
-}
-</style>
-
-<style>
-/* ══════════════════════════════════════════
-   칼럼 목록 페이지 폭 고정 보정 (자동 삽입)
-   601px 이상: section-inner 폭 제한 해제 상태 고정 유지
-   ══════════════════════════════════════════ */
-@media (min-width:601px) {
-  #columns .section-inner {
-    max-width:none !important;
-    padding-left:72px !important;
-    padding-right:48px !important;
-  }
-}
 </style>
 </html>
