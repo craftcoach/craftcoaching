@@ -673,9 +673,9 @@ footer {
   border-bottom:0.5px solid rgba(184,147,90,0.2);
 }
 .mob-item-link .mob-title { text-decoration:none; }
-a.mob-item-link { display:block; text-decoration:none; color:#EAE0D0; }
+a.mob-item-link { display:block; text-decoration:none; color:#EAE0D0; text-align:center; }
 .mob-title {
-  display:flex; justify-content:space-between; align-items:center;
+  display:flex; justify-content:center; align-items:center;
   width:100%; padding:20px 32px;
   font-family:'Josefin Sans',sans-serif;
   font-size:15px; letter-spacing:2px;
@@ -788,23 +788,30 @@ a.mob-item-link { display:block; text-decoration:none; color:#EAE0D0; }
 </nav>
 <!-- ── 모바일 오버레이 메뉴 ── -->
 <div class="nav-overlay" id="navOverlay">
-
-  <!-- 닫기 버튼 -->
+  <a class="mob-item mob-item-link" href="company_ceo.html" onclick="closeNav()">
+    <span class="mob-title">회사 소개</span>
+  </a>
+  <a class="mob-item mob-item-link" href="jc.html" onclick="closeNav()">
+    <span class="mob-title">잡 크래프팅</span>
+  </a>
+  <a class="mob-item mob-item-link" href="business_intro.html" onclick="closeNav()">
+    <span class="mob-title">비즈니스 코칭</span>
+  </a>
+  <a class="mob-item mob-item-link" href="life_intro.html" onclick="closeNav()">
+    <span class="mob-title">라이프 코칭</span>
+  </a>
+  <a class="mob-item mob-item-link" href="columns.html" onclick="closeNav()">
+    <span class="mob-title">자료</span>
+  </a>
+  <a class="mob-item mob-item-link" href="avatar_intro.html" onclick="closeNav()">
+    <span class="mob-title">아봐타®</span>
+  </a>
+  <a class="mob-item mob-item-link" href="contact.html" onclick="closeNav()">
+    <span class="mob-title">문의하기</span>
+  </a>
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
 
-  <!-- 회사 소개 -->
-  <div class="mob-item">
-    <input type="radio" name="mob-acc" id="mob-company" class="mob-radio">
-    <label for="mob-company" class="mob-title">
-      <span>회사 소개</span><span class="mob-arrow">+</span>
-    </label>
-    <div class="mob-sub">
-      <a href="company_ceo.html" onclick="closeNav()">CEO Message</a>
-      <a href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
-      <a href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
-      <a href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
-      <a href="company_books.html" onclick="closeNav()">저서</a>
-    </div>
+</div>
   </div>
 
   <!-- 비즈니스 코칭 -->
