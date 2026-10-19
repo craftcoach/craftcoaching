@@ -372,6 +372,9 @@ section { scroll-margin-top: 108px; }
   position: relative;
   width: 380px; height: 440px;
   flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px rgba(184,147,90,0.4), 0 0 0 10px rgba(184,147,90,0.08);
 }
 .hero-photo-frame::before {
   content: '';
@@ -379,6 +382,7 @@ section { scroll-margin-top: 108px; }
   top: -12px; right: -12px;
   width: 100%; height: 100%;
   border: 1px solid rgba(184,147,90,0.35);
+  border-radius: 50%;
   pointer-events: none;
   z-index: 0;
 }
@@ -386,10 +390,11 @@ section { scroll-margin-top: 108px; }
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 40%;
-  background: linear-gradient(to top, rgba(15,32,24,0.7) 0%, transparent 100%);
+  height: 30%;
+  background: linear-gradient(to top, rgba(15,32,24,0.5) 0%, transparent 100%);
   z-index: 1;
   pointer-events: none;
+  border-radius: 0 0 50% 50%;
 }
 .hero-photo {
   width: 100%; height: 100%;
