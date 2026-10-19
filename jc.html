@@ -168,6 +168,7 @@ nav {
 
 /* ── Section Commons ── */
 section { scroll-margin-top: 108px; }
+.nav-back-btn { display:none; background:none; border:none; padding:0; cursor:pointer; }
 @media (max-width:900px) { section { scroll-margin-top:52px; } }
 .section-inner { max-width:1100px; margin:0 auto; padding:100px 48px; }
 .section-tag {
@@ -707,7 +708,7 @@ a.mob-item-link { display:block; text-decoration:none; color:#EAE0D0; text-align
       </div>
     </li>
   </ul>
-  <button class="nav-back-btn" id="navBackBtn" onclick="history.back()" aria-label="뒤로가기">&#8249;</button>
+  <button class="nav-back-btn" id="navBackBtn" onclick="toggleNav()" aria-label="뒤로가기">&#8249;</button>
   <button class="nav-hamburger" id="navBtn" onclick="toggleNav()" aria-label="메뉴열기">
     <span class="nav-ham-line"></span>
     <span class="nav-ham-line"></span>
@@ -859,6 +860,15 @@ function closeNav(){
 </footer>
 
 
+<script>
+(function(){
+  var b = document.getElementById('navBackBtn');
+  if(!b) return;
+  var p = window.location.pathname;
+  if(p === '/' || p.endsWith('/index.html') || p === '/index.html') { return; }
+  if(window.innerWidth <= 900) { b.style.display = 'flex'; }
+})();
+</script>
 </body>
 <!-- ── 모바일 고정 버튼 ── -->
 <button id="fixedMenuBtn" aria-label="메뉴열기">

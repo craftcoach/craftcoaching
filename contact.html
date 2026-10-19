@@ -523,6 +523,7 @@ footer {
 .hero-symbol { animation: fadeUp 0.8s 0.2s ease both; }
 
 /* ── Responsive ── */
+.nav-back-btn { display:none; background:none; border:none; padding:0; cursor:pointer; }
 @media (max-width:900px) {
   nav { padding:0 24px; }
   .nav-menu { display:none; }
@@ -687,7 +688,7 @@ a.mob-item-link { display:block; text-decoration:none; color:#EAE0D0; text-align
       </div>
     </li>
   </ul>
-  <button class="nav-back-btn" id="navBackBtn" onclick="history.back()" aria-label="뒤로가기">&#8249;</button>
+  <button class="nav-back-btn" id="navBackBtn" onclick="toggleNav()" aria-label="뒤로가기">&#8249;</button>
   <button class="nav-hamburger" id="navBtn" onclick="toggleNav()" aria-label="메뉴열기">
     <span class="nav-ham-line"></span>
     <span class="nav-ham-line"></span>
@@ -902,6 +903,15 @@ function closeNav(){var ov=document.getElementById('navOverlay');var btn=documen
   var top=document.getElementById('topBtn');
   if(top){window.addEventListener('scroll',function(){var s=window.scrollY>300;top.style.opacity=s?'1':'0';top.style.pointerEvents=s?'auto':'none';},{passive:true});}
   window.addEventListener('pageshow',function(){closeNav();});
+})();
+</script>
+<script>
+(function(){
+  var b = document.getElementById('navBackBtn');
+  if(!b) return;
+  var p = window.location.pathname;
+  if(p === '/' || p.endsWith('/index.html') || p === '/index.html') { return; }
+  if(window.innerWidth <= 900) { b.style.display = 'flex'; }
 })();
 </script>
 </body>
