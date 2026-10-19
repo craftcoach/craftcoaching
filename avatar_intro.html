@@ -585,6 +585,10 @@ footer {
 @media (max-width:900px) {
   nav { padding:0 16px; height:48px; display:flex; justify-content:space-between; align-items:center; }
   .nav-logo img { height:40px !important; }
+  footer .nav-logo img { height:20px !important; }
+  footer .nav-logo svg { width:22px !important; height:22px !important; }
+  footer .nav-logo-craft { font-size:8px !important; }
+  footer .nav-logo-coaching { font-size:8px !important; }
   .section-inner { padding-top:70px !important; }
   .nav-menu { display:none; }
   .nav-hamburger { display:flex !important; margin-left:auto; }
@@ -771,6 +775,7 @@ footer {
       </div>
     </li>
   </ul>
+  <button class="nav-back-btn" id="navBackBtn" onclick="history.back()" aria-label="뒤로가기" style="display:none;">&#8249;</button>
   <button class="nav-hamburger" id="navBtn" onclick="toggleNav()" aria-label="메뉴열기">
     <span class="nav-ham-line"></span>
     <span class="nav-ham-line"></span>
@@ -780,29 +785,61 @@ footer {
 </nav>
 <!-- ── 모바일 오버레이 메뉴 ── -->
 <div class="nav-overlay" id="navOverlay">
-  <a class="mob-item mob-item-link" href="company_ceo.html" onclick="closeNav()">
-    <span class="mob-title">회사 소개</span>
-  </a>
+  <!-- 회사 소개 -->
+  <details class="mob-item">
+    <summary class="mob-title">회사 소개<span class="mob-arrow"></span></summary>
+    <div class="mob-sub">
+      <a href="company_ceo.html" onclick="closeNav()">CEO Message</a>
+      <a href="company_philosophy.html" onclick="closeNav()">회사 철학</a>
+      <a href="company_brand.html" onclick="closeNav()">브랜드 스토리</a>
+      <a href="company_vision.html" onclick="closeNav()">비전 &amp; 미션</a>
+    </div>
+  </details>
+  <!-- 비즈니스 코칭 -->
+  <details class="mob-item">
+    <summary class="mob-title">비즈니스 코칭<span class="mob-arrow"></span></summary>
+    <div class="mob-sub">
+      <a href="business_intro.html" onclick="closeNav()">비즈니스 코칭이란</a>
+      <a href="business_fields.html" onclick="closeNav()">코칭 분야</a>
+    </div>
+  </details>
+  <!-- 라이프 코칭 -->
+  <details class="mob-item">
+    <summary class="mob-title">라이프 코칭<span class="mob-arrow"></span></summary>
+    <div class="mob-sub">
+      <a href="life_intro.html" onclick="closeNav()">라이프 코칭이란</a>
+      <a href="life_fields.html" onclick="closeNav()">코칭 분야</a>
+    </div>
+  </details>
+  <!-- 잡 크래프팅 -->
   <a class="mob-item mob-item-link" href="jc.html" onclick="closeNav()">
     <span class="mob-title">잡 크래프팅</span>
   </a>
-  <a class="mob-item mob-item-link" href="business_intro.html" onclick="closeNav()">
-    <span class="mob-title">비즈니스 코칭</span>
-  </a>
-  <a class="mob-item mob-item-link" href="life_intro.html" onclick="closeNav()">
-    <span class="mob-title">라이프 코칭</span>
-  </a>
-  <a class="mob-item mob-item-link" href="columns.html" onclick="closeNav()">
-    <span class="mob-title">자료</span>
-  </a>
-  <a class="mob-item mob-item-link" href="avatar_intro.html" onclick="closeNav()">
-    <span class="mob-title">아봐타®</span>
-  </a>
+  <!-- 자료 -->
+  <details class="mob-item">
+    <summary class="mob-title">자료<span class="mob-arrow"></span></summary>
+    <div class="mob-sub">
+      <a href="columns.html" onclick="closeNav()">칼럼</a>
+      <a href="company_media.html" onclick="closeNav()">미디어</a>
+      <a href="company_books.html" onclick="closeNav()">저서</a>
+    </div>
+  </details>
+  <!-- 아봐타 -->
+  <details class="mob-item">
+    <summary class="mob-title">아봐타®<span class="mob-arrow"></span></summary>
+    <div class="mob-sub">
+      <a href="avatar_intro.html" onclick="closeNav()">아봐타®란</a>
+      <a href="avatar_courses.html" onclick="closeNav()">아봐타® 코스</a>
+      <a href="avatar_schedule.html" onclick="closeNav()">아봐타® 코스일정</a>
+      <a href="avatar_faq.html" onclick="closeNav()">FAQ</a>
+      <a href="avatar_books.html" onclick="closeNav()">아봐타® 도서</a>
+    </div>
+  </details>
+  <!-- 문의하기 -->
   <a class="mob-item mob-item-link" href="contact.html" onclick="closeNav()">
     <span class="mob-title">문의하기</span>
   </a>
   <button class="nav-overlay-close" onclick="closeNav()">✕ &nbsp; CLOSE</button>
-
 </div>
 
 <script>
