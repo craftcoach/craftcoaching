@@ -728,7 +728,6 @@ a.mob-item-link { display:block; text-decoration:none; color:#EAE0D0; text-align
         <a href="company_philosophy.html">회사 철학</a>
         <a href="company_brand.html">브랜드 스토리</a>
         <a href="company_vision.html">비전 &amp; 미션</a>
-        <a href="company_books.html">저서</a>
       </div>
     </li>
     <li>
@@ -864,15 +863,17 @@ function closeNav(){
       <div style="margin-bottom:40px;">
         <h4 style="font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:18px;color:var(--green);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--gold);display:inline-block;">인터뷰</h4>
         <div class="media-grid" style="grid-template-columns:1fr;">
-          <div class="media-card">
-            <div class="media-card-type">Interview</div>
-            <div class="media-card-title" style="font-weight:700;">한국강사신문 — 잡 크래프팅 전문 코치 이정숙 인터뷰</div>
-            <div class="media-card-date" style="margin-top:10px;">
+          <div class="media-card" style="display:flex;align-items:center;gap:20px;">
+            <div style="flex:1;min-width:0;">
+              <div class="media-card-type">Interview</div>
+              <div class="media-card-title" style="font-weight:700;">한국강사신문 — 잡 크래프팅 전문 코치 이정숙 인터뷰</div>
+            </div>
+            <div style="flex-shrink:0;">
               <a href="https://www.lecturernews.com/news/articleView.html?idxno=191204"
                  target="_blank"
                  style="font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:1.5px;
                         color:var(--gold);border:0.5px solid rgba(27,58,42,0.25);
-                        padding:6px 14px;text-decoration:none;display:inline-block;">
+                        padding:6px 14px;text-decoration:none;display:inline-block;white-space:nowrap;">
                 기사 보기 →
               </a>
             </div>
@@ -885,10 +886,13 @@ function closeNav(){
         <h4 style="font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:18px;color:var(--green);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--gold);display:inline-block;">방송</h4>
 
         <!-- TV 방송 박스 (tbn과 동일 디자인) -->
-        <div style="margin-bottom:24px;padding:20px 24px;background:rgba(27,58,42,0.3);border-left:3px solid var(--gold);">
-          <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">TV Broadcasting</div>
-          <div style="font-family:'Noto Sans KR',sans-serif;font-size:20px;font-weight:700;color:#EAE0D0;">TV 방송</div>
-          <div style="margin-top:12px;display:flex;align-items:center;padding:6px 0;border-bottom:0.5px solid rgba(184,147,90,0.1);">
+        <div style="margin-bottom:24px;padding:20px 24px;background:rgba(27,58,42,0.65);border-left:3px solid var(--gold);display:flex;gap:24px;align-items:flex-start;">
+          <div style="flex-shrink:0;min-width:130px;">
+            <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">TV Broadcasting</div>
+            <div style="font-family:'Noto Sans KR',sans-serif;font-size:20px;font-weight:700;color:#EAE0D0;">TV 방송</div>
+          </div>
+          <div style="flex:1;min-width:0;">
+          <div style="display:flex;align-items:center;padding:6px 0;border-bottom:0.5px solid rgba(184,147,90,0.1);">
             <div style="width:50%;font-size:12px;color:rgba(184,147,90,0.85);padding-right:12px;">2026.10.16 — <strong>JTBC 장르가머니 돈선체크</strong></div>
             <a href="https://www.youtube.com/watch?v=8mrsWRKmMbE" target="_blank"
                style="display:inline-flex;align-items:center;gap:6px;background:#CC0000;color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:4px;text-decoration:none;flex-shrink:0;">
@@ -896,16 +900,18 @@ function closeNav(){
               YouTube
             </a>
           </div>
+          </div>
         </div>
 
         <!-- tbn 강원교통방송 -->
-        <div style="margin-bottom:24px;padding:20px 24px;background:rgba(27,58,42,0.3);border-left:3px solid var(--gold);">
-          <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Radio Broadcasting</div>
-          <div style="font-family:'Noto Sans KR',sans-serif;font-size:20px;font-weight:700;color:#EAE0D0;">tbn 강원교통방송</div>
-          <div style="font-family:'Noto Sans KR',sans-serif;font-size:16px;color:rgba(184,147,90,0.85);margin-top:4px;">'강원매거진 정보카페'</div>
-        </div>
-        <!-- 회차 나열 -->
-        <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="margin-bottom:24px;padding:20px 24px;background:rgba(27,58,42,0.65);border-left:3px solid var(--gold);display:flex;gap:24px;align-items:flex-start;">
+          <div style="flex-shrink:0;min-width:150px;">
+            <div style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Radio Broadcasting</div>
+            <div style="font-family:'Noto Sans KR',sans-serif;font-size:20px;font-weight:700;color:#EAE0D0;">tbn 강원교통방송</div>
+            <div style="font-family:'Noto Sans KR',sans-serif;font-size:16px;color:rgba(184,147,90,0.85);margin-top:4px;">'강원매거진 정보카페'</div>
+          </div>
+          <!-- 회차 나열 -->
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:0;">
 
           <div style="display:flex;align-items:center;padding:4px 0;border-bottom:0.5px solid rgba(184,147,90,0.1);">
             <div style="width:50%;font-size:12px;color:var(--text-lt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:12px;">1회 (2025.11.10) — <strong>잡 크래프팅과 코칭 개념소개</strong></div>
@@ -979,6 +985,7 @@ function closeNav(){
             <audio controls controlslist="nodownload" preload="metadata" style="width:50%;height:28px;accent-color:#B8935A;">
               <source src="audio/tbn_12_261019.mp3" type="audio/mpeg">
             </audio>
+          </div>
           </div>
         </div>
       </div>
